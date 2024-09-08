@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://w50j2di7mvra"]
+
+[ext_resource type="Script" path="res://scenes/menus/options_menu.gd" id="1_6v5m2"]
+[ext_resource type="Theme" uid="uid://qc43p7xhuxrq" path="res://fonts/test_ui_theme.theme" id="1_ct6d1"]
+[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="3_a4yhu"]
+[ext_resource type="Texture2D" uid="uid://vjbcr8yfvim0" path="res://pictures/placeholder_options_picture.png" id="3_gnsu0"]
+[ext_resource type="Script" path="res://scenes/menus/scene_loader_button.gd" id="4_xej13"]
+
+[node name="OptionsMenu" type="CanvasLayer"]
+script = ExtResource("1_6v5m2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ct6d1")
+color = Color(0.300691, 0.485783, 0.583158, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -602.0
+offset_top = 92.0
+offset_right = -299.0
+offset_bottom = 664.0
+grow_horizontal = 2
+theme = ExtResource("1_ct6d1")
+texture = ExtResource("3_gnsu0")
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = 43.0
+offset_right = 239.5
+offset_bottom = 154.0
+grow_horizontal = 2
+theme = ExtResource("3_a4yhu")
+text = "Options"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -49.0
+offset_right = 258.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ct6d1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ct6d1")
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ct6d1")
+text = "Fullscreen: "
+
+[node name="FullScreen" type="CheckBox" parent="ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ct6d1")
+
+[node name="BackButton" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("1_ct6d1")
+text = "Back"
+script = ExtResource("4_xej13")
+scene_path = "res://scenes/menus/main_menu.tscn"
+
+[connection signal="toggled" from="ColorRect/VBoxContainer/HBoxContainer/FullScreen" to="." method="_on_full_screen_toggled"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/BackButton" to="ColorRect/VBoxContainer/BackButton" method="_on_pressed"]
