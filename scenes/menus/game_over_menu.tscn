@@ -1,0 +1,135 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfdthumkb8q66"]
+
+[ext_resource type="Script" path="res://scenes/menus/menu_base.gd" id="1_giuvq"]
+[ext_resource type="Texture2D" uid="uid://deb0f4jrprxhl" path="res://pictures/placeholder_game_over_character.png" id="2_1sasm"]
+[ext_resource type="FontFile" uid="uid://bvd2lkbgxtf83" path="res://fonts/bangers/Bangers.ttf" id="3_ghaof"]
+[ext_resource type="Theme" uid="uid://qc43p7xhuxrq" path="res://fonts/test_ui_theme.theme" id="4_xrdb2"]
+[ext_resource type="Script" path="res://scenes/menus/scene_loader_button.gd" id="5_5xjh3"]
+[ext_resource type="Script" path="res://scenes/menus/quit_button.gd" id="6_xowrq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_772j4"]
+font = ExtResource("3_ghaof")
+font_size = 95
+
+[node name="GameOverMenu" type="ReferenceRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_giuvq")
+
+[node name="Contents" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.300691, 0.485783, 0.583158, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Contents"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -602.0
+offset_top = 55.0
+offset_right = -299.0
+offset_bottom = 627.0
+grow_horizontal = 2
+texture = ExtResource("2_1sasm")
+
+[node name="Label" type="Label" parent="Contents"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -351.5
+offset_top = -323.0
+offset_right = 351.5
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_772j4")
+horizontal_alignment = 1
+
+[node name="WinOrLoseMessage" type="Label" parent="Contents"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -351.5
+offset_top = -196.0
+offset_right = 351.5
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Maybe You Won
+Maybe You Lost"
+label_settings = SubResource("LabelSettings_772j4")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Contents"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -351.5
+offset_top = 62.0
+offset_right = 351.5
+offset_bottom = 269.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score: 420"
+label_settings = SubResource("LabelSettings_772j4")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Contents"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 210.0
+offset_top = -340.0
+offset_right = 726.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.761384, 0.761384)
+
+[node name="RestartButton" type="Button" parent="Contents/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_xrdb2")
+text = "Try Again"
+script = ExtResource("5_5xjh3")
+scene_path = "res://scenes/test_level_00.tscn"
+
+[node name="MenuButton" type="Button" parent="Contents/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_xrdb2")
+text = "To Menu"
+script = ExtResource("5_5xjh3")
+scene_path = "res://scenes/menus/main_menu_scene.tscn"
+
+[node name="QuitButton" type="Button" parent="Contents/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_xrdb2")
+text = "I REALLY Gotta Go"
+script = ExtResource("6_xowrq")
+
+[connection signal="pressed" from="Contents/VBoxContainer/RestartButton" to="Contents/VBoxContainer/RestartButton" method="_on_pressed"]
+[connection signal="pressed" from="Contents/VBoxContainer/MenuButton" to="Contents/VBoxContainer/MenuButton" method="_on_pressed"]
+[connection signal="pressed" from="Contents/VBoxContainer/QuitButton" to="Contents/VBoxContainer/QuitButton" method="_on_pressed"]
