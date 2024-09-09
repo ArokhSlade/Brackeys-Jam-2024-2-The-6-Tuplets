@@ -1,50 +1,59 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkb4fxl3tda7e"]
+[gd_scene load_steps=9 format=3 uid="uid://dy8f85l62q7v3"]
 
-[ext_resource type="Texture2D" uid="uid://b20yvpwbxd1lb" path="res://pictures/placeholder_menu_character.png" id="1_rpyr4"]
-[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="2_5waj5"]
-[ext_resource type="FontFile" uid="uid://bvd2lkbgxtf83" path="res://fonts/bangers/Bangers.ttf" id="2_judfq"]
-[ext_resource type="Script" path="res://scenes/menus/scene_loader_button.gd" id="4_fvjta"]
-[ext_resource type="Script" path="res://scenes/menus/quit_button.gd" id="6_46sje"]
+[ext_resource type="Script" path="res://scenes/menus/menu_base.gd" id="1_ux8au"]
+[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="2_50o8t"]
+[ext_resource type="Texture2D" uid="uid://b20yvpwbxd1lb" path="res://pictures/placeholder_menu_character.png" id="2_tvkrs"]
+[ext_resource type="Theme" uid="uid://qc43p7xhuxrq" path="res://fonts/test_ui_theme.theme" id="3_p32xq"]
+[ext_resource type="Script" path="res://scenes/menus/scene_loader_button.gd" id="4_kv287"]
+[ext_resource type="Script" path="res://scenes/menus/quit_button.gd" id="5_jh16t"]
+[ext_resource type="PackedScene" uid="uid://b7vc0qaf6buxr" path="res://scenes/menus/options_menu.tscn" id="6_vmdub"]
+[ext_resource type="PackedScene" uid="uid://di0lp5gtvsv3" path="res://scenes/menus/credits_menu.tscn" id="7_ehv3a"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_vsi2p"]
-font = ExtResource("2_judfq")
-font_size = 95
-
-[node name="MainMenu" type="CanvasLayer"]
-
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="MainMenu" type="ReferenceRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.300691, 0.485783, 0.583158, 1)
+script = ExtResource("1_ux8au")
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+[node name="Contents" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.301961, 0.486275, 0.584314, 0.627451)
+
+[node name="TextureRect" type="TextureRect" parent="Contents"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -602.0
-offset_top = 92.0
-offset_right = -299.0
-offset_bottom = 664.0
+offset_left = -588.0
+offset_top = 180.0
+offset_right = -285.0
+offset_bottom = 752.0
 grow_horizontal = 2
-texture = ExtResource("1_rpyr4")
+scale = Vector2(0.92, 0.92)
+texture = ExtResource("2_tvkrs")
 
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 364.0
-offset_top = 27.0
-offset_right = 1220.0
-offset_bottom = 234.0
-theme = ExtResource("2_5waj5")
+[node name="Label" type="Label" parent="Contents"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -428.0
+offset_right = 428.0
+offset_bottom = 207.0
+grow_horizontal = 2
+theme = ExtResource("2_50o8t")
 text = "The 6 Tuplets
 It's seriously awesome!!!"
-label_settings = SubResource("LabelSettings_vsi2p")
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="Contents"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -52,45 +61,51 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -258.0
-offset_top = -448.0
+offset_top = -466.0
 offset_right = 258.0
-offset_bottom = -45.0
+offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("2_5waj5")
+theme = ExtResource("3_p32xq")
 
-[node name="StartButton" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="StartButton" type="Button" parent="Contents/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("2_5waj5")
-text = "Start Game"
-script = ExtResource("4_fvjta")
+theme = ExtResource("3_p32xq")
+text = "Let's Get It"
+script = ExtResource("4_kv287")
 scene_path = "res://scenes/test_level_00.tscn"
 
-[node name="OptionsButton" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="Contents/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("2_5waj5")
+theme = ExtResource("3_p32xq")
 text = "Options"
-script = ExtResource("4_fvjta")
-scene_path = "res://scenes/menus/options_menu.tscn"
 
-[node name="CreditsButton" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="Contents/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("2_5waj5")
-text = "Who did this"
-script = ExtResource("4_fvjta")
-scene_path = "res://scenes/menus/credits.tscn"
+theme = ExtResource("3_p32xq")
+text = "Credits"
 
-[node name="QuitButton" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Contents/VBoxContainer3"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("2_5waj5")
+theme = ExtResource("3_p32xq")
 text = "I Gotta Go"
-script = ExtResource("6_46sje")
+script = ExtResource("5_jh16t")
 
-[connection signal="pressed" from="ColorRect/VBoxContainer/StartButton" to="ColorRect/VBoxContainer/StartButton" method="_on_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/OptionsButton" to="ColorRect/VBoxContainer/OptionsButton" method="_on_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/CreditsButton" to="ColorRect/VBoxContainer/CreditsButton" method="_on_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/QuitButton" to="ColorRect/VBoxContainer/QuitButton" method="_on_pressed"]
+[node name="OptionsMenu" parent="." node_paths=PackedStringArray("parent_menu") instance=ExtResource("6_vmdub")]
+visible = false
+layout_mode = 1
+parent_menu = NodePath("..")
+
+[node name="CreditsMenu" parent="." node_paths=PackedStringArray("parent_menu") instance=ExtResource("7_ehv3a")]
+visible = false
+layout_mode = 1
+parent_menu = NodePath("..")
+
+[connection signal="pressed" from="Contents/VBoxContainer3/StartButton" to="Contents/VBoxContainer3/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="Contents/VBoxContainer3/OptionsButton" to="OptionsMenu" method="open_menu"]
+[connection signal="pressed" from="Contents/VBoxContainer3/CreditsButton" to="CreditsMenu" method="open_menu"]
+[connection signal="pressed" from="Contents/VBoxContainer3/QuitButton" to="Contents/VBoxContainer3/QuitButton" method="_on_pressed"]

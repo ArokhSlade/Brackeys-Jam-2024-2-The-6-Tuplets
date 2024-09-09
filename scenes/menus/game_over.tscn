@@ -1,18 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqmcd7msxruea"]
+[gd_scene load_steps=8 format=3 uid="uid://dvu5ys1e7pu23"]
 
-[ext_resource type="Script" path="res://scenes/menus/game_over.gd" id="1_icj8c"]
 [ext_resource type="Texture2D" uid="uid://deb0f4jrprxhl" path="res://pictures/placeholder_game_over_character.png" id="2_118qi"]
 [ext_resource type="FontFile" uid="uid://bvd2lkbgxtf83" path="res://fonts/bangers/Bangers.ttf" id="3_j1ui1"]
 [ext_resource type="Theme" uid="uid://qc43p7xhuxrq" path="res://fonts/test_ui_theme.theme" id="4_xf42r"]
 [ext_resource type="Script" path="res://scenes/menus/scene_loader_button.gd" id="5_t7jyo"]
 [ext_resource type="Script" path="res://scenes/menus/quit_button.gd" id="6_fptyx"]
 
+[sub_resource type="GDScript" id="GDScript_7i02h"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$ColorRect/WinOrLoseMessage.text = \"Congrats\\nYou Won!\" if TestGlobalData.was_game_won else \"Oof, You Lost :(\"
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
 [sub_resource type="LabelSettings" id="LabelSettings_vsi2p"]
 font = ExtResource("3_j1ui1")
 font_size = 95
 
 [node name="GameOver" type="CanvasLayer"]
-script = ExtResource("1_icj8c")
+script = SubResource("GDScript_7i02h")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

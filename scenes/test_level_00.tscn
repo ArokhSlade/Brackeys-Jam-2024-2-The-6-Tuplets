@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bo20eh72d0433"]
+[gd_scene load_steps=10 format=3 uid="uid://bo20eh72d0433"]
 
 [ext_resource type="Script" path="res://scenes/scene_transition_zone.gd" id="1_fndat"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_qqqb8"]
 [ext_resource type="FontFile" uid="uid://bvd2lkbgxtf83" path="res://fonts/bangers/Bangers.ttf" id="3_ol7bn"]
+[ext_resource type="PackedScene" uid="uid://qyset6fs0lox" path="res://scenes/menus/pause_menu.tscn" id="4_vn5ej"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t23ql"]
 size = Vector3(10, 0.3, 2)
@@ -62,7 +63,6 @@ mesh = SubResource("CapsuleMesh_khc4m")
 [node name="LoseGameZone" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32104, 0.996671, 0)
 script = ExtResource("1_fndat")
-scene_path = "res://scenes/menus/game_over.tscn"
 
 [node name="Label3D" type="Label3D" parent="LoseGameZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -0.5)
@@ -80,7 +80,6 @@ shape = SubResource("BoxShape3D_j0ob2")
 [node name="WinGameZone" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95137, 0.996671, 0)
 script = ExtResource("1_fndat")
-scene_path = "res://scenes/menus/game_over.tscn"
 was_game_won = true
 
 [node name="Label3D" type="Label3D" parent="WinGameZone"]
@@ -95,6 +94,12 @@ collision_mask = 128
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WinGameZone/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
 shape = SubResource("BoxShape3D_j0ob2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_vn5ej")]
+process_mode = 3
+visible = false
 
 [connection signal="body_entered" from="LoseGameZone/Area3D" to="LoseGameZone" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="WinGameZone/Area3D" to="WinGameZone" method="_on_area_3d_body_entered"]
