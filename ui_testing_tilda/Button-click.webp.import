@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dl3ukssif25pg"
-path="res://.godot/imported/Button-click.webp-933acfcd7ffd1dae728ce1e44d1c8e42.ctex"
+path="res://.godot/imported/Button-click.webp-f1f20082b6fdee458b49324b50af0ec4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Button-click.webp"
-dest_files=["res://.godot/imported/Button-click.webp-933acfcd7ffd1dae728ce1e44d1c8e42.ctex"]
+source_file="res://ui_testing_tilda/Button-click.webp"
+dest_files=["res://.godot/imported/Button-click.webp-f1f20082b6fdee458b49324b50af0ec4.ctex"]
 
 [params]
 

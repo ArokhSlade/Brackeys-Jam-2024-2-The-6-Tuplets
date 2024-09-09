@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://06vrul07pjk5"
-path="res://.godot/imported/Tilda_test_UI_Menu.gltf-a8021e627d55d8556d026ab1fed3369b.scn"
+path="res://.godot/imported/Tilda_test_UI_Menu.gltf-b275aaa5270807bd9aa35f1db2c48e11.scn"
 
 [deps]
 
-source_file="res://Tilda_test_UI_Menu.gltf"
-dest_files=["res://.godot/imported/Tilda_test_UI_Menu.gltf-a8021e627d55d8556d026ab1fed3369b.scn"]
+source_file="res://ui_testing_tilda/Tilda_test_UI_Menu.gltf"
+dest_files=["res://.godot/imported/Tilda_test_UI_Menu.gltf-b275aaa5270807bd9aa35f1db2c48e11.scn"]
 
 [params]
 
