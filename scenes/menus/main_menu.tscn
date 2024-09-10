@@ -65,7 +65,7 @@ size_flags_vertical = 3
 theme = ExtResource("2_5waj5")
 text = "Start Game"
 script = ExtResource("4_fvjta")
-scene_path = "res://scenes/test_level_00.tscn"
+scene_path = "res://scenes/playerController.tscn"
 
 [node name="OptionsButton" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
