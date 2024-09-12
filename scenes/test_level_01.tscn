@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=3 uid="uid://h12s86tm0f8q"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_gdf2h"]
+[ext_resource type="Script" path="res://scenes/scene_transition_zone.gd" id="2_h6s0f"]
+[ext_resource type="FontFile" uid="uid://bvd2lkbgxtf83" path="res://fonts/bangers/Bangers.ttf" id="3_5vfpw"]
+[ext_resource type="PackedScene" uid="uid://qyset6fs0lox" path="res://scenes/menus/pause_menu.tscn" id="4_y5srh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t23ql"]
+size = Vector3(10, 0.3, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bgyop"]
+size = Vector3(10, 0.3, 2)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hilwa"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cu6oo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cc17d"]
+size = Vector3(1, 0.3, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j0ob2"]
+size = Vector3(1.33789, 2.6062, 2.03473)
+
+[node name="TestLevel_00" type="Node"]
+
+[node name="CameraPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 4)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.714754, -0.477768, 0.51075, 0, 0.730293, 0.683134, -0.699376, -0.488272, 0.52198, 0, 2.14895, 0)
+light_energy = 1.323
+
+[node name="Platform" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/StaticBody3D"]
+shape = SubResource("BoxShape3D_t23ql")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform/StaticBody3D"]
+mesh = SubResource("BoxMesh_bgyop")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13241, 0)
+script = ExtResource("1_gdf2h")
+
+[node name="Character" type="Node3D" parent="Player"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Character"]
+mesh = SubResource("CapsuleMesh_hilwa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_cu6oo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22168, 0.549839, 0)
+mesh = SubResource("BoxMesh_cc17d")
+
+[node name="FootstepTimer" type="Timer" parent="Player"]
+one_shot = true
+
+[node name="LoseGameZone" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32104, 0.996671, 0)
+script = ExtResource("2_h6s0f")
+
+[node name="Label3D" type="Label3D" parent="LoseGameZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -0.5)
+text = "Lose Game <-"
+font = ExtResource("3_5vfpw")
+font_size = 117
+
+[node name="Area3D" type="Area3D" parent="LoseGameZone"]
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LoseGameZone/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
+shape = SubResource("BoxShape3D_j0ob2")
+
+[node name="WinGameZone" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95137, 0.996671, 0)
+script = ExtResource("2_h6s0f")
+was_game_won = true
+
+[node name="Label3D" type="Label3D" parent="WinGameZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -0.5)
+text = "-> Win Game"
+font = ExtResource("3_5vfpw")
+font_size = 117
+
+[node name="Area3D" type="Area3D" parent="WinGameZone"]
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WinGameZone/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
+shape = SubResource("BoxShape3D_j0ob2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_y5srh")]
+process_mode = 3
+visible = false
+
+[connection signal="body_entered" from="LoseGameZone/Area3D" to="LoseGameZone" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WinGameZone/Area3D" to="WinGameZone" method="_on_area_3d_body_entered"]
