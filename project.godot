@@ -29,7 +29,7 @@ window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
