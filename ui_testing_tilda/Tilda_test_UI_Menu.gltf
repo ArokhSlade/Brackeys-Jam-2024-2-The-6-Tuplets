@@ -1,1 +1,0 @@
-{"asset":{"generator":"Godot Engine v4.3.stable.official@77dcf97d82cbfe4e4615475fa52ca03da645dbd8","version":"2.0"},"extensionsUsed":["GODOT_single_root"],"nodes":[{"children":[1],"name":"Menu"},{"children":[2],"name":"MarginContainer"},{"children":[3],"name":"VBoxContainer"},{"name":"TextureButton"}],"scene":0,"scenes":[{"nodes":[0]}]}
