@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 TestGlobalData="*res://scenes/test_global_data.gd"
-PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 AudioController="*res://audio/audio_controller.tscn"
 
 [display]
