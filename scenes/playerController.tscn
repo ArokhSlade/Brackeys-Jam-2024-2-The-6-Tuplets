@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bo20eh72d0433"]
+[gd_scene load_steps=14 format=3 uid="uid://bo20eh72d0433"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_byhrd"]
 [ext_resource type="Script" path="res://scenes/scene_transition_zone.gd" id="2_c4xpd"]
 [ext_resource type="Script" path="res://scenes/camera_follow.gd" id="2_caelx"]
 [ext_resource type="FontFile" uid="uid://bvd2lkbgxtf83" path="res://fonts/bangers/Bangers.ttf" id="3_btnkp"]
+[ext_resource type="PackedScene" uid="uid://qyset6fs0lox" path="res://scenes/menus/pause_menu.tscn" id="5_bl7a3"]
 
 [sub_resource type="GDScript" id="GDScript_ssxd0"]
 script/source = "extends Node
@@ -147,6 +148,13 @@ collision_mask = 128
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WinGameZone/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
 shape = SubResource("BoxShape3D_j0ob2")
+
+[node name="MenuCanvas" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="PauseMenu" parent="MenuCanvas" instance=ExtResource("5_bl7a3")]
+process_mode = 3
+visible = false
 
 [connection signal="body_entered" from="LoseGameZone/Area3D" to="LoseGameZone" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="WinGameZone/Area3D" to="WinGameZone" method="_on_area_3d_body_entered"]

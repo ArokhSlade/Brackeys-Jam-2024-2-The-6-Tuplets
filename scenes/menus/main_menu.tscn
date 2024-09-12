@@ -74,7 +74,7 @@ size_flags_vertical = 3
 theme = ExtResource("3_p32xq")
 text = "Let's Get It"
 script = ExtResource("4_kv287")
-scene_path = "res://scenes/test_level_01.tscn"
+scene_path = "res://scenes/playerController.tscn"
 
 [node name="OptionsButton" type="Button" parent="Contents/VBoxContainer3"]
 layout_mode = 2
