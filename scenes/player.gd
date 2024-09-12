@@ -7,6 +7,12 @@ extends CharacterBody3D
 @export var speed: float = 8.0
 @export var rotation_speed: float = 20.0
 
+
+func _ready():
+	## changes music that's playing to game music
+	AudioController.stop_menuMusic()
+	AudioController.play_gameMusic1()
+
 var jump_count = 0
 var player_velocity: Vector3 = Vector3.ZERO
 
@@ -15,6 +21,7 @@ func _process(delta: float) -> void:
 	_apply_gravity(delta)
 	_apply_movement()
 	_check_for_landing()
+	_footstep_sounds()
 
 # INPUT CONTROLLERS
 func _handle_input(delta: float) -> void:
@@ -22,6 +29,7 @@ func _handle_input(delta: float) -> void:
 
 	if Input.is_action_pressed("move_left"):
 		input_direction.x -= 1
+
 	if Input.is_action_pressed("move_right"):
 		input_direction.x += 1
 
@@ -39,7 +47,16 @@ func _handle_jump() -> void:
 	if is_on_floor() or jump_count < max_jumps:
 		player_velocity.y = jumpForce 
 		jump_count += 1
+		AudioController.play_jump()
 		print("Player jump count: ", jump_count)
+
+# TO DO: CHANGE FOOTSTEP SOUND BASED ON MATERIAL TYPE
+# FOOTSTEP SOUND LOGIC 
+func _footstep_sounds() -> void:
+	if is_on_floor() and player_velocity.x != 0:
+		if $FootstepTimer.time_left <=0 :
+			AudioController.play_stepDirt()
+			$FootstepTimer.start(.5)
 
 # GRAVITY
 func _apply_gravity(delta: float) -> void:

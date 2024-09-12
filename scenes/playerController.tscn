@@ -108,6 +108,9 @@ shape = SubResource("CapsuleShape3D_hdmxt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22168, 0.549839, 0)
 mesh = SubResource("BoxMesh_wglny")
 
+[node name="FootstepTimer" type="Timer" parent="Player"]
+one_shot = true
+
 [node name="LoseGameZone" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4376, 0.996671, 0)
 script = ExtResource("2_c4xpd")
