@@ -4,8 +4,8 @@
 [ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="2_50o8t"]
 [ext_resource type="Texture2D" uid="uid://b20yvpwbxd1lb" path="res://pictures/placeholder_menu_character.png" id="2_tvkrs"]
 [ext_resource type="Theme" uid="uid://qc43p7xhuxrq" path="res://fonts/test_ui_theme.theme" id="3_p32xq"]
-[ext_resource type="Script" path="res://scenes/menus/scene_loader_button.gd" id="4_kv287"]
 [ext_resource type="Script" path="res://scenes/menus/quit_button.gd" id="5_jh16t"]
+[ext_resource type="Script" path="res://scenes/menus/start_game_button.gd" id="5_qlfve"]
 [ext_resource type="PackedScene" uid="uid://b7vc0qaf6buxr" path="res://scenes/menus/options_menu.tscn" id="6_vmdub"]
 [ext_resource type="PackedScene" uid="uid://di0lp5gtvsv3" path="res://scenes/menus/credits_menu.tscn" id="7_ehv3a"]
 
@@ -73,8 +73,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_p32xq")
 text = "Let's Get It"
-script = ExtResource("4_kv287")
-scene_path = "res://scenes/playerController.tscn"
+script = ExtResource("5_qlfve")
 
 [node name="OptionsButton" type="Button" parent="Contents/VBoxContainer3"]
 layout_mode = 2

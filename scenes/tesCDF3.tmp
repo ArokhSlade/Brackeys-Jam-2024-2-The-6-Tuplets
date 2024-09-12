@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=3 uid="uid://bo20eh72d0433"]
+
+[ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_2u4fh"]
+[ext_resource type="Script" path="res://scenes/camera_follow.gd" id="1_c4ila"]
+[ext_resource type="PackedScene" uid="uid://dy0d5e4fcyuv2" path="res://scenes/player.tscn" id="2_qmlhm"]
+[ext_resource type="Script" path="res://scenes/scene_transition_zone.gd" id="3_2boio"]
+[ext_resource type="FontFile" uid="uid://bvd2lkbgxtf83" path="res://fonts/bangers/Bangers.ttf" id="4_nd1oa"]
+[ext_resource type="PackedScene" uid="uid://qyset6fs0lox" path="res://scenes/menus/pause_menu.tscn" id="5_tj64r"]
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="6_p1ggv"]
+[ext_resource type="PackedScene" uid="uid://dm1e5wfnm1ssy" path="res://scenes/build_site.tscn" id="7_octvi"]
+[ext_resource type="PackedScene" uid="uid://benlqovn1gllt" path="res://scenes/pickup_straw.tscn" id="8_tc5de"]
+[ext_resource type="PackedScene" uid="uid://do8e6ayqb6acm" path="res://scenes/pickup_plank.tscn" id="9_7siwi"]
+[ext_resource type="PackedScene" uid="uid://d4ks7dbpwpjs4" path="res://scenes/pickup_bricks.tscn" id="10_1kkjp"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_18een"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j0ob2"]
+size = Vector3(1.33789, 2.6062, 2.03473)
+
+[node name="TestLevel" type="Node"]
+script = ExtResource("1_2u4fh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.714754, -0.477768, 0.51075, 0, 0.730293, 0.683134, -0.699376, -0.488272, 0.52198, 0, 2.14895, 0)
+light_energy = 1.323
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13241, 19.9995)
+attributes = SubResource("CameraAttributesPhysical_18een")
+script = ExtResource("1_c4ila")
+deadzone_x_left = 2.0
+deadzone_x_right = 2.0
+player = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("2_qmlhm")]
+
+[node name="LoseGameZone" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4376, 0.996671, 0)
+script = ExtResource("3_2boio")
+
+[node name="Label3D" type="Label3D" parent="LoseGameZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02227, 1, -0.5)
+text = "Lose Game <-"
+font = ExtResource("4_nd1oa")
+font_size = 117
+
+[node name="Area3D" type="Area3D" parent="LoseGameZone"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LoseGameZone/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
+shape = SubResource("BoxShape3D_j0ob2")
+
+[node name="WinGameZone" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1262, 0.996671, 0)
+script = ExtResource("3_2boio")
+was_game_won = true
+
+[node name="Label3D" type="Label3D" parent="WinGameZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -0.5)
+text = "-> Win Game"
+font = ExtResource("4_nd1oa")
+font_size = 117
+
+[node name="Area3D" type="Area3D" parent="WinGameZone"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WinGameZone/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
+shape = SubResource("BoxShape3D_j0ob2")
+
+[node name="MenuCanvas" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="PauseMenu" parent="MenuCanvas" instance=ExtResource("5_tj64r")]
+process_mode = 3
+visible = false
+
+[node name="Platform4" parent="." instance=ExtResource("6_p1ggv")]
+
+[node name="Platform5" parent="." instance=ExtResource("6_p1ggv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4817, 11.4019, 0)
+
+[node name="Platform6" parent="." instance=ExtResource("6_p1ggv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7391, 5.87821, 0)
+
+[node name="BuildSite" parent="." instance=ExtResource("7_octvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306323, 0)
+
+[node name="BuildingMaterials" type="Node" parent="."]
+
+[node name="BuildingMaterial" parent="BuildingMaterials" instance=ExtResource("8_tc5de")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, 0)
+
+[node name="BuildingMaterial2" parent="BuildingMaterials" instance=ExtResource("9_7siwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, 0)
+
+[node name="BuildingMaterial3" parent="BuildingMaterials" instance=ExtResource("9_7siwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 13, 0)
+
+[node name="BuildingMaterial4" parent="BuildingMaterials" instance=ExtResource("10_1kkjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 0)
+
+[connection signal="body_entered" from="LoseGameZone/Area3D" to="LoseGameZone" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WinGameZone/Area3D" to="WinGameZone" method="_on_area_3d_body_entered"]

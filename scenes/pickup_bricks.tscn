@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4ks7dbpwpjs4"]
+
+[ext_resource type="ArrayMesh" uid="uid://cjtcu67mksofy" path="res://meshes/building_materials/brick_pile.res" id="1_f4ogy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o8puh"]
+size = Vector3(2.5752, 1.30469, 1.11517)
+
+[node name="BuildingMaterial" type="Area3D" groups=["building_materials"]]
+collision_layer = 4
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.152344, 0.0130507)
+shape = SubResource("BoxShape3D_o8puh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.306, 0, 0, 0, 0.132, 0, 0, 0, 0.168, -1.005, -0.29, -0.162455)
+mesh = ExtResource("1_f4ogy")

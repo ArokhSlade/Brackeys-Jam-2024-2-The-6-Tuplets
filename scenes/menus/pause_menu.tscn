@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/menus/pause_menu.gd" id="1_5ljix"]
 [ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="2_5blkl"]
 [ext_resource type="Theme" uid="uid://qc43p7xhuxrq" path="res://fonts/test_ui_theme.theme" id="3_4f2w0"]
-[ext_resource type="Script" path="res://scenes/menus/scene_loader_button.gd" id="5_bgdwd"]
+[ext_resource type="Script" path="res://scenes/menus/main_menu_button.gd" id="4_bu3ch"]
 [ext_resource type="Script" path="res://scenes/menus/quit_button.gd" id="6_0ivej"]
 [ext_resource type="PackedScene" uid="uid://b7vc0qaf6buxr" path="res://scenes/menus/options_menu.tscn" id="7_736sa"]
 
@@ -71,8 +71,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("3_4f2w0")
 text = "Main Menu"
-script = ExtResource("5_bgdwd")
-scene_path = "res://scenes/menus/main_menu_scene.tscn"
+script = ExtResource("4_bu3ch")
 
 [node name="QuitButton" type="Button" parent="Contents/VBoxContainer3"]
 layout_mode = 2

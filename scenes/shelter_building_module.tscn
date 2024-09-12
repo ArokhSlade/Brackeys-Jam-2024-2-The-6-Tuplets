@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpslgkte872ph"]
+
+[ext_resource type="Script" path="res://scenes/shelter_building_module.gd" id="1_e3746"]
+[ext_resource type="Texture2D" uid="uid://d0n2wa8vkokf0" path="res://pictures/straw_bushel_alpha.png" id="2_n1cxo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m7ajp"]
+
+[sub_resource type="Theme" id="Theme_qqw2a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjcih"]
+font_size = 250
+
+[node name="ShelterBuildingModule" type="Node3D"]
+script = ExtResource("1_e3746")
+
+[node name="Detector" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 20
+
+[node name="DetectorShape" type="CollisionShape3D" parent="Detector"]
+shape = SubResource("CapsuleShape3D_m7ajp")
+
+[node name="Materials UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Materials UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0442708
+anchor_top = 0.0694444
+anchor_right = 0.217882
+anchor_bottom = 0.205247
+offset_right = 800.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+theme = SubResource("Theme_qqw2a")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Materials UI/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_n1cxo")
+
+[node name="SpacingLabel" type="Label" parent="Materials UI/HBoxContainer"]
+layout_mode = 2
+text = "  "
+label_settings = SubResource("LabelSettings_gjcih")
+
+[node name="MaterialsLabel" type="Label" parent="Materials UI/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1/4"
+label_settings = SubResource("LabelSettings_gjcih")
+
+[connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]

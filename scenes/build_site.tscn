@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://dm1e5wfnm1ssy"]
+
+[ext_resource type="Script" path="res://scenes/build_site.gd" id="1_e8xwj"]
+[ext_resource type="BoxMesh" uid="uid://dw0ohtxv052fb" path="res://meshes/test_shelter_stages/shelter_stage_0.tres" id="2_1tufp"]
+[ext_resource type="BoxMesh" uid="uid://b7bsrombsh0y5" path="res://meshes/test_shelter_stages/shelter_stage_1.tres" id="3_fxqql"]
+[ext_resource type="BoxMesh" uid="uid://cf45b1r76aw2v" path="res://meshes/test_shelter_stages/shelter_stage_2.tres" id="4_c80fg"]
+[ext_resource type="BoxMesh" uid="uid://5pack77vq28v" path="res://meshes/test_shelter_stages/shelter_stage_3.tres" id="5_5fb35"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruy1m"]
+albedo_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w804a"]
+material = SubResource("StandardMaterial3D_ruy1m")
+size = Vector3(4, 0.3, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l5l2d"]
+size = Vector3(3.5, 2, 2)
+
+[node name="BuildSite" type="Node3D"]
+script = ExtResource("1_e8xwj")
+required_count = 4
+build_stage_meshes = [null, ExtResource("2_1tufp"), ExtResource("3_fxqql"), ExtResource("4_c80fg"), ExtResource("5_5fb35")]
+
+[node name="FoundationMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_w804a")
+
+[node name="CurrentBuildMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.190863, 0)
+
+[node name="DropOffArea" type="Area3D" parent="." groups=["build_site"]]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DropOffArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702354, 0)
+shape = SubResource("BoxShape3D_l5l2d")

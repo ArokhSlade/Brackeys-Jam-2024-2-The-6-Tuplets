@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://l2ay2q0xmldr"]
+
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="1_mtsy2"]
+[ext_resource type="PackedScene" uid="uid://dy0d5e4fcyuv2" path="res://scenes/player.tscn" id="2_ax18f"]
+[ext_resource type="Script" path="res://scenes/camera_follow.gd" id="2_jhyp0"]
+[ext_resource type="PackedScene" uid="uid://bjocrjv566t5p" path="res://scenes/building_material.tscn" id="3_dri5g"]
+[ext_resource type="PackedScene" uid="uid://dm1e5wfnm1ssy" path="res://scenes/build_site.tscn" id="4_ij6ri"]
+[ext_resource type="PackedScene" uid="uid://do8e6ayqb6acm" path="res://scenes/pickup_plank.tscn" id="5_0yjbv"]
+[ext_resource type="PackedScene" uid="uid://d4ks7dbpwpjs4" path="res://scenes/pickup_bricks.tscn" id="6_2ya3y"]
+[ext_resource type="PackedScene" uid="uid://benlqovn1gllt" path="res://scenes/pickup_straw.tscn" id="7_hxppg"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_cy82x"]
+
+[node name="Level" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.5, 0.75, -0.433013, 0, 0.5, 0.866025, 0.866025, -0.433013, 0.25, 0, 6, 0)
+light_energy = 3.0
+shadow_enabled = true
+shadow_opacity = 0.88
+
+[node name="Platform" parent="." instance=ExtResource("1_mtsy2")]
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13241, 19.9995)
+attributes = SubResource("CameraAttributesPhysical_cy82x")
+script = ExtResource("2_jhyp0")
+deadzone_x_left = 2.0
+deadzone_x_right = 2.0
+player = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("2_ax18f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.477944, 1.48259, 0)
+
+[node name="BuildSite" parent="." instance=ExtResource("4_ij6ri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6627, 0.303182, 0)
+
+[node name="BuildingMaterial" parent="." instance=ExtResource("3_dri5g")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.93471, 1.56396, 0)
+
+[node name="BuildingMaterial5" parent="." instance=ExtResource("5_0yjbv")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.78317, 1.56396, 0.346159)
+
+[node name="BuildingMaterial2" parent="." instance=ExtResource("5_0yjbv")]
+
+[node name="BuildingMaterial3" parent="." instance=ExtResource("6_2ya3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69047, 1.33353, 0.455993)
+
+[node name="BuildingMaterial4" parent="." instance=ExtResource("7_hxppg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.63374, 1.72407, 0)

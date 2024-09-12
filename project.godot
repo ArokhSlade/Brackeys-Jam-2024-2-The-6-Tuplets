@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-TestGlobalData="*res://scenes/test_global_data.gd"
+GlobalGameState="*res://scenes/global_game_state.gd"
 AudioController="*res://audio/audio_controller.tscn"
 
 [display]
@@ -58,7 +58,11 @@ Stump={
 
 [layer_names]
 
-3d_physics/layer_2="Player"
+3d_physics/layer_1="terrain"
+3d_physics/layer_2="player"
+3d_physics/layer_3="pickups"
+3d_physics/layer_4="monsters"
+3d_physics/layer_5="build_site"
 3d_physics/layer_8="Layer 8"
 
 [rendering]
