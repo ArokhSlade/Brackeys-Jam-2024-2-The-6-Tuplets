@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://do8e6ayqb6acm"]
+
+[ext_resource type="ArrayMesh" uid="uid://h2vuykqqrpmi" path="res://meshes/building_materials/wooden_cube.res" id="1_8w0kr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o8puh"]
+size = Vector3(0.930664, 0.244141, 3.16553)
+
+[node name="BuildingMaterial" type="Area3D" groups=["building_materials"]]
+collision_layer = 4
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0193481)
+shape = SubResource("BoxShape3D_o8puh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.372, 0, 0, 0, 1.49, 0, 0, 0, 0.074, 0, 0, 0)
+mesh = ExtResource("1_8w0kr")

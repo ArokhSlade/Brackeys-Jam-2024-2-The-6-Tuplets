@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfdthumkb8q66"]
+[gd_scene load_steps=9 format=3 uid="uid://dfdthumkb8q66"]
 
-[ext_resource type="Script" path="res://scenes/menus/menu_base.gd" id="1_giuvq"]
+[ext_resource type="Script" path="res://scenes/menus/game_over_menu.gd" id="1_8ji5p"]
 [ext_resource type="Texture2D" uid="uid://deb0f4jrprxhl" path="res://pictures/placeholder_game_over_character.png" id="2_1sasm"]
 [ext_resource type="FontFile" uid="uid://bvd2lkbgxtf83" path="res://fonts/bangers/Bangers.ttf" id="3_ghaof"]
 [ext_resource type="Theme" uid="uid://qc43p7xhuxrq" path="res://fonts/test_ui_theme.theme" id="4_xrdb2"]
-[ext_resource type="Script" path="res://scenes/menus/scene_loader_button.gd" id="5_5xjh3"]
+[ext_resource type="Script" path="res://scenes/menus/start_game_button.gd" id="5_45h1s"]
+[ext_resource type="Script" path="res://scenes/menus/main_menu_button.gd" id="6_wxlqy"]
 [ext_resource type="Script" path="res://scenes/menus/quit_button.gd" id="6_xowrq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_772j4"]
@@ -17,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_giuvq")
+script = ExtResource("1_8ji5p")
 
 [node name="Contents" type="ColorRect" parent="."]
 layout_mode = 1
@@ -40,7 +41,7 @@ offset_bottom = 627.0
 grow_horizontal = 2
 texture = ExtResource("2_1sasm")
 
-[node name="Label" type="Label" parent="Contents"]
+[node name="Headline" type="Label" parent="Contents"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -57,7 +58,7 @@ text = "Game Over"
 label_settings = SubResource("LabelSettings_772j4")
 horizontal_alignment = 1
 
-[node name="WinOrLoseMessage" type="Label" parent="Contents"]
+[node name="GameOverMessage" type="Label" parent="Contents"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -112,16 +113,14 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_xrdb2")
 text = "Try Again"
-script = ExtResource("5_5xjh3")
-scene_path = "res://scenes/test_level_00.tscn"
+script = ExtResource("5_45h1s")
 
 [node name="MenuButton" type="Button" parent="Contents/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_xrdb2")
 text = "To Menu"
-script = ExtResource("5_5xjh3")
-scene_path = "res://scenes/menus/main_menu_scene.tscn"
+script = ExtResource("6_wxlqy")
 
 [node name="QuitButton" type="Button" parent="Contents/VBoxContainer"]
 layout_mode = 2

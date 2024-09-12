@@ -120,7 +120,6 @@ size_flags_vertical = 3
 theme = ExtResource("4_xf42r")
 text = "Try Again"
 script = ExtResource("5_t7jyo")
-scene_path = "res://scenes/test_level_00.tscn"
 
 [node name="MenuButton" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
@@ -128,7 +127,6 @@ size_flags_vertical = 3
 theme = ExtResource("4_xf42r")
 text = "To Menu"
 script = ExtResource("5_t7jyo")
-scene_path = "res://scenes/menus/main_menu.tscn"
 
 [node name="QuitButton" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2

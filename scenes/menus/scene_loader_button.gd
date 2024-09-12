@@ -1,6 +1,8 @@
+class_name SceneLoaderButton
 extends Button
 
-@export var scene_path : String
+var scene_path : String
+
 
 func _on_pressed():
 	get_tree().paused = false

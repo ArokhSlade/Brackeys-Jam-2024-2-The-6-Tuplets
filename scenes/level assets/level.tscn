@@ -1,0 +1,89 @@
+[gd_scene load_steps=14 format=3 uid="uid://bo20eh72d0433"]
+
+[ext_resource type="Script" path="res://scenes/general/game_manager.gd" id="1_dvvai"]
+[ext_resource type="Script" path="res://scenes/general/camera_follow.gd" id="2_vjt33"]
+[ext_resource type="PackedScene" uid="uid://dy0d5e4fcyuv2" path="res://scenes/player.tscn" id="3_knmal"]
+[ext_resource type="Script" path="res://scenes/level assets/scene_transition_zone.gd" id="4_l2sbh"]
+[ext_resource type="FontFile" uid="uid://bvd2lkbgxtf83" path="res://fonts/bangers/Bangers.ttf" id="5_xa8se"]
+[ext_resource type="PackedScene" uid="uid://dm1e5wfnm1ssy" path="res://scenes/pickups and shelter/build_site.tscn" id="6_to7r2"]
+[ext_resource type="PackedScene" uid="uid://benlqovn1gllt" path="res://scenes/pickups and shelter/pickup_straw.tscn" id="7_caxjc"]
+[ext_resource type="PackedScene" uid="uid://do8e6ayqb6acm" path="res://scenes/pickups and shelter/pickup_plank.tscn" id="8_yw5vr"]
+[ext_resource type="PackedScene" uid="uid://d4ks7dbpwpjs4" path="res://scenes/pickups and shelter/pickup_bricks.tscn" id="9_dqj8j"]
+[ext_resource type="PackedScene" uid="uid://cwfqhpyrpe0le" path="res://scenes/level assets/platform.tscn" id="10_8btdo"]
+[ext_resource type="PackedScene" uid="uid://qyset6fs0lox" path="res://scenes/menus/pause_menu.tscn" id="11_hqfbd"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_18een"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j0ob2"]
+size = Vector3(1.33789, 2.6062, 2.03473)
+
+[node name="Level" type="Node"]
+script = ExtResource("1_dvvai")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.714754, -0.477768, 0.51075, 0, 0.730293, 0.683134, -0.699376, -0.488272, 0.52198, 0, 2.14895, 0)
+light_energy = 1.323
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13241, 19.9995)
+attributes = SubResource("CameraAttributesPhysical_18een")
+script = ExtResource("2_vjt33")
+deadzone_x_left = 2.0
+deadzone_x_right = 2.0
+player = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("3_knmal")]
+
+[node name="LoseGameZone" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4376, 0.996671, 0)
+script = ExtResource("4_l2sbh")
+
+[node name="Label3D" type="Label3D" parent="LoseGameZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02227, 1, -0.5)
+text = "Lose Game <-"
+font = ExtResource("5_xa8se")
+font_size = 117
+
+[node name="Area3D" type="Area3D" parent="LoseGameZone"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LoseGameZone/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
+shape = SubResource("BoxShape3D_j0ob2")
+
+[node name="BuildSite" parent="." instance=ExtResource("6_to7r2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306323, 0)
+
+[node name="BuildingMaterials" type="Node" parent="."]
+
+[node name="BuildingMaterial" parent="BuildingMaterials" instance=ExtResource("7_caxjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, 0)
+
+[node name="BuildingMaterial2" parent="BuildingMaterials" instance=ExtResource("8_yw5vr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, 0)
+
+[node name="BuildingMaterial3" parent="BuildingMaterials" instance=ExtResource("8_yw5vr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 13, 0)
+
+[node name="BuildingMaterial4" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 0)
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform1" parent="Platforms" instance=ExtResource("10_8btdo")]
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("10_8btdo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4817, 11.4019, 0)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("10_8btdo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7391, 5.87821, 0)
+
+[node name="MenuCanvas" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="PauseMenu" parent="MenuCanvas" instance=ExtResource("11_hqfbd")]
+process_mode = 3
+visible = false
+
+[connection signal="body_entered" from="LoseGameZone/Area3D" to="LoseGameZone" method="_on_area_3d_body_entered"]
