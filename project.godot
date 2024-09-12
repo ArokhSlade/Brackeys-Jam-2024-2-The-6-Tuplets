@@ -59,7 +59,8 @@ Stump={
 
 [layer_names]
 
-3d_physics/layer_8="Player"
+3d_physics/layer_2="Player"
+3d_physics/layer_8="Layer 8"
 
 [rendering]
 

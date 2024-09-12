@@ -95,6 +95,7 @@ player = NodePath("../Player")
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13241, 0)
+collision_layer = 2
 script = ExtResource("1_byhrd")
 
 [node name="Character" type="Node3D" parent="Player"]
@@ -124,7 +125,8 @@ font = ExtResource("3_btnkp")
 font_size = 117
 
 [node name="Area3D" type="Area3D" parent="LoseGameZone"]
-collision_mask = 128
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LoseGameZone/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
@@ -143,7 +145,8 @@ font = ExtResource("3_btnkp")
 font_size = 117
 
 [node name="Area3D" type="Area3D" parent="WinGameZone"]
-collision_mask = 128
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WinGameZone/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
