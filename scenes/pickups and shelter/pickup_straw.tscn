@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://benlqovn1gllt"]
 
-[ext_resource type="ArrayMesh" uid="uid://cd1oqatrtwwin" path="res://meshes/building_materials/straw_bushel.res" id="1_kjdbs"]
+[ext_resource type="ArrayMesh" uid="uid://cd1oqatrtwwin" path="res://meshes/building_materials/straw_bushel.res" id="1_bmyto"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8puh"]
 size = Vector3(1.4873, 1.42383, 2.70215)
@@ -15,4 +15,4 @@ shape = SubResource("BoxShape3D_o8puh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, -2.97208e-09, -0.0679932)
-mesh = ExtResource("1_kjdbs")
+mesh = ExtResource("1_bmyto")

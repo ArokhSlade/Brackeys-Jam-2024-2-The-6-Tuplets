@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalGameState="*res://scenes/global_game_state.gd"
+GlobalGameState="*res://scenes/general/global_game_state.gd"
 AudioController="*res://audio/audio_controller.tscn"
 
 [display]

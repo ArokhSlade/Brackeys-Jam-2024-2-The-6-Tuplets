@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dm1e5wfnm1ssy"]
 
-[ext_resource type="Script" path="res://scenes/build_site.gd" id="1_e8xwj"]
+[ext_resource type="Script" path="res://scenes/pickups and shelter/build_site.gd" id="1_e8xwj"]
 [ext_resource type="BoxMesh" uid="uid://dw0ohtxv052fb" path="res://meshes/test_shelter_stages/shelter_stage_0.tres" id="2_1tufp"]
 [ext_resource type="BoxMesh" uid="uid://b7bsrombsh0y5" path="res://meshes/test_shelter_stages/shelter_stage_1.tres" id="3_fxqql"]
 [ext_resource type="BoxMesh" uid="uid://cf45b1r76aw2v" path="res://meshes/test_shelter_stages/shelter_stage_2.tres" id="4_c80fg"]
