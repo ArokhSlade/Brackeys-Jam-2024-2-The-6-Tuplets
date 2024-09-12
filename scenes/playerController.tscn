@@ -1,0 +1,152 @@
+[gd_scene load_steps=13 format=3 uid="uid://bo20eh72d0433"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_byhrd"]
+[ext_resource type="Script" path="res://scenes/scene_transition_zone.gd" id="2_c4xpd"]
+[ext_resource type="Script" path="res://scenes/camera_follow.gd" id="2_caelx"]
+[ext_resource type="FontFile" uid="uid://bvd2lkbgxtf83" path="res://fonts/bangers/Bangers.ttf" id="3_btnkp"]
+
+[sub_resource type="GDScript" id="GDScript_ssxd0"]
+script/source = "extends Node
+
+var max_jumpHeight: float = 2
+var jumpCount: int = 2
+var jumpForce = 200
+@export var jump_impulse = 20
+var fall_acceleration: float = 100.0
+
+#PASSING CHARACTER BODY 3D AND DELTA VALUE
+func _handle_Jump( delta: float, player_velocity: Vector3)-> void:
+		player_velocity.y = jumpForce
+	
+		
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t23ql"]
+size = Vector3(10, 0.3, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bgyop"]
+size = Vector3(40, 1, 2)
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_18een"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_odj5n"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdmxt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wglny"]
+size = Vector3(1, 0.3, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j0ob2"]
+size = Vector3(1.33789, 2.6062, 2.03473)
+
+[node name="PlayerScene" type="Node"]
+script = SubResource("GDScript_ssxd0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.714754, -0.477768, 0.51075, 0, 0.730293, 0.683134, -0.699376, -0.488272, 0.52198, 0, 2.14895, 0)
+light_energy = 1.323
+
+[node name="Platform" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/StaticBody3D"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_t23ql")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.250491, 0)
+mesh = SubResource("BoxMesh_bgyop")
+
+[node name="Platform2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6728, 6.0265, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform2/StaticBody3D"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_t23ql")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.250491, 0)
+mesh = SubResource("BoxMesh_bgyop")
+
+[node name="Platform3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5321, 11.4368, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform3/StaticBody3D"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_t23ql")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.250491, 0)
+mesh = SubResource("BoxMesh_bgyop")
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13241, 19.9995)
+attributes = SubResource("CameraAttributesPhysical_18een")
+script = ExtResource("2_caelx")
+deadzone_x_left = 2.0
+deadzone_x_right = 2.0
+player = NodePath("../Player")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13241, 0)
+script = ExtResource("1_byhrd")
+
+[node name="Character" type="Node3D" parent="Player"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Character"]
+mesh = SubResource("CapsuleMesh_odj5n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_hdmxt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22168, 0.549839, 0)
+mesh = SubResource("BoxMesh_wglny")
+
+[node name="FootstepTimer" type="Timer" parent="Player"]
+one_shot = true
+
+[node name="LoseGameZone" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4376, 0.996671, 0)
+script = ExtResource("2_c4xpd")
+scene_path = "res://scenes/menus/game_over.tscn"
+
+[node name="Label3D" type="Label3D" parent="LoseGameZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02227, 1, -0.5)
+text = "Lose Game <-"
+font = ExtResource("3_btnkp")
+font_size = 117
+
+[node name="Area3D" type="Area3D" parent="LoseGameZone"]
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LoseGameZone/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
+shape = SubResource("BoxShape3D_j0ob2")
+
+[node name="WinGameZone" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1262, 0.996671, 0)
+script = ExtResource("2_c4xpd")
+scene_path = "res://scenes/menus/game_over.tscn"
+was_game_won = true
+
+[node name="Label3D" type="Label3D" parent="WinGameZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -0.5)
+text = "-> Win Game"
+font = ExtResource("3_btnkp")
+font_size = 117
+
+[node name="Area3D" type="Area3D" parent="WinGameZone"]
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WinGameZone/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
+shape = SubResource("BoxShape3D_j0ob2")
+
+[connection signal="body_entered" from="LoseGameZone/Area3D" to="LoseGameZone" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="WinGameZone/Area3D" to="WinGameZone" method="_on_area_3d_body_entered"]
