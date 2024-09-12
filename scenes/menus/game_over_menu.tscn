@@ -113,7 +113,7 @@ size_flags_vertical = 3
 theme = ExtResource("4_xrdb2")
 text = "Try Again"
 script = ExtResource("5_5xjh3")
-scene_path = "res://scenes/test_level_00.tscn"
+scene_path = "res://scenes/playerController.tscn"
 
 [node name="MenuButton" type="Button" parent="Contents/VBoxContainer"]
 layout_mode = 2

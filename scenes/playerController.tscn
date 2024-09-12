@@ -116,7 +116,6 @@ one_shot = true
 [node name="LoseGameZone" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4376, 0.996671, 0)
 script = ExtResource("2_c4xpd")
-scene_path = "res://scenes/menus/game_over.tscn"
 
 [node name="Label3D" type="Label3D" parent="LoseGameZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02227, 1, -0.5)
@@ -135,7 +134,6 @@ shape = SubResource("BoxShape3D_j0ob2")
 [node name="WinGameZone" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1262, 0.996671, 0)
 script = ExtResource("2_c4xpd")
-scene_path = "res://scenes/menus/game_over.tscn"
 was_game_won = true
 
 [node name="Label3D" type="Label3D" parent="WinGameZone"]
