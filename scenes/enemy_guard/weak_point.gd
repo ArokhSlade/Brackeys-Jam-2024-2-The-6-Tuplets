@@ -9,6 +9,7 @@ func _ready():
 
 func _on_body_entered(body):
 	emit_signal("area_entered", body)
+	#print("COLLIDING WITHH THE PLAYER", body.name)
 
 func _on_body_exited(body):
 	pass

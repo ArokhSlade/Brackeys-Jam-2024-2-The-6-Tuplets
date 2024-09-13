@@ -7,6 +7,8 @@ extends CharacterBody3D
 @export var speed: float = 8.0
 @export var rotation_speed: float = 20.0
 
+var player_health: int = 3
+
 func _ready():
 	add_to_group("Player")
 	## changes music that's playing to game music
@@ -83,10 +85,19 @@ func _check_for_landing() -> void:
 		if jump_count > 0:
 			jump_count = 0  
 			
-
 # ROTATION FUNCTION
 func _update_rotation(input_direction: Vector3) -> void:
 	if input_direction != Vector3.ZERO:
 		var target_rotation = Basis(Vector3.UP, input_direction.x).rotated(Vector3.UP, -PI/2)
 		rotation = rotation.slerp(target_rotation.get_euler(), rotation_speed * get_process_delta_time())
 	
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.name == "Enemy":
+		body.queue_free()
+
+
+func _on_take_damage_body_entered(body: Node3D) -> void:
+	player_health -=1
+	if player_health == 0:
+		queue_free()
+		player_health=5
