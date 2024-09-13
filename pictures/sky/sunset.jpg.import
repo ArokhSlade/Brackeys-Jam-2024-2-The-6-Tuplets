@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0n2wa8vkokf0"
-path="res://.godot/imported/straw_bushel_alpha.png-5167bcefb5f73a6f84b847d15ebadd28.ctex"
+uid="uid://cy1bj5hhertr6"
+path="res://.godot/imported/sunset.jpg-8a5379ad7056d8a371bbf493edcf9ac7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pictures/straw_bushel_alpha.png"
-dest_files=["res://.godot/imported/straw_bushel_alpha.png-5167bcefb5f73a6f84b847d15ebadd28.ctex"]
+source_file="res://pictures/sky/sunset.jpg"
+dest_files=["res://.godot/imported/sunset.jpg-8a5379ad7056d8a371bbf493edcf9ac7.ctex"]
 
 [params]
 
