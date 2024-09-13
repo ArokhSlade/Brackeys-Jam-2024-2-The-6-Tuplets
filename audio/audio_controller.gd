@@ -1,6 +1,5 @@
 extends Node2D
 
-
 ## how to add audio: 
 ## create AudioStreamPlayer2D, assign a stream
 ## create function in this script to play it
@@ -29,7 +28,7 @@ func play_gameMusic2():
 func play_gameMusic3():
 	$gameMusic3.play()
 
-func play_endscreenMusic1():
+func play_endscreenMusic():
 	$endscreenMusic.play()
 
 func play_jump():
@@ -43,6 +42,9 @@ func play_stepSand():
 
 func play_stepSandstone():
 	$stepSandstone.play()
-	
+
 func play_stepWood():
 	$stepWood.play()
+
+func play_ambience():
+	$ambience.play()

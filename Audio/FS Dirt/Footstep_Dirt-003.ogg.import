@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://igpbo4kj2hc2"
-path="res://.godot/imported/Footstep_Dirt-003.ogg-a02a6d97463b4b3c0d99800d07cea0d4.oggvorbisstr"
+path="res://.godot/imported/Footstep_Dirt-003.ogg-96337d5f28eb8bf96346bc84cb6bfe6d.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/FS Dirt/Footstep_Dirt-003.ogg"
-dest_files=["res://.godot/imported/Footstep_Dirt-003.ogg-a02a6d97463b4b3c0d99800d07cea0d4.oggvorbisstr"]
+source_file="res://audio/FS Dirt/Footstep_Dirt-003.ogg"
+dest_files=["res://.godot/imported/Footstep_Dirt-003.ogg-96337d5f28eb8bf96346bc84cb6bfe6d.oggvorbisstr"]
 
 [params]
 
