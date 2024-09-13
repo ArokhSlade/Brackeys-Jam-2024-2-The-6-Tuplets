@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b7t7djtjvhrrv"]
+[gd_scene load_steps=17 format=3 uid="uid://b7t7djtjvhrrv"]
 
 [ext_resource type="Script" path="res://scenes/general/game_manager.gd" id="1_dvvai"]
 [ext_resource type="PackedScene" uid="uid://ceyaoapmq52di" path="res://camera_3d.tscn" id="2_7cnwm"]
@@ -9,15 +9,79 @@
 [ext_resource type="PackedScene" uid="uid://benlqovn1gllt" path="res://scenes/pickups and shelter/pickup_straw.tscn" id="7_caxjc"]
 [ext_resource type="PackedScene" uid="uid://do8e6ayqb6acm" path="res://scenes/pickups and shelter/pickup_plank.tscn" id="8_yw5vr"]
 [ext_resource type="PackedScene" uid="uid://d4ks7dbpwpjs4" path="res://scenes/pickups and shelter/pickup_bricks.tscn" id="9_dqj8j"]
-[ext_resource type="PackedScene" path="res://scenes/level assets/platform.tscn" id="10_8btdo"]
+[ext_resource type="PackedScene" uid="uid://cwfqhpyrpe0le" path="res://scenes/level assets/platform.tscn" id="10_8btdo"]
 [ext_resource type="PackedScene" uid="uid://qyset6fs0lox" path="res://scenes/menus/pause_menu.tscn" id="11_hqfbd"]
 [ext_resource type="PackedScene" uid="uid://nygjomhu8npw" path="res://scenes/enemy_guard/Enemy_guard.tscn" id="12_t2cgs"]
+[ext_resource type="Texture2D" uid="uid://c7x2h07viy8tm" path="res://pictures/sky/midday.jpg" id="13_lfdo5"]
+[ext_resource type="Texture2D" uid="uid://5h1gjbfnlnpq" path="res://pictures/ui_icons/icon_construction.png" id="14_l3dmy"]
+[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="15_8otoy"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_j0ob2"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_og10c"]
 size = Vector3(1.33789, 2.6062, 2.03473)
 
 [node name="Level" type="Node"]
 script = ExtResource("1_dvvai")
+time_limit = 25.0
+
+[node name="MenuCanvas" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="PauseMenu" parent="MenuCanvas" instance=ExtResource("11_hqfbd")]
+process_mode = 3
+visible = false
+
+[node name="Sky" type="Sprite3D" parent="."]
+transform = Transform3D(66.435, 0, 0, 0, 66.435, 0, 0, 0, 66.435, 0, 0, -1000)
+texture = ExtResource("13_lfdo5")
+
+[node name="PastGameTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="StormTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="LevelUI" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="LevelUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = -333.0
+offset_right = -102.0
+offset_bottom = -181.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("14_l3dmy")
+expand_mode = 2
+
+[node name="ProgressLabel" type="Label" parent="LevelUI"]
+unique_name_in_owner = true
+offset_left = 561.0
+offset_top = 61.0
+offset_right = 677.0
+offset_bottom = 147.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("15_8otoy")
+text = "0/N"
+
+[node name="TimerLabel" type="Label" parent="LevelUI"]
+unique_name_in_owner = true
+offset_left = 963.0
+offset_top = 63.0
+offset_right = 1117.0
+offset_bottom = 149.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("15_8otoy")
+text = "12.34"
 
 [node name="Player" parent="." instance=ExtResource("3_knmal")]
 
@@ -44,7 +108,7 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LoseGameZone/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
-shape = SubResource("BoxShape3D_j0ob2")
+shape = SubResource("BoxShape3D_og10c")
 
 [node name="BuildSite" parent="." instance=ExtResource("6_to7r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306323, 0)
@@ -73,20 +137,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4817, 11.4019, 0)
 [node name="Platform3" parent="Platforms" instance=ExtResource("10_8btdo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7391, 5.87821, 0)
 
-[node name="MenuCanvas" type="CanvasLayer" parent="."]
-process_mode = 3
+[node name="EnemyGuards" type="Node" parent="."]
 
-[node name="PauseMenu" parent="MenuCanvas" instance=ExtResource("11_hqfbd")]
-process_mode = 3
-visible = false
-
-[node name="EnemyGuard" parent="." instance=ExtResource("12_t2cgs")]
+[node name="EnemyGuard" parent="EnemyGuards" instance=ExtResource("12_t2cgs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6394, 7.4329, -0.0215664)
 
-[node name="EnemyGuard3" parent="." instance=ExtResource("12_t2cgs")]
+[node name="EnemyGuard3" parent="EnemyGuards" instance=ExtResource("12_t2cgs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27307, 0.671298, -0.0215664)
 
-[node name="EnemyGuard2" parent="." instance=ExtResource("12_t2cgs")]
+[node name="EnemyGuard2" parent="EnemyGuards" instance=ExtResource("12_t2cgs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5732, 11.5774, -0.0215664)
 
+[connection signal="timeout" from="PastGameTimer" to="." method="_on_past_game_timer_timeout"]
+[connection signal="timeout" from="StormTimer" to="." method="lose_game"]
+[connection signal="entered_game_over_zone" from="LoseGameZone" to="." method="lose_game"]
 [connection signal="body_entered" from="LoseGameZone/Area3D" to="LoseGameZone" method="_on_area_3d_body_entered"]
+[connection signal="material_received" from="BuildSite" to="." method="_on_build_site_material_received"]
