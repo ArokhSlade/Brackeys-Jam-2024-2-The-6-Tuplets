@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0n2wa8vkokf0"
-path="res://.godot/imported/straw_bushel_alpha.png-5167bcefb5f73a6f84b847d15ebadd28.ctex"
+path="res://.godot/imported/straw_bushel_alpha.png-2d0123fb77ab6addfbb5c925ddf0d882.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pictures/straw_bushel_alpha.png"
-dest_files=["res://.godot/imported/straw_bushel_alpha.png-5167bcefb5f73a6f84b847d15ebadd28.ctex"]
+source_file="res://pictures/ui_icons/straw_bushel_alpha.png"
+dest_files=["res://.godot/imported/straw_bushel_alpha.png-2d0123fb77ab6addfbb5c925ddf0d882.ctex"]
 
 [params]
 
