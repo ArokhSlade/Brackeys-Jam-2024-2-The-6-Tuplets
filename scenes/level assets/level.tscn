@@ -1,18 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://bo20eh72d0433"]
+[gd_scene load_steps=14 format=3 uid="uid://b7t7djtjvhrrv"]
 
 [ext_resource type="Script" path="res://scenes/general/game_manager.gd" id="1_dvvai"]
-[ext_resource type="Script" path="res://scenes/general/camera_follow.gd" id="2_vjt33"]
-[ext_resource type="PackedScene" uid="uid://dy0d5e4fcyuv2" path="res://scenes/player.tscn" id="3_knmal"]
+[ext_resource type="PackedScene" uid="uid://ceyaoapmq52di" path="res://camera_3d.tscn" id="2_7cnwm"]
+[ext_resource type="PackedScene" uid="uid://dgsiwgj2qxjim" path="res://scenes/player.tscn" id="3_knmal"]
 [ext_resource type="Script" path="res://scenes/level assets/scene_transition_zone.gd" id="4_l2sbh"]
 [ext_resource type="FontFile" uid="uid://bvd2lkbgxtf83" path="res://fonts/bangers/Bangers.ttf" id="5_xa8se"]
 [ext_resource type="PackedScene" uid="uid://dm1e5wfnm1ssy" path="res://scenes/pickups and shelter/build_site.tscn" id="6_to7r2"]
 [ext_resource type="PackedScene" uid="uid://benlqovn1gllt" path="res://scenes/pickups and shelter/pickup_straw.tscn" id="7_caxjc"]
 [ext_resource type="PackedScene" uid="uid://do8e6ayqb6acm" path="res://scenes/pickups and shelter/pickup_plank.tscn" id="8_yw5vr"]
 [ext_resource type="PackedScene" uid="uid://d4ks7dbpwpjs4" path="res://scenes/pickups and shelter/pickup_bricks.tscn" id="9_dqj8j"]
-[ext_resource type="PackedScene" uid="uid://cwfqhpyrpe0le" path="res://scenes/level assets/platform.tscn" id="10_8btdo"]
+[ext_resource type="PackedScene" path="res://scenes/level assets/platform.tscn" id="10_8btdo"]
 [ext_resource type="PackedScene" uid="uid://qyset6fs0lox" path="res://scenes/menus/pause_menu.tscn" id="11_hqfbd"]
-
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_18een"]
+[ext_resource type="PackedScene" uid="uid://nygjomhu8npw" path="res://scenes/enemy_guard/Enemy_guard.tscn" id="12_t2cgs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j0ob2"]
 size = Vector3(1.33789, 2.6062, 2.03473)
@@ -20,19 +19,14 @@ size = Vector3(1.33789, 2.6062, 2.03473)
 [node name="Level" type="Node"]
 script = ExtResource("1_dvvai")
 
+[node name="Player" parent="." instance=ExtResource("3_knmal")]
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.714754, -0.477768, 0.51075, 0, 0.730293, 0.683134, -0.699376, -0.488272, 0.52198, 0, 2.14895, 0)
 light_energy = 1.323
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13241, 19.9995)
-attributes = SubResource("CameraAttributesPhysical_18een")
-script = ExtResource("2_vjt33")
-deadzone_x_left = 2.0
-deadzone_x_right = 2.0
+[node name="Camera3D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_7cnwm")]
 player = NodePath("../Player")
-
-[node name="Player" parent="." instance=ExtResource("3_knmal")]
 
 [node name="LoseGameZone" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4376, 0.996671, 0)
@@ -85,5 +79,14 @@ process_mode = 3
 [node name="PauseMenu" parent="MenuCanvas" instance=ExtResource("11_hqfbd")]
 process_mode = 3
 visible = false
+
+[node name="EnemyGuard" parent="." instance=ExtResource("12_t2cgs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6394, 7.4329, -0.0215664)
+
+[node name="EnemyGuard3" parent="." instance=ExtResource("12_t2cgs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27307, 0.671298, -0.0215664)
+
+[node name="EnemyGuard2" parent="." instance=ExtResource("12_t2cgs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5732, 11.5774, -0.0215664)
 
 [connection signal="body_entered" from="LoseGameZone/Area3D" to="LoseGameZone" method="_on_area_3d_body_entered"]
