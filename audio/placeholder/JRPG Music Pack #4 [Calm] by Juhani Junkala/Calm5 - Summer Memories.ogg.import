@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d173hbnq6ewsd"
+path="res://.godot/imported/Calm5 - Summer Memories.ogg-5bbe046593cbda97b8282c80c5830534.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm5 - Summer Memories.ogg"
+dest_files=["res://.godot/imported/Calm5 - Summer Memories.ogg-5bbe046593cbda97b8282c80c5830534.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

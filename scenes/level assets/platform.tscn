@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwfqhpyrpe0le"]
+
+[ext_resource type="Texture2D" uid="uid://kwre1ym0w5q5" path="res://pictures/sandstone.bmp" id="1_w2433"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h6ale"]
+size = Vector3(40, 0.3, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sd5hs"]
+albedo_color = Color(0.48733, 0.540529, 0.277589, 1)
+albedo_texture = ExtResource("1_w2433")
+uv1_scale = Vector3(0.155, 0.155, 0.155)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_8mhrt"]
+material = SubResource("StandardMaterial3D_sd5hs")
+size = Vector3(40, 0.3, 4)
+
+[node name="Platform" type="StaticBody3D"]
+collision_mask = 5
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_h6ale")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_8mhrt")

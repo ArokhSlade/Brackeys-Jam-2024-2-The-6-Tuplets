@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://dm1e5wfnm1ssy"]
+
+[ext_resource type="Script" path="res://scenes/pickups and shelter/build_site.gd" id="1_e8xwj"]
+[ext_resource type="PackedScene" uid="uid://cywukf5yibu1u" path="res://meshes/borakay3d/house_stages/2.glb" id="3_4dkdg"]
+[ext_resource type="PackedScene" uid="uid://dqj13haotychv" path="res://meshes/borakay3d/house_stages/3.glb" id="4_th4yn"]
+[ext_resource type="PackedScene" uid="uid://cssfss15sn2i5" path="res://meshes/borakay3d/house_stages/7.glb" id="5_a10ek"]
+[ext_resource type="PackedScene" uid="uid://57gnkqi2ng57" path="res://meshes/borakay3d/house_stages/1.glb" id="7_1xpx2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruy1m"]
+albedo_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w804a"]
+material = SubResource("StandardMaterial3D_ruy1m")
+size = Vector3(4, 0.3, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l5l2d"]
+size = Vector3(3.5, 2, 2)
+
+[node name="BuildSite" type="Node3D"]
+script = ExtResource("1_e8xwj")
+build_stages = [null, ExtResource("7_1xpx2"), ExtResource("3_4dkdg"), ExtResource("4_th4yn"), ExtResource("5_a10ek")]
+
+[node name="FoundationMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_w804a")
+
+[node name="CurrentBuildMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.190863, 0)
+
+[node name="DropOffArea" type="Area3D" parent="." groups=["build_site"]]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DropOffArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702354, 0)
+shape = SubResource("BoxShape3D_l5l2d")

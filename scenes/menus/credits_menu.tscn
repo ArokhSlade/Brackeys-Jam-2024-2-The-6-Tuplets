@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=3 uid="uid://di0lp5gtvsv3"]
+
+[ext_resource type="Script" path="res://scenes/menus/menu_base.gd" id="1_5oui0"]
+[ext_resource type="Texture2D" uid="uid://b5lmw0y6j2qtd" path="res://pictures/placeholder_credits_left.png" id="2_4ev05"]
+[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="3_0o78l"]
+[ext_resource type="Theme" uid="uid://qc43p7xhuxrq" path="res://fonts/test_ui_theme.theme" id="4_y2aor"]
+
+[node name="CreditsMenu" type="ReferenceRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5oui0")
+
+[node name="Contents" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.301961, 0.486275, 0.584314, 0.627451)
+
+[node name="PictureLeft" type="TextureRect" parent="Contents"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -602.0
+offset_top = 92.0
+offset_right = -299.0
+offset_bottom = 664.0
+grow_horizontal = 2
+texture = ExtResource("2_4ev05")
+
+[node name="PictureRight" type="TextureRect" parent="Contents"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 290.0
+offset_top = 92.0
+offset_right = 593.0
+offset_bottom = 664.0
+grow_horizontal = 2
+texture = ExtResource("2_4ev05")
+flip_h = true
+
+[node name="Headline" type="Label" parent="Contents"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -428.0
+offset_top = 21.0
+offset_right = 428.0
+offset_bottom = 228.0
+grow_horizontal = 2
+theme = ExtResource("3_0o78l")
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Contents"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_top = -536.0
+offset_right = 258.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_y2aor")
+
+[node name="CreditsText" type="Label" parent="Contents/VBoxContainer2"]
+layout_mode = 2
+text = "Andee
+Arokh Slade
+Galaxsci
+Gyn
+Miguel js
+Tilda
+ "
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="Contents/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("4_y2aor")
+text = "Back"
+
+[connection signal="pressed" from="Contents/VBoxContainer2/BackButton" to="." method="close_menu"]
