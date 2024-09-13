@@ -1,6 +1,8 @@
 extends Node
 
+var materials_required_count = 4
 var was_game_won = false
+
 
 #used by main menu and game over menu
 const level_path = "res://scenes/level assets/level.tscn"

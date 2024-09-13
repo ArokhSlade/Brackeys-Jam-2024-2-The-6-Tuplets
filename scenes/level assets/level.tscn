@@ -57,7 +57,6 @@ shape = SubResource("BoxShape3D_j0ob2")
 
 [node name="BuildSite" parent="." instance=ExtResource("6_to7r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306323, 0)
-required_count = 1
 
 [node name="BuildingMaterials" type="Node" parent="."]
 
@@ -102,9 +101,9 @@ one_shot = true
 one_shot = true
 autostart = true
 
-[node name="StormTimerUI" type="CanvasLayer" parent="."]
+[node name="LevelUI" type="CanvasLayer" parent="."]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="StormTimerUI"]
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelUI"]
 anchors_preset = -1
 anchor_left = 0.760656
 anchor_right = 0.999
@@ -117,7 +116,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="TimerLabel" type="Label" parent="StormTimerUI/HBoxContainer"]
+[node name="TimerLabel" type="Label" parent="LevelUI/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("13_ck8p6")

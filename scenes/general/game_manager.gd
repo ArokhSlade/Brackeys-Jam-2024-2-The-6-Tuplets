@@ -8,6 +8,7 @@ extends Node
 
 func _ready():
 	storm_timer.start(time_limit)
+	GlobalGameState.was_game_won = false
 
 func _process(delta):	
 	if !storm_timer.is_stopped():
@@ -26,7 +27,7 @@ func _on_past_game_timer_timeout():
 	get_tree().call_deferred("change_scene_to_file",GlobalGameState.game_over_scene_path)
 
 
-func _on_build_site_material_received():
+func _on_build_site_material_received():	
 	if build_site.received_count >= build_site.required_count:
 		if not GlobalGameState.was_game_won:
 			win_game()

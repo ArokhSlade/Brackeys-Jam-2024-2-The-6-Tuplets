@@ -18,7 +18,6 @@ size = Vector3(3.5, 2, 2)
 
 [node name="BuildSite" type="Node3D"]
 script = ExtResource("1_e8xwj")
-required_count = 4
 build_stages = [null, ExtResource("7_1xpx2"), ExtResource("3_4dkdg"), ExtResource("4_th4yn"), ExtResource("5_a10ek")]
 
 [node name="FoundationMesh" type="MeshInstance3D" parent="."]
