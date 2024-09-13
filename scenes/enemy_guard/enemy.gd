@@ -46,7 +46,7 @@ func _physics_process(delta):
 	_rotate_to_movement_direction()
 
 func _update_state(delta):
-	if player:
+	if player != null:
 		var distance_x = abs(global_transform.origin.x - player.global_transform.origin.x)
 		var distance_y = abs(global_transform.origin.y - player.global_transform.origin.y)
 		
@@ -97,19 +97,21 @@ func _chase(delta):
 				current_state = AIState.RETURN
 
 func _attack(delta):
-	if player:
+	if player != null:
 		attack_timer += delta
+		
 		if attack_timer >= attack_cooldown:
 			attack_timer = 0.0
-	
-	if abs(global_transform.origin.x - player.global_transform.origin.x) < chase_range and abs(global_transform.origin.y - player.global_transform.origin.y) < chase_range:
-		current_state = AIState.CHASE
+			
+			if player != null:
+				if abs(global_transform.origin.x - player.global_transform.origin.x) < chase_range and abs(global_transform.origin.y - player.global_transform.origin.y) < chase_range:
+					current_state = AIState.CHASE
 		
-	if abs(global_transform.origin.x - player.global_transform.origin.x) > chase_range and abs(global_transform.origin.y - player.global_transform.origin.y) > chase_range:
-		wait_timer += delta
-		if wait_timer >= return_to_patrol_delay:
-			current_state = AIState.PATROL
-			wait_timer = 0.0  
+			if abs(global_transform.origin.x - player.global_transform.origin.x) > chase_range and abs(global_transform.origin.y - player.global_transform.origin.y) > chase_range:
+				wait_timer += delta
+			if wait_timer >= return_to_patrol_delay:
+				current_state = AIState.PATROL
+				wait_timer = 0.0  
 
 func _return_to_patrol(delta):
 	_patrol(delta)
@@ -129,7 +131,4 @@ func _rotate_to_movement_direction():
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == self: 
-		movingLeft = not movingLeft  
-
-func _on_area_3d_body_exited(body: Node3D) -> void:
-	pass
+		movingLeft = not movingLeft
