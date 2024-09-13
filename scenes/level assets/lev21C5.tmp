@@ -84,7 +84,6 @@ theme = ExtResource("15_8otoy")
 text = "12.34"
 
 [node name="Player" parent="." instance=ExtResource("3_knmal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.714754, -0.477768, 0.51075, 0, 0.730293, 0.683134, -0.699376, -0.488272, 0.52198, 0, 2.14895, 0)
