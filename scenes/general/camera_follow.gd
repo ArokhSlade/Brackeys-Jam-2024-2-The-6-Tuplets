@@ -16,7 +16,7 @@ func _ready() -> void:
 		return
 
 func _process(delta: float) -> void:
-	if player:
+	if player != null:
 		update_camera_position()
 
 func update_camera_position():

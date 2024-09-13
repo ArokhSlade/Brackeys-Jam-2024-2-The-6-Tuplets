@@ -11,9 +11,9 @@
 [sub_resource type="BoxMesh" id="BoxMesh_wglny"]
 size = Vector3(1, 0.3, 0.4)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_6uboj"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_ul7gi"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_n6crs"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7sxc2"]
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13241, 0)
@@ -38,19 +38,16 @@ one_shot = true
 [node name="ShelterBuildingModule" parent="." instance=ExtResource("2_syksq")]
 
 [node name="apply_damage" type="Area3D" parent="."]
-transform = Transform3D(0.697518, 0, 0, 0, 0.697518, 0, 0, 0, 0.697518, 0, -0.745366, 0)
+transform = Transform3D(0.697518, 0, 0, 0, 0.697518, 0, 0, 0, 0.697518, 0, -0.662981, 0)
 script = ExtResource("3_j84jk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="apply_damage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108785, 0)
-shape = SubResource("SphereShape3D_6uboj")
+shape = SubResource("SphereShape3D_ul7gi")
 
 [node name="take_damage" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.299968, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="take_damage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0233526, 0)
-shape = SubResource("SphereShape3D_n6crs")
+shape = SubResource("CapsuleShape3D_7sxc2")
 
 [connection signal="body_entered" from="apply_damage" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="take_damage" to="." method="_on_take_damage_body_entered"]
