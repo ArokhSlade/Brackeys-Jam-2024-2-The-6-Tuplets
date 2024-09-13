@@ -26,16 +26,7 @@ func _ready():
 	var players = get_tree().get_nodes_in_group("Player")
 	if players.size() > 0:
 		player = players[0] as CharacterBody3D 
-		if player:
-			print("Player found: ", player)
-		else:
-			print("Player found but casting failed")
-	else:
-		print("Player not found in the group")
-	if player:
-		print("Player found")
-	else:
-		print("Player not found")
+		
 
 func _physics_process(delta):
 	_update_state(delta)
@@ -139,8 +130,6 @@ func _rotate_to_movement_direction():
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == self: 
 		movingLeft = not movingLeft  
-		#print("Enemy has entered the area and changed direction")
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	if body == self:
-		print("Enemy has left the area")
+	pass

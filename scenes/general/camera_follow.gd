@@ -11,10 +11,9 @@ var player_last_y: float = 0.0
 
 func _ready() -> void:
 	if player:
-		print("Player found!")
 		player_last_y = player.global_transform.origin.y 
 	else:
-		print("Player not found!")
+		return
 
 func _process(delta: float) -> void:
 	if player:

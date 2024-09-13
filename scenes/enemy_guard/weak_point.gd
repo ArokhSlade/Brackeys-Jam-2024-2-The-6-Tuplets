@@ -9,7 +9,6 @@ func _ready():
 
 func _on_body_entered(body):
 	emit_signal("area_entered", body)
-	print("Body entered: ", body.name)
 
 func _on_body_exited(body):
-	print("Body exited: ", body.name)
+	pass

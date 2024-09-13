@@ -48,7 +48,7 @@ func _handle_jump() -> void:
 		player_velocity.y = jumpForce 
 		jump_count += 1
 		AudioController.play_jump()
-		print("Player jump count: ", jump_count)
+		
 
 # TO DO: CHANGE FOOTSTEP SOUND BASED ON MATERIAL TYPE
 # FOOTSTEP SOUND LOGIC 
@@ -82,7 +82,7 @@ func _check_for_landing() -> void:
 	if is_on_floor():
 		if jump_count > 0:
 			jump_count = 0  
-			print("Landed, jump count reset")
+			
 
 # ROTATION FUNCTION
 func _update_rotation(input_direction: Vector3) -> void:
@@ -90,5 +90,3 @@ func _update_rotation(input_direction: Vector3) -> void:
 		var target_rotation = Basis(Vector3.UP, input_direction.x).rotated(Vector3.UP, -PI/2)
 		rotation = rotation.slerp(target_rotation.get_euler(), rotation_speed * get_process_delta_time())
 	
-	print("Current Rotation:", rotation)
-	print("Input Direction:", input_direction)
