@@ -8,6 +8,7 @@ extends CharacterBody3D
 @export var rotation_speed: float = 20.0
 
 func _ready():
+	add_to_group("Player")
 	## changes music that's playing to game music
 	AudioController.stop_menuMusic()
 	AudioController.play_gameMusic1()

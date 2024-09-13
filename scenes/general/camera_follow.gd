@@ -42,9 +42,9 @@ func update_camera_position():
 	global_transform.origin = global_transform.origin.lerp(target_position, 0.05)
 
 	
-	print("Camera Position:", global_transform.origin)
-	print("Player Position:", player_position)
-	print("Target Position:", target_position)
+	#print("Camera Position:", global_transform.origin)
+	#print("Player Position:", player_position)
+	#print("Target Position:", target_position)
 
 	# UPDATE LAST PLAYER POSITION
 	player_last_y = player_position.y
