@@ -1,0 +1,150 @@
+[gd_scene load_steps=17 format=3 uid="uid://bo20eh72d0433"]
+
+[ext_resource type="Script" path="res://scenes/general/game_manager.gd" id="1_gklr1"]
+[ext_resource type="Script" path="res://scenes/general/camera_follow.gd" id="2_sokxa"]
+[ext_resource type="PackedScene" uid="uid://dy0d5e4fcyuv2" path="res://scenes/player.tscn" id="3_bfax0"]
+[ext_resource type="Script" path="res://scenes/level assets/scene_transition_zone.gd" id="4_cvcbj"]
+[ext_resource type="FontFile" uid="uid://bvd2lkbgxtf83" path="res://fonts/bangers/Bangers.ttf" id="5_88ds1"]
+[ext_resource type="PackedScene" uid="uid://dm1e5wfnm1ssy" path="res://scenes/pickups and shelter/build_site.tscn" id="6_fbj1h"]
+[ext_resource type="PackedScene" uid="uid://benlqovn1gllt" path="res://scenes/pickups and shelter/pickup_straw.tscn" id="7_eyiym"]
+[ext_resource type="PackedScene" uid="uid://do8e6ayqb6acm" path="res://scenes/pickups and shelter/pickup_plank.tscn" id="8_jsxx1"]
+[ext_resource type="PackedScene" uid="uid://d4ks7dbpwpjs4" path="res://scenes/pickups and shelter/pickup_bricks.tscn" id="9_2xeni"]
+[ext_resource type="PackedScene" uid="uid://cwfqhpyrpe0le" path="res://scenes/level assets/platform.tscn" id="10_73rhr"]
+[ext_resource type="PackedScene" uid="uid://qyset6fs0lox" path="res://scenes/menus/pause_menu.tscn" id="11_okkah"]
+[ext_resource type="Texture2D" uid="uid://c7x2h07viy8tm" path="res://pictures/sky/midday.jpg" id="12_ubfrv"]
+[ext_resource type="Texture2D" uid="uid://5h1gjbfnlnpq" path="res://pictures/ui_icons/icon_construction.png" id="13_5h1la"]
+[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="14_iu7vi"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_18een"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j0ob2"]
+size = Vector3(1.33789, 2.6062, 2.03473)
+
+[node name="Level" type="Node"]
+script = ExtResource("1_gklr1")
+time_limit = 25.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.714754, -0.477768, 0.51075, 0, 0.730293, 0.683134, -0.699376, -0.488272, 0.52198, 0, 2.14895, 0)
+light_energy = 1.323
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.13241, 19.9995)
+attributes = SubResource("CameraAttributesPhysical_18een")
+script = ExtResource("2_sokxa")
+deadzone_x_left = 2.0
+deadzone_x_right = 2.0
+player = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("3_bfax0")]
+
+[node name="LoseGameZone" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4376, 0.996671, 0)
+script = ExtResource("4_cvcbj")
+
+[node name="Label3D" type="Label3D" parent="LoseGameZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02227, 1, -0.5)
+text = "Lose Game <-"
+font = ExtResource("5_88ds1")
+font_size = 117
+
+[node name="Area3D" type="Area3D" parent="LoseGameZone"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LoseGameZone/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
+shape = SubResource("BoxShape3D_j0ob2")
+
+[node name="BuildSite" parent="." instance=ExtResource("6_fbj1h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306323, 0)
+
+[node name="BuildingMaterials" type="Node" parent="."]
+
+[node name="BuildingMaterial" parent="BuildingMaterials" instance=ExtResource("7_eyiym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, 0)
+
+[node name="BuildingMaterial2" parent="BuildingMaterials" instance=ExtResource("8_jsxx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, 0)
+
+[node name="BuildingMaterial3" parent="BuildingMaterials" instance=ExtResource("8_jsxx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 13, 0)
+
+[node name="BuildingMaterial4" parent="BuildingMaterials" instance=ExtResource("9_2xeni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 0)
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform1" parent="Platforms" instance=ExtResource("10_73rhr")]
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("10_73rhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4817, 11.4019, 0)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("10_73rhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7391, 5.87821, 0)
+
+[node name="MenuCanvas" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="PauseMenu" parent="MenuCanvas" instance=ExtResource("11_okkah")]
+process_mode = 3
+visible = false
+
+[node name="Sky" type="Sprite3D" parent="."]
+transform = Transform3D(66.435, 0, 0, 0, 66.435, 0, 0, 0, 66.435, 0, 0, -1000)
+texture = ExtResource("12_ubfrv")
+
+[node name="PastGameTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="StormTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="LevelUI" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="LevelUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = -333.0
+offset_right = -102.0
+offset_bottom = -181.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("13_5h1la")
+expand_mode = 2
+
+[node name="ProgressLabel" type="Label" parent="LevelUI"]
+unique_name_in_owner = true
+offset_left = 561.0
+offset_top = 61.0
+offset_right = 677.0
+offset_bottom = 147.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("14_iu7vi")
+text = "0/N"
+
+[node name="TimerLabel" type="Label" parent="LevelUI"]
+unique_name_in_owner = true
+offset_left = 963.0
+offset_top = 63.0
+offset_right = 1117.0
+offset_bottom = 149.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("14_iu7vi")
+text = "12.34"
+
+[connection signal="entered_game_over_zone" from="LoseGameZone" to="." method="lose_game"]
+[connection signal="body_entered" from="LoseGameZone/Area3D" to="LoseGameZone" method="_on_area_3d_body_entered"]
+[connection signal="material_received" from="BuildSite" to="." method="_on_build_site_material_received"]
+[connection signal="timeout" from="PastGameTimer" to="." method="_on_past_game_timer_timeout"]
+[connection signal="timeout" from="StormTimer" to="." method="lose_game"]
