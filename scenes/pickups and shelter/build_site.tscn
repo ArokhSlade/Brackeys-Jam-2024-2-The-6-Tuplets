@@ -1,10 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm1e5wfnm1ssy"]
+[gd_scene load_steps=11 format=3 uid="uid://dm1e5wfnm1ssy"]
 
 [ext_resource type="Script" path="res://scenes/pickups and shelter/build_site.gd" id="1_e8xwj"]
 [ext_resource type="PackedScene" uid="uid://cywukf5yibu1u" path="res://meshes/borakay3d/house_stages/2.glb" id="3_4dkdg"]
 [ext_resource type="PackedScene" uid="uid://dqj13haotychv" path="res://meshes/borakay3d/house_stages/3.glb" id="4_th4yn"]
 [ext_resource type="PackedScene" uid="uid://cssfss15sn2i5" path="res://meshes/borakay3d/house_stages/7.glb" id="5_a10ek"]
 [ext_resource type="PackedScene" uid="uid://57gnkqi2ng57" path="res://meshes/borakay3d/house_stages/1.glb" id="7_1xpx2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wikfi"]
+size = Vector3(0.401, 0.3, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wn8kp"]
+size = Vector3(4, 0.3, 2.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruy1m"]
 albedo_color = Color(0.31802, 0.31802, 0.31802, 1)
@@ -19,6 +25,20 @@ size = Vector3(3.5, 2, 2)
 [node name="BuildSite" type="Node3D"]
 script = ExtResource("1_e8xwj")
 build_stages = [null, ExtResource("7_1xpx2"), ExtResource("3_4dkdg"), ExtResource("4_th4yn"), ExtResource("5_a10ek")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.887011, -0.461749, 0, 0.461749, 0.887011, 0, 0, 0, 1, -2.1054, -0.077374, 0)
+shape = SubResource("BoxShape3D_wikfi")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_wn8kp")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.887011, 0.461749, 0, -0.461749, 0.887011, 0, 0, 0, 1, 2.11862, -0.0778026, 0)
+shape = SubResource("BoxShape3D_wikfi")
 
 [node name="FoundationMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_w804a")
