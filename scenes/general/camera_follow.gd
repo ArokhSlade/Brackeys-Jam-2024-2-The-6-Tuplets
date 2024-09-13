@@ -11,10 +11,9 @@ var player_last_y: float = 0.0
 
 func _ready() -> void:
 	if player:
-		print("Player found!")
 		player_last_y = player.global_transform.origin.y 
 	else:
-		print("Player not found!")
+		return
 
 func _process(delta: float) -> void:
 	if player:
@@ -42,9 +41,9 @@ func update_camera_position():
 	global_transform.origin = global_transform.origin.lerp(target_position, 0.05)
 
 	
-	print("Camera Position:", global_transform.origin)
-	print("Player Position:", player_position)
-	print("Target Position:", target_position)
+	#print("Camera Position:", global_transform.origin)
+	#print("Player Position:", player_position)
+	#print("Target Position:", target_position)
 
 	# UPDATE LAST PLAYER POSITION
 	player_last_y = player_position.y
