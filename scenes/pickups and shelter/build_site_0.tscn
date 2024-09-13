@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm1e5wfnm1ssy"]
+[gd_scene load_steps=9 format=3 uid="uid://b6nkhbd8hna8d"]
 
-[ext_resource type="Script" path="res://scenes/pickups and shelter/build_site.gd" id="1_e8xwj"]
-[ext_resource type="PackedScene" uid="uid://cywukf5yibu1u" path="res://meshes/borakay3d/house_stages/2.glb" id="3_4dkdg"]
-[ext_resource type="PackedScene" uid="uid://dqj13haotychv" path="res://meshes/borakay3d/house_stages/3.glb" id="4_th4yn"]
-[ext_resource type="PackedScene" uid="uid://cssfss15sn2i5" path="res://meshes/borakay3d/house_stages/7.glb" id="5_a10ek"]
-[ext_resource type="PackedScene" uid="uid://57gnkqi2ng57" path="res://meshes/borakay3d/house_stages/1.glb" id="7_1xpx2"]
+[ext_resource type="Script" path="res://scenes/pickups and shelter/build_site.gd" id="1_1afw5"]
+[ext_resource type="BoxMesh" uid="uid://dw0ohtxv052fb" path="res://meshes/test_shelter_stages/shelter_stage_0.tres" id="2_xanc6"]
+[ext_resource type="BoxMesh" uid="uid://b7bsrombsh0y5" path="res://meshes/test_shelter_stages/shelter_stage_1.tres" id="3_16482"]
+[ext_resource type="BoxMesh" uid="uid://cf45b1r76aw2v" path="res://meshes/test_shelter_stages/shelter_stage_2.tres" id="4_4epqw"]
+[ext_resource type="BoxMesh" uid="uid://5pack77vq28v" path="res://meshes/test_shelter_stages/shelter_stage_3.tres" id="5_3dmod"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruy1m"]
 albedo_color = Color(0.31802, 0.31802, 0.31802, 1)
@@ -17,9 +17,9 @@ size = Vector3(4, 0.3, 2.5)
 size = Vector3(3.5, 2, 2)
 
 [node name="BuildSite" type="Node3D"]
-script = ExtResource("1_e8xwj")
+script = ExtResource("1_1afw5")
 required_count = 4
-build_stages = [null, ExtResource("7_1xpx2"), ExtResource("3_4dkdg"), ExtResource("4_th4yn"), ExtResource("5_a10ek")]
+build_stage_meshes = [null, ExtResource("2_xanc6"), ExtResource("3_16482"), ExtResource("4_4epqw"), ExtResource("5_3dmod")]
 
 [node name="FoundationMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_w804a")

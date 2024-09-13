@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bo20eh72d0433"]
+[gd_scene load_steps=16 format=3 uid="uid://bo20eh72d0433"]
 
 [ext_resource type="Script" path="res://scenes/general/game_manager.gd" id="1_dvvai"]
 [ext_resource type="Script" path="res://scenes/general/camera_follow.gd" id="2_vjt33"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://d4ks7dbpwpjs4" path="res://scenes/pickups and shelter/pickup_bricks.tscn" id="9_dqj8j"]
 [ext_resource type="PackedScene" uid="uid://cwfqhpyrpe0le" path="res://scenes/level assets/platform.tscn" id="10_8btdo"]
 [ext_resource type="PackedScene" uid="uid://qyset6fs0lox" path="res://scenes/menus/pause_menu.tscn" id="11_hqfbd"]
+[ext_resource type="Texture2D" uid="uid://c7x2h07viy8tm" path="res://pictures/sky/midday.jpg" id="12_iy1or"]
+[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="13_ck8p6"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_18een"]
 
@@ -19,6 +21,7 @@ size = Vector3(1.33789, 2.6062, 2.03473)
 
 [node name="Level" type="Node"]
 script = ExtResource("1_dvvai")
+time_limit = 25.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.714754, -0.477768, 0.51075, 0, 0.730293, 0.683134, -0.699376, -0.488272, 0.52198, 0, 2.14895, 0)
@@ -54,6 +57,7 @@ shape = SubResource("BoxShape3D_j0ob2")
 
 [node name="BuildSite" parent="." instance=ExtResource("6_to7r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306323, 0)
+required_count = 1
 
 [node name="BuildingMaterials" type="Node" parent="."]
 
@@ -86,4 +90,41 @@ process_mode = 3
 process_mode = 3
 visible = false
 
+[node name="Sky" type="Sprite3D" parent="."]
+transform = Transform3D(66.435, 0, 0, 0, 66.435, 0, 0, 0, 66.435, 0, 0, -1000)
+texture = ExtResource("12_iy1or")
+
+[node name="PastGameTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="StormTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="StormTimerUI" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StormTimerUI"]
+anchors_preset = -1
+anchor_left = 0.760656
+anchor_right = 0.999
+anchor_bottom = 0.211056
+offset_left = 0.359985
+offset_right = 1.27991
+offset_bottom = 0.0399933
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TimerLabel" type="Label" parent="StormTimerUI/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("13_ck8p6")
+text = "12.34"
+
+[connection signal="entered_game_over_zone" from="LoseGameZone" to="." method="lose_game"]
 [connection signal="body_entered" from="LoseGameZone/Area3D" to="LoseGameZone" method="_on_area_3d_body_entered"]
+[connection signal="material_received" from="BuildSite" to="." method="_on_build_site_material_received"]
+[connection signal="timeout" from="PastGameTimer" to="." method="_on_past_game_timer_timeout"]
+[connection signal="timeout" from="StormTimer" to="." method="lose_game"]
