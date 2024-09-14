@@ -17,6 +17,7 @@ albedo_color = Color(1, 0.101961, 0.0862745, 1)
 
 [node name="Enemy" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54249, 0)
+axis_lock_linear_z = true
 script = ExtResource("1_hhtly")
 
 [node name="Character" type="Node3D" parent="Enemy"]

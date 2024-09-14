@@ -7,13 +7,17 @@ extends CharacterBody3D
 @export var speed: float = 8.0
 @export var rotation_speed: float = 20.0
 
-var player_health: int = 3
+@export var player_health: int = 3
+signal motion_updated
+
+var motion : GlobalGameState.Motion = GlobalGameState.Motion.IDLE
 
 func _ready():
 	add_to_group("Player")
 	## changes music that's playing to game music
 	AudioController.stop_menuMusic()
 	AudioController.play_gameMusic1()
+	_update_health_label()
 
 var jump_count = 0
 var player_velocity: Vector3 = Vector3.ZERO
@@ -24,7 +28,18 @@ func _process(delta: float) -> void:
 	_apply_movement()
 	_check_for_landing()
 	_footstep_sounds()
+	_set_animation()
 
+func _set_animation():
+	
+	if !is_on_floor():
+		motion = GlobalGameState.Motion.JUMP
+	elif player_velocity.length_squared() > 0.01:
+		motion = GlobalGameState.Motion.RUN
+	else:
+		motion = GlobalGameState.Motion.IDLE
+	motion_updated.emit(motion)
+	
 # INPUT CONTROLLERS
 func _handle_input(delta: float) -> void:
 	var input_direction: Vector3 = Vector3.ZERO
@@ -95,9 +110,12 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Enemy":
 		body.queue_free()
 
+func _update_health_label():
+	$HealthLabel.text = "HP: %d" % [player_health]
 
 func _on_take_damage_body_entered(body: Node3D) -> void:
 	player_health -=1
+	_update_health_label()
 	if player_health == 0:
 		queue_free()
-		player_health=5
+		player_health=5 #NOTE(Arokh):why?
