@@ -1,52 +1,34 @@
-[gd_scene load_steps=7 format=3 uid="uid://nygjomhu8npw"]
+[gd_scene load_steps=5 format=3 uid="uid://nygjomhu8npw"]
 
-[ext_resource type="Script" path="res://scenes/enemy_guard/enemy.gd" id="1_hhtly"]
+[ext_resource type="Script" path="res://scenes/enemy_guard/enemy.gd" id="1_35pk1"]
+[ext_resource type="PackedScene" uid="uid://clxjrmcjf5bbm" path="res://meshes/characters/Enemy_With_Animation.glb" id="1_ufe0y"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_5fy4q"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jtwgs"]
+radius = 0.906648
+height = 2.72488
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dlbvh"]
-albedo_color = Color(1, 0.101961, 0.0862745, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_3313w"]
+size = Vector3(2, 2, 2)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kkeki"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_pq2bv"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_4f4wt"]
-
-[node name="EnemyGuard" type="Node3D"]
-
-[node name="Enemy" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54249, 0)
+[node name="Enemy" instance=ExtResource("1_ufe0y")]
+collision_layer = 8
+collision_mask = 19
 axis_lock_linear_z = true
-script = ExtResource("1_hhtly")
+script = ExtResource("1_35pk1")
 
-[node name="Character" type="Node3D" parent="Enemy"]
+[node name="Enemy_Test" parent="." index="0"]
+transform = Transform3D(-4.37114e-10, 0.01, -4.37114e-10, 0, -4.37114e-10, -0.01, -0.01, -4.37114e-10, 1.91069e-17, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy/Character"]
-mesh = SubResource("CapsuleMesh_5fy4q")
-surface_material_override/0 = SubResource("StandardMaterial3D_dlbvh")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.963074, 0)
+shape = SubResource("CapsuleShape3D_jtwgs")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]
-shape = SubResource("CapsuleShape3D_kkeki")
+[node name="CheckpointDetector" type="Area3D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 32
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy"]
-transform = Transform3D(0.827028, 0, 0, 0, 0.367556, 0, 0, 0, 0.93495, 0.299646, 0.387632, 0)
-mesh = SubResource("BoxMesh_pq2bv")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CheckpointDetector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.910033, 0)
+shape = SubResource("BoxShape3D_3313w")
 
-[node name="right_checkpoint" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3957, 1.01622, -0.091104)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="right_checkpoint"]
-shape = SubResource("SphereShape3D_4f4wt")
-
-[node name="left_checkpoint" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7549, 1.01622, 0.0385475)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="left_checkpoint"]
-shape = SubResource("SphereShape3D_4f4wt")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.26382, 0)
-
-[connection signal="body_entered" from="right_checkpoint" to="Enemy" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="left_checkpoint" to="Enemy" method="_on_area_3d_body_entered"]
+[connection signal="area_entered" from="CheckpointDetector" to="." method="_on_checkpoint_detector_area_entered"]

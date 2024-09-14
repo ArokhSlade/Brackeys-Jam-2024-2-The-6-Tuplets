@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c315rvw44gpxh"]
+
+[resource]
+resource_name = "Left_EarSG"
+cull_mode = 2
+albedo_color = Color(0.379993, 0.0388658, 0.0671341, 1)
+roughness = 0.5

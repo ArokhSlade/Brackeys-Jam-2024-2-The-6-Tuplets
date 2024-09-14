@@ -6,9 +6,12 @@ extends CharacterBody3D
 @export var max_jumps = 2  
 @export var speed: float = 8.0
 @export var rotation_speed: float = 20.0
-
 @export var player_health: int = 3
+
+var outside_level_position = Vector3(0,0,100) #behind camera
+
 signal motion_updated
+signal died
 
 var motion : GlobalGameState.Motion = GlobalGameState.Motion.IDLE
 
@@ -106,9 +109,8 @@ func _update_rotation(input_direction: Vector3) -> void:
 		var target_rotation = Basis(Vector3.UP, input_direction.x).rotated(Vector3.UP, -PI/2)
 		rotation = rotation.slerp(target_rotation.get_euler(), rotation_speed * get_process_delta_time())
 	
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.name == "Enemy":
-		body.queue_free()
+func on_enemy_hit_with_feet(enemy: Node3D) -> void:	
+	enemy.die()
 
 func _update_health_label():
 	$HealthLabel.text = "HP: %d" % [player_health]
@@ -117,5 +119,8 @@ func _on_take_damage_body_entered(body: Node3D) -> void:
 	player_health -=1
 	_update_health_label()
 	if player_health == 0:
-		queue_free()
-		player_health=5 #NOTE(Arokh):why?
+		die()
+		
+func die():
+	died.emit()
+	position = outside_level_position
