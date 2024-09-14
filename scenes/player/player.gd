@@ -109,9 +109,8 @@ func _update_rotation(input_direction: Vector3) -> void:
 		var target_rotation = Basis(Vector3.UP, input_direction.x).rotated(Vector3.UP, -PI/2)
 		rotation = rotation.slerp(target_rotation.get_euler(), rotation_speed * get_process_delta_time())
 	
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.name == "Enemy":
-		body.queue_free()
+func on_enemy_hit_with_feet(enemy: Node3D) -> void:	
+	enemy.die()
 
 func _update_health_label():
 	$HealthLabel.text = "HP: %d" % [player_health]

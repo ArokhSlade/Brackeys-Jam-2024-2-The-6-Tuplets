@@ -129,6 +129,14 @@ func _rotate_to_movement_direction():
 		var angle = atan2(direction.z, direction.x)  
 		global_transform.basis = Basis(Vector3.UP, angle)
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body == self: 
-		movingLeft = not movingLeft
+#func _on_area_3d_body_entered(body: Node3D) -> void:
+	#if body == self: 
+		#movingLeft = not movingLeft
+
+
+func _on_checkpoint_detector_area_entered(area):
+	movingLeft = area.go_left
+
+func die():
+	print("rip")
+	queue_free()

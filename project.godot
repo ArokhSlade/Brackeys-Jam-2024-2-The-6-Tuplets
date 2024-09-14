@@ -63,6 +63,7 @@ Stump={
 3d_physics/layer_3="pickups"
 3d_physics/layer_4="monsters"
 3d_physics/layer_5="build_site"
+3d_physics/layer_6="checkpoints"
 3d_physics/layer_8="Layer 8"
 
 [rendering]

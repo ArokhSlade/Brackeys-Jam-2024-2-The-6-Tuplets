@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://c7bujta8e63ol"]
 
-[ext_resource type="Script" path="res://meshes/characters/character_full_rig_run.gd" id="1_mm34f"]
+[ext_resource type="Script" path="res://scenes/player/player_animation.gd" id="1_mm34f"]
 [ext_resource type="ArrayMesh" uid="uid://c12ojd2d6mwgx" path="res://meshes/characters/player meshes/Character_Full_rig_Run_Mesh_181.res" id="1_vja0q"]
 [ext_resource type="ArrayMesh" uid="uid://oqqx0l463our" path="res://meshes/characters/player meshes/Character_Full_rig_Run_Mesh_015.res" id="2_5hh7m"]
 [ext_resource type="ArrayMesh" uid="uid://b712xt2pc8ekh" path="res://meshes/characters/player meshes/Character_Full_rig_Run_Cube_011.res" id="3_s74be"]

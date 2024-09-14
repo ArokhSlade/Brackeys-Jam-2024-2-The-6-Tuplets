@@ -1,22 +1,23 @@
-[gd_scene load_steps=20 format=3 uid="uid://bo20eh72d0433"]
+[gd_scene load_steps=21 format=3 uid="uid://bo20eh72d0433"]
 
 [ext_resource type="Script" path="res://scenes/general/game_manager.gd" id="1_dvvai"]
 [ext_resource type="PackedScene" uid="uid://ceyaoapmq52di" path="res://camera_3d.tscn" id="2_7cnwm"]
-[ext_resource type="PackedScene" uid="uid://dy0d5e4fcyuv2" path="res://scenes/player.tscn" id="3_knmal"]
 [ext_resource type="Script" path="res://scenes/level assets/scene_transition_zone.gd" id="4_l2sbh"]
 [ext_resource type="FontFile" uid="uid://bvd2lkbgxtf83" path="res://fonts/bangers/Bangers.ttf" id="5_xa8se"]
 [ext_resource type="PackedScene" uid="uid://dm1e5wfnm1ssy" path="res://scenes/pickups and shelter/build_site.tscn" id="6_to7r2"]
 [ext_resource type="PackedScene" uid="uid://benlqovn1gllt" path="res://scenes/pickups and shelter/pickup_straw.tscn" id="7_caxjc"]
 [ext_resource type="PackedScene" uid="uid://do8e6ayqb6acm" path="res://scenes/pickups and shelter/pickup_plank.tscn" id="8_yw5vr"]
+[ext_resource type="PackedScene" uid="uid://dnga6u54hw306" path="res://scenes/player/player.tscn" id="9_2fse1"]
 [ext_resource type="PackedScene" uid="uid://d4ks7dbpwpjs4" path="res://scenes/pickups and shelter/pickup_bricks.tscn" id="9_dqj8j"]
 [ext_resource type="PackedScene" uid="uid://cwfqhpyrpe0le" path="res://scenes/level assets/platform.tscn" id="10_8btdo"]
 [ext_resource type="PackedScene" uid="uid://qyset6fs0lox" path="res://scenes/menus/pause_menu.tscn" id="11_hqfbd"]
-[ext_resource type="PackedScene" uid="uid://nygjomhu8npw" path="res://scenes/enemy_guard/Enemy_guard.tscn" id="12_t2cgs"]
 [ext_resource type="Texture2D" uid="uid://c7x2h07viy8tm" path="res://pictures/sky/midday.jpg" id="13_lfdo5"]
 [ext_resource type="Texture2D" uid="uid://5h1gjbfnlnpq" path="res://pictures/ui_icons/icon_construction.png" id="14_l3dmy"]
 [ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="15_8otoy"]
+[ext_resource type="PackedScene" uid="uid://nygjomhu8npw" path="res://scenes/enemy_guard/Enemy_guard.tscn" id="16_e6yl5"]
 [ext_resource type="ArrayMesh" uid="uid://8dwf6ppxp5vc" path="res://meshes/platforms/arokh_platform_01.obj" id="16_ef1q3"]
 [ext_resource type="Material" uid="uid://cuis7v7i5gbmc" path="res://materials/sandstone.tres" id="17_gf3nq"]
+[ext_resource type="PackedScene" uid="uid://bk1j7v5nthfag" path="res://scenes/enemy_guard/check_point.tscn" id="17_oac4o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_og10c"]
 size = Vector3(1.33789, 2.6062, 2.03473)
@@ -37,6 +38,7 @@ visible = false
 
 [node name="Sky" type="Sprite3D" parent="."]
 transform = Transform3D(66.435, 0, 0, 0, 66.435, 0, 0, 0, 66.435, 0, 0, -1000)
+visible = false
 texture = ExtResource("13_lfdo5")
 
 [node name="PastGameTimer" type="Timer" parent="."]
@@ -106,10 +108,6 @@ grow_vertical = 2
 theme = ExtResource("15_8otoy")
 text = "Game Over Message"
 
-[node name="Player" parent="." instance=ExtResource("3_knmal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
-player_health = 3
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.714754, -0.477768, 0.51075, 0, 0.730293, 0.683134, -0.699376, -0.488272, 0.52198, 0, 2.14895, 0)
 light_energy = 1.323
@@ -135,6 +133,10 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168945, 0.456177, -0.0162659)
 shape = SubResource("BoxShape3D_og10c")
 
+[node name="Player" parent="." instance=ExtResource("9_2fse1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.29545, 0)
+player_health = 3
+
 [node name="BuildSite" parent="." instance=ExtResource("6_to7r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306323, 0)
 
@@ -144,7 +146,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306323, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, 0)
 
 [node name="BuildingMaterial2" parent="BuildingMaterials" instance=ExtResource("8_yw5vr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3791, 2.91161, -9.53674e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3791, -0.172282, -9.53674e-07)
 
 [node name="BuildingMaterial3" parent="BuildingMaterials" instance=ExtResource("8_yw5vr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 13, 0)
@@ -164,14 +166,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7391, 5.87821, 0)
 
 [node name="EnemyGuards" type="Node" parent="."]
 
-[node name="EnemyGuard" parent="EnemyGuards" instance=ExtResource("12_t2cgs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6394, 7.4329, -0.0215664)
+[node name="Enemy2" parent="EnemyGuards" instance=ExtResource("16_e6yl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7234, 13.0162, 0)
 
-[node name="EnemyGuard3" parent="EnemyGuards" instance=ExtResource("12_t2cgs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27307, 0.671298, -0.0215664)
+[node name="Enemy" parent="EnemyGuards" instance=ExtResource("16_e6yl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46947, 0.94716, 0)
 
-[node name="EnemyGuard2" parent="EnemyGuards" instance=ExtResource("12_t2cgs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5732, 11.5774, -0.0215664)
+[node name="Enemy3" parent="EnemyGuards" instance=ExtResource("16_e6yl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7807, 6.79375, 0)
+
+[node name="Enemy4" parent="EnemyGuards" instance=ExtResource("16_e6yl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.9466, -3.20008, 0)
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 43.3096, -3.10855, 3.26284)
@@ -180,16 +185,48 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 43.309
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0966, -3.61228, -3.86286)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 3.08389)
 mesh = ExtResource("16_ef1q3")
 surface_material_override/0 = ExtResource("17_gf3nq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19209e-07, 3.08389)
 shape = SubResource("ConcavePolygonShape3D_x4hue")
+
+[node name="CheckPoints" type="Node" parent="."]
+
+[node name="CheckPoint <-" parent="CheckPoints" instance=ExtResource("17_oac4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2499, 0.237534, 0)
+
+[node name="CheckPoint ->" parent="CheckPoints" instance=ExtResource("17_oac4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.566, 0, 0)
+go_left = false
+
+[node name="CheckPoint <-4" parent="CheckPoints" instance=ExtResource("17_oac4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1051, -2.85845, 0)
+
+[node name="CheckPoint ->4" parent="CheckPoints" instance=ExtResource("17_oac4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3495, -5.39929, 0)
+go_left = false
+
+[node name="CheckPoint <-2" parent="CheckPoints" instance=ExtResource("17_oac4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.9536, 6.55748, 0)
+
+[node name="CheckPoint ->2" parent="CheckPoints" instance=ExtResource("17_oac4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9549, 6.55748, 0)
+go_left = false
+
+[node name="CheckPoint <-3" parent="CheckPoints" instance=ExtResource("17_oac4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9581, 11.9324, 0)
+
+[node name="CheckPoint ->3" parent="CheckPoints" instance=ExtResource("17_oac4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0405, 11.9324, 0)
+go_left = false
 
 [connection signal="timeout" from="PastGameTimer" to="." method="_on_past_game_timer_timeout"]
 [connection signal="timeout" from="StormTimer" to="." method="lose_game"]
-[connection signal="died" from="Player" to="." method="lose_game"]
-[connection signal="died" from="Player" to="Camera3D" method="_on_player_died"]
 [connection signal="entered_game_over_zone" from="LoseGameZone" to="." method="lose_game"]
 [connection signal="body_entered" from="LoseGameZone/Area3D" to="LoseGameZone" method="_on_area_3d_body_entered"]
+[connection signal="died" from="Player" to="." method="lose_game"]
+[connection signal="died" from="Player" to="Camera3D" method="_on_player_died"]
 [connection signal="material_received" from="BuildSite" to="." method="_on_build_site_material_received"]

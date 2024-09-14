@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://t1gemhuftch0"]
+
+[resource]
+resource_name = "green"
+cull_mode = 2
+albedo_color = Color(0.00952502, 0.30666, 0.0307049, 1)
+roughness = 0.552786

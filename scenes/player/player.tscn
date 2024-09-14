@@ -1,14 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://dy0d5e4fcyuv2"]
+[gd_scene load_steps=10 format=3 uid="uid://dnga6u54hw306"]
 
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_mcjbf"]
-[ext_resource type="PackedScene" uid="uid://c7bujta8e63ol" path="res://meshes/characters/Character_Full_rig_Run.tscn" id="2_8rx7i"]
-[ext_resource type="PackedScene" uid="uid://dpslgkte872ph" path="res://scenes/pickups and shelter/shelter_building_module.tscn" id="2_syksq"]
-[ext_resource type="Script" path="res://scenes/apply_damage.gd" id="3_j84jk"]
-[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="5_6fxa4"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_jav5r"]
+[ext_resource type="PackedScene" uid="uid://ddyjf1vtv2er7" path="res://meshes/characters/Character_Full_rig_Run.glb" id="2_1tmfg"]
+[ext_resource type="Script" path="res://scenes/player/player_animation.gd" id="3_ivt3e"]
+[ext_resource type="PackedScene" uid="uid://dpslgkte872ph" path="res://scenes/pickups and shelter/shelter_building_module.tscn" id="3_misgd"]
+[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="5_5vm0l"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1bava"]
-radius = 0.37744
-height = 0.75488
+radius = 0.363895
+height = 0.836959
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hmjjy"]
 radius = 0.775402
@@ -24,32 +24,37 @@ height = 1.18878
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
+collision_mask = 25
 axis_lock_linear_z = true
 slide_on_ceiling = false
-script = ExtResource("1_mcjbf")
+script = ExtResource("1_jav5r")
 player_health = 1
 
 [node name="Character" type="Node3D" parent="."]
 
-[node name="Character_Full_rig_Run" parent="Character" instance=ExtResource("2_8rx7i")]
-transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 0, 0.705, 0)
+[node name="Character_Full_rig_Run" parent="Character" instance=ExtResource("2_1tmfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.745, 0)
+script = ExtResource("3_ivt3e")
 
 [node name="FootstepTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="ShelterBuildingModule" parent="." instance=ExtResource("2_syksq")]
+[node name="ShelterBuildingModule" parent="." instance=ExtResource("3_misgd")]
 
 [node name="apply_damage" type="Area3D" parent="."]
-script = ExtResource("3_j84jk")
+collision_layer = 0
+collision_mask = 8
 
-[node name="FeetCollider" type="CollisionShape3D" parent="apply_damage"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -1.57606, 0)
+[node name="HitBox" type="CollisionShape3D" parent="apply_damage"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -1.66703, 0)
 shape = SubResource("CapsuleShape3D_1bava")
 
 [node name="take_damage" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 8
 
-[node name="BodyCollider" type="CollisionShape3D" parent="take_damage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0924524, 0)
+[node name="HurtBox" type="CollisionShape3D" parent="take_damage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0155995, -0.513628, 0)
 shape = SubResource("CapsuleShape3D_hmjjy")
 
 [node name="BodyCollider" type="CollisionShape3D" parent="."]
@@ -65,9 +70,9 @@ offset_left = 297.0
 offset_top = 60.0
 offset_right = 508.0
 offset_bottom = 154.0
-theme = ExtResource("5_6fxa4")
+theme = ExtResource("5_5vm0l")
 text = "HP: N"
 
 [connection signal="motion_updated" from="." to="Character/Character_Full_rig_Run" method="_on_player_motion_updated"]
-[connection signal="body_entered" from="apply_damage" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="apply_damage" to="." method="on_enemy_hit_with_feet"]
 [connection signal="body_entered" from="take_damage" to="." method="_on_take_damage_body_entered"]
