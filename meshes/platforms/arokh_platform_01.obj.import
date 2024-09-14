@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://8dwf6ppxp5vc"
+path="res://.godot/imported/arokh_platform_01.obj-eb556a10aa28a638d7e51621ae9093a8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/arokh_platform_01.obj-eb556a10aa28a638d7e51621ae9093a8.mesh"]
+
+source_file="res://meshes/platforms/arokh_platform_01.obj"
+dest_files=["res://.godot/imported/arokh_platform_01.obj-eb556a10aa28a638d7e51621ae9093a8.mesh", "res://.godot/imported/arokh_platform_01.obj-eb556a10aa28a638d7e51621ae9093a8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

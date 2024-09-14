@@ -45,8 +45,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7549, 1.01622, 0.0385475)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="left_checkpoint"]
 shape = SubResource("SphereShape3D_4f4wt")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.26382, 0)
-
 [connection signal="body_entered" from="right_checkpoint" to="Enemy" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="left_checkpoint" to="Enemy" method="_on_area_3d_body_entered"]
