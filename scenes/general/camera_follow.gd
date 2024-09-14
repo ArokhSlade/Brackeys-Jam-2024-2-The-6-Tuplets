@@ -47,3 +47,7 @@ func update_camera_position():
 
 	# UPDATE LAST PLAYER POSITION
 	player_last_y = player_position.y
+
+
+func _on_player_died():
+	player = null

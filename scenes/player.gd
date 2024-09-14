@@ -6,9 +6,12 @@ extends CharacterBody3D
 @export var max_jumps = 2  
 @export var speed: float = 8.0
 @export var rotation_speed: float = 20.0
-
 @export var player_health: int = 3
+
+var outside_level_position = Vector3(0,0,100) #behind camera
+
 signal motion_updated
+signal died
 
 var motion : GlobalGameState.Motion = GlobalGameState.Motion.IDLE
 
@@ -117,5 +120,8 @@ func _on_take_damage_body_entered(body: Node3D) -> void:
 	player_health -=1
 	_update_health_label()
 	if player_health == 0:
-		queue_free()
-		player_health=5 #NOTE(Arokh):why?
+		die()
+		
+func die():
+	died.emit()
+	position = outside_level_position

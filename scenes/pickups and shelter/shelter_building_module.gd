@@ -10,15 +10,13 @@ func _ready():
 
 func pick_up_material(material : Area3D):
 	if carrying_count < carrying_capacity:
-		carrying_count += 1
-		print("+ material (%d/%d)" % [carrying_count, carrying_capacity])
+		carrying_count += 1		
 		update_materials_label()
 		material.queue_free()
 	
 func drop_off_material(build_site : Area3D):
 	if carrying_count > 0:
-		carrying_count -= 1
-		print("- material (%d/%d)" % [carrying_count, carrying_capacity])
+		carrying_count -= 1		
 		update_materials_label()
 		build_site.owner.receive_materials()
 

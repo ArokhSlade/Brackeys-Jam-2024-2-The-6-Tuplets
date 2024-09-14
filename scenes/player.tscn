@@ -61,10 +61,10 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -1.
 shape = SubResource("CapsuleShape3D_sbujm")
 
 [node name="HealthLabel" type="Label" parent="."]
-offset_left = 263.0
-offset_top = 59.0
-offset_right = 474.0
-offset_bottom = 145.0
+offset_left = 297.0
+offset_top = 60.0
+offset_right = 508.0
+offset_bottom = 154.0
 theme = ExtResource("5_6fxa4")
 text = "HP: N"
 

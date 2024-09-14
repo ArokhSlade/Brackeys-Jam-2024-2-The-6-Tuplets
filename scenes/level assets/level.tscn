@@ -50,9 +50,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -147.0
+offset_left = -93.0
 offset_top = -333.0
-offset_right = 5.0
+offset_right = 59.0
 offset_bottom = -181.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -63,10 +63,10 @@ expand_mode = 2
 
 [node name="ProgressLabel" type="Label" parent="LevelUI"]
 unique_name_in_owner = true
-offset_left = 668.0
+offset_left = 722.0
 offset_top = 61.0
-offset_right = 784.0
-offset_bottom = 147.0
+offset_right = 840.0
+offset_bottom = 155.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("15_8otoy")
@@ -82,6 +82,23 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("15_8otoy")
 text = "12.34"
+
+[node name="GameOverLabel" type="Label" parent="LevelUI"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("15_8otoy")
+text = "Game Over Message"
 
 [node name="Player" parent="." instance=ExtResource("3_knmal")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
@@ -152,6 +169,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5732, 11.5774, -0.0215664
 
 [connection signal="timeout" from="PastGameTimer" to="." method="_on_past_game_timer_timeout"]
 [connection signal="timeout" from="StormTimer" to="." method="lose_game"]
+[connection signal="died" from="Player" to="." method="lose_game"]
+[connection signal="died" from="Player" to="Camera3D" method="_on_player_died"]
 [connection signal="entered_game_over_zone" from="LoseGameZone" to="." method="lose_game"]
 [connection signal="body_entered" from="LoseGameZone/Area3D" to="LoseGameZone" method="_on_area_3d_body_entered"]
 [connection signal="material_received" from="BuildSite" to="." method="_on_build_site_material_received"]
