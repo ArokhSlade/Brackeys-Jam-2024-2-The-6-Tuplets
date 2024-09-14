@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3vukbri7rp0w"]
+
+[ext_resource type="Script" path="res://scenes/enemy_guard/enemy.gd" id="1_35pk1"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5fy4q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dlbvh"]
+albedo_color = Color(1, 0.101961, 0.0862745, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kkeki"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pq2bv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4f4wt"]
+
+[node name="EnemyGuard" type="Node3D"]
+
+[node name="Enemy" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54249, 0)
+axis_lock_linear_z = true
+script = ExtResource("1_35pk1")
+
+[node name="Character" type="Node3D" parent="Enemy"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy/Character"]
+mesh = SubResource("CapsuleMesh_5fy4q")
+surface_material_override/0 = SubResource("StandardMaterial3D_dlbvh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy"]
+shape = SubResource("CapsuleShape3D_kkeki")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy"]
+transform = Transform3D(0.827028, 0, 0, 0, 0.367556, 0, 0, 0, 0.93495, 0.299646, 0.387632, 0)
+mesh = SubResource("BoxMesh_pq2bv")
+
+[node name="right_checkpoint" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3957, 1.01622, -0.091104)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="right_checkpoint"]
+shape = SubResource("SphereShape3D_4f4wt")
+
+[node name="left_checkpoint" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7549, 1.01622, 0.0385475)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="left_checkpoint"]
+shape = SubResource("SphereShape3D_4f4wt")
+
+[connection signal="body_entered" from="right_checkpoint" to="Enemy" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="left_checkpoint" to="Enemy" method="_on_area_3d_body_entered"]

@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn2f3il6s8vtp"
-path.s3tc="res://.godot/imported/Pickup_items_SandBricks_Pickup_UV.png-f90a7ca6b5c24368005ba5afdf996721.s3tc.ctex"
+uid="uid://c6xay8jthx78n"
+path.s3tc="res://.godot/imported/Pickup_items_with_animation_Straw_Pickup_UV.png-a7941e70d78cb3af06807cc6763e0c77.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "f8371ed11ded7de3b474556f7ea6a09d"
+}
 
 [deps]
 
-source_file="res://meshes/Pickup_items_SandBricks_Pickup_UV.png"
-dest_files=["res://.godot/imported/Pickup_items_SandBricks_Pickup_UV.png-f90a7ca6b5c24368005ba5afdf996721.s3tc.ctex"]
+source_file="res://Item_Pickups/Pickup_items_with_animation_Straw_Pickup_UV.png"
+dest_files=["res://.godot/imported/Pickup_items_with_animation_Straw_Pickup_UV.png-a7941e70d78cb3af06807cc6763e0c77.s3tc.ctex"]
 
 [params]
 
