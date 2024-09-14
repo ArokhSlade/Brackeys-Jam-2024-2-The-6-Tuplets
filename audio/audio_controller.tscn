@@ -1,19 +1,19 @@
 [gd_scene load_steps=19 format=3 uid="uid://j3ma234csm3c"]
 
 [ext_resource type="Script" path="res://audio/audio_controller.gd" id="1_ithd2"]
-[ext_resource type="AudioStream" uid="uid://b5bqoh107cbfj" path="res://audio/sfx/Footstep_Dirt-001.mp3" id="2_nj881"]
-[ext_resource type="AudioStream" uid="uid://d3cxkbgrvbuhg" path="res://audio/sfx/Footstep_Dirt-002.mp3" id="3_53pc8"]
-[ext_resource type="AudioStream" uid="uid://bs4nnfg4o6h0c" path="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm1 - A Place I Call Home.ogg" id="3_hc2vb"]
-[ext_resource type="AudioStream" uid="uid://c48p3djd6with" path="res://audio/sfx/Footstep_Sand-001.mp3" id="4_bym7o"]
-[ext_resource type="AudioStream" uid="uid://d1kkjx1fp07vn" path="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm2 - Childhood Friends.ogg" id="4_utq7i"]
-[ext_resource type="AudioStream" uid="uid://bdt3p81iatwd8" path="res://audio/sfx/Footstep_Sand-002.mp3" id="5_o3ruy"]
-[ext_resource type="AudioStream" uid="uid://dhf06sfgvjd7u" path="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm3 - Peaceful Days.ogg" id="5_v4amg"]
-[ext_resource type="AudioStream" uid="uid://cyokxyyragllf" path="res://audio/sfx/Footstep_SandStone-001.mp3" id="6_f5e54"]
-[ext_resource type="AudioStream" uid="uid://c1xararad8gbo" path="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm4 - Sand Castles.ogg" id="6_lb2ol"]
-[ext_resource type="AudioStream" uid="uid://d173hbnq6ewsd" path="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm5 - Summer Memories.ogg" id="7_ighkg"]
-[ext_resource type="AudioStream" uid="uid://bws7vuu31omv8" path="res://audio/sfx/Footstep_SandStone-002.mp3" id="7_v4mc6"]
-[ext_resource type="AudioStream" uid="uid://gpjt46e0261e" path="res://audio/sfx/Footstep_Wood-001.mp3" id="8_cpm3b"]
-[ext_resource type="AudioStream" uid="uid://bis4i5mi56omw" path="res://audio/sfx/Footstep_Wood-002.mp3" id="9_lyex2"]
+[ext_resource type="AudioStream" uid="uid://b5bqoh107cbfj" path="res://Audio/sfx/Footstep_Dirt-001.mp3" id="2_nj881"]
+[ext_resource type="AudioStream" uid="uid://d3cxkbgrvbuhg" path="res://Audio/sfx/Footstep_Dirt-002.mp3" id="3_53pc8"]
+[ext_resource type="AudioStream" uid="uid://d3imyvgaff01g" path="res://Audio/music/1stSketch.mp3" id="3_qqv3y"]
+[ext_resource type="AudioStream" uid="uid://c48p3djd6with" path="res://Audio/sfx/Footstep_Sand-001.mp3" id="4_bym7o"]
+[ext_resource type="AudioStream" uid="uid://d1kkjx1fp07vn" path="res://Audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm2 - Childhood Friends.ogg" id="4_utq7i"]
+[ext_resource type="AudioStream" uid="uid://bdt3p81iatwd8" path="res://Audio/sfx/Footstep_Sand-002.mp3" id="5_o3ruy"]
+[ext_resource type="AudioStream" uid="uid://dhf06sfgvjd7u" path="res://Audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm3 - Peaceful Days.ogg" id="5_v4amg"]
+[ext_resource type="AudioStream" uid="uid://cyokxyyragllf" path="res://Audio/sfx/Footstep_SandStone-001.mp3" id="6_f5e54"]
+[ext_resource type="AudioStream" uid="uid://c1xararad8gbo" path="res://Audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm4 - Sand Castles.ogg" id="6_lb2ol"]
+[ext_resource type="AudioStream" uid="uid://d173hbnq6ewsd" path="res://Audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm5 - Summer Memories.ogg" id="7_ighkg"]
+[ext_resource type="AudioStream" uid="uid://bws7vuu31omv8" path="res://Audio/sfx/Footstep_SandStone-002.mp3" id="7_v4mc6"]
+[ext_resource type="AudioStream" uid="uid://gpjt46e0261e" path="res://Audio/sfx/Footstep_Wood-001.mp3" id="8_cpm3b"]
+[ext_resource type="AudioStream" uid="uid://bis4i5mi56omw" path="res://Audio/sfx/Footstep_Wood-002.mp3" id="9_lyex2"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_22s1l"]
 random_pitch = 1.1
@@ -54,8 +54,9 @@ volume_db = 1.962
 pitch_scale = 3.06
 
 [node name="menuMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_hc2vb")
-parameters/looping = false
+stream = ExtResource("3_qqv3y")
+autoplay = true
+parameters/looping = true
 
 [node name="gameMusic1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_utq7i")
