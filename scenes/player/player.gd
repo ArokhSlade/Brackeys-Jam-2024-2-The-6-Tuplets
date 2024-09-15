@@ -9,6 +9,7 @@ extends CharacterBody3D
 @export var player_health: int = 3
 
 var outside_level_position = Vector3(0,0,100) #behind camera
+@onready var step_sounds = AudioController.steps_sandstone
 
 signal motion_updated
 signal died
@@ -67,12 +68,14 @@ func _handle_jump() -> void:
 		AudioController.play_jump()
 		
 
-# TO DO: CHANGE FOOTSTEP SOUND BASED ON MATERIAL TYPE
 # FOOTSTEP SOUND LOGIC 
 func _footstep_sounds() -> void:
 	if is_on_floor() and player_velocity.x != 0:
 		if $FootstepTimer.time_left <=0 :
-			AudioController.play_stepDirt()
+			#AudioController.play_stepDirt()
+			var random_index = randi_range(0,step_sounds.size()-1)
+			$StepSoundsPlayer.stream = step_sounds[random_index]
+			$StepSoundsPlayer.play()
 			$FootstepTimer.start(.5)
 
 # GRAVITY
@@ -92,8 +95,16 @@ func _apply_gravity(delta: float) -> void:
 # MOVEMENT
 func _apply_movement() -> void:
 	velocity = player_velocity 
-	move_and_slide()
-
+	move_and_slide()	
+	
+	var collision = get_last_slide_collision()
+	#var last_collision_count = collision.get_collision_count()
+	if collision:	
+		var collider = collision.get_collider() as Node
+		if collider.is_in_group("terrain"):
+			var terrain_type = collider.terrain_type
+			step_sounds = AudioController.steps_dictionary[terrain_type]
+	
 # RESET JUMP COUNT WHEN LANDING
 func _check_for_landing() -> void:
 	if is_on_floor():

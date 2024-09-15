@@ -14,11 +14,31 @@ extends Node
 @export var ambiance_clips : Array 
 @export var test_clips : Array 
 @export var menu_music : AudioStream
+@export var steps_dirt: Array
+@export var steps_sand: Array
+@export var steps_sandstone: Array
+@export var steps_wood: Array
+@export var steps_gravel: Array
+
+const SANDSTONE = GlobalGameState.TerrainType.SANDSTONE
+const SAND = GlobalGameState.TerrainType.SAND
+const WOOD = GlobalGameState.TerrainType.WOOD
+const DIRT = GlobalGameState.TerrainType.DIRT
+const GRAVEL = GlobalGameState.TerrainType.GRAVEL
+
+@export var steps_dictionary : Dictionary 
 
 @onready var background_player = $BackgroundClipPlayer
 
 func _ready():
 	background_player.stream = menu_music
+	steps_dictionary = {
+		SANDSTONE : steps_sandstone,
+		SAND : steps_sand,
+		GRAVEL : steps_gravel,
+		WOOD : steps_wood,
+		DIRT : steps_dirt	
+	}
 	
 
 func play_menuMusic():
