@@ -93,6 +93,17 @@ func _apply_gravity(delta: float) -> void:
 func _apply_movement() -> void:
 	velocity = player_velocity 
 	move_and_slide()
+	
+	
+	var collision = get_last_slide_collision()
+	#var last_collision_count = collision.get_collision_count()
+	if collision:	
+		var collider = collision.get_collider() as Node
+		if collider.is_in_group("terrain"):
+			var terrain_type = collider.terrain_type
+	
+	
+	
 
 # RESET JUMP COUNT WHEN LANDING
 func _check_for_landing() -> void:

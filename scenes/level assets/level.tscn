@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bo20eh72d0433"]
+[gd_scene load_steps=24 format=3 uid="uid://bo20eh72d0433"]
 
 [ext_resource type="Script" path="res://scenes/general/game_manager.gd" id="1_dvvai"]
 [ext_resource type="PackedScene" uid="uid://ceyaoapmq52di" path="res://camera_3d.tscn" id="2_7cnwm"]
@@ -13,10 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://qyset6fs0lox" path="res://scenes/menus/pause_menu.tscn" id="11_hqfbd"]
 [ext_resource type="Texture2D" uid="uid://c7x2h07viy8tm" path="res://pictures/sky/midday.jpg" id="13_lfdo5"]
 [ext_resource type="Texture2D" uid="uid://5h1gjbfnlnpq" path="res://pictures/ui_icons/icon_construction.png" id="14_l3dmy"]
+[ext_resource type="Shape3D" uid="uid://dmh8w5r5laxhi" path="res://scenes/level assets/platform shapes/long_plank_shape.tres" id="15_01dit"]
 [ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="15_8otoy"]
 [ext_resource type="PackedScene" uid="uid://nygjomhu8npw" path="res://scenes/enemy_guard/Enemy_guard.tscn" id="16_e6yl5"]
+[ext_resource type="BoxMesh" uid="uid://b2yneilb7jqgs" path="res://scenes/level assets/platform shapes/long_plank_mesh.tres" id="16_e46q2"]
 [ext_resource type="ArrayMesh" uid="uid://8dwf6ppxp5vc" path="res://meshes/platforms/arokh_platform_01.obj" id="16_ef1q3"]
-[ext_resource type="Material" uid="uid://cuis7v7i5gbmc" path="res://materials/sandstone.tres" id="17_gf3nq"]
+[ext_resource type="Material" uid="uid://cuis7v7i5gbmc" path="res://materials/SANDSTONE.tres" id="17_gf3nq"]
 [ext_resource type="PackedScene" uid="uid://bk1j7v5nthfag" path="res://scenes/enemy_guard/check_point.tscn" id="17_oac4o"]
 [ext_resource type="Theme" uid="uid://qc43p7xhuxrq" path="res://fonts/test_ui_theme.theme" id="19_sbsi5"]
 
@@ -38,7 +40,6 @@ visible = false
 
 [node name="Sky" type="Sprite3D" parent="."]
 transform = Transform3D(66.435, 0, 0, 0, 66.435, 0, 0, 0, 66.435, 0, 0, -1000)
-visible = false
 texture = ExtResource("13_lfdo5")
 
 [node name="PastGameTimer" type="Timer" parent="."]
@@ -110,7 +111,8 @@ text = "Game Over Message"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.714754, -0.477768, 0.51075, 0, 0.730293, 0.683134, -0.699376, -0.488272, 0.52198, 0, 2.14895, 0)
-light_energy = 1.323
+light_color = Color(0.956519, 0.940584, 0.920425, 1)
+shadow_enabled = true
 
 [node name="Camera3D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_7cnwm")]
 player = NodePath("../Player")
@@ -157,12 +159,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 0)
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Platform1" parent="Platforms" instance=ExtResource("10_8btdo")]
+collision_shape = ExtResource("15_01dit")
+mesh = ExtResource("16_e46q2")
 
 [node name="Platform2" parent="Platforms" instance=ExtResource("10_8btdo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4817, 11.4019, 0)
+terrain_type = 1
+collision_shape = ExtResource("15_01dit")
+mesh = ExtResource("16_e46q2")
 
 [node name="Platform3" parent="Platforms" instance=ExtResource("10_8btdo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7391, 5.87821, 0)
+terrain_type = 3
+collision_shape = ExtResource("15_01dit")
+mesh = ExtResource("16_e46q2")
 
 [node name="EnemyGuards" type="Node" parent="."]
 

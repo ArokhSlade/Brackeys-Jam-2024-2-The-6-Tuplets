@@ -3,5 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d3yrxtpsgr24x" path="res://pictures/sandstone.bmp" id="1_5ifdc"]
 
 [resource]
-albedo_color = Color(0.71, 0.5112, 0.142, 1)
+albedo_color = Color(0.55, 0.55, 0.55, 1)
 albedo_texture = ExtResource("1_5ifdc")
+uv1_scale = Vector3(0.395, 0.395, 0.395)
+uv1_triplanar = true
