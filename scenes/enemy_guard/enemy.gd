@@ -12,7 +12,7 @@ extends CharacterBody3D
 var player: CharacterBody3D
 var ai_velocity = Vector3.ZERO
 var gravity = -9.8 
-var movingLeft: bool = false
+@export var movingLeft: bool = false
 var attack_timer = 0.0
 var wait_timer = 0.0 
 
