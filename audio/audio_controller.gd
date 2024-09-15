@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 
 ## how to add audio: 
@@ -11,8 +11,15 @@ extends Node2D
 ## useful notes: setting the stream to AudioStreamRandomizer allows you to randomize between
 ## multiple sounds and give each sound a random pitch and volume. 
 
+@export var ambiance_clips : Array 
+@export var test_clips : Array 
+@export var menu_music : AudioStream
+
+@onready var background_player = $BackgroundClipPlayer
+
 func _ready():
-	play_menuMusic()
+	background_player.stream = menu_music
+	
 
 func play_menuMusic():
 	$menuMusic.play()
@@ -20,14 +27,17 @@ func play_menuMusic():
 func stop_menuMusic():
 	$menuMusic.stop()
 
-func play_gameMusic1():
-	$gameMusic1.play()
+func play_gameAmbience1():
+	$gameAmbience1.play()
 
-func play_gameMusic2():
-	$gameMusic2.play()
+func play_gameAmbience2():
+	$gameAmbience2.play()
 
-func play_gameMusic3():
-	$gameMusic3.play()
+func play_gameAmbience3():
+	$gameAmbience3.play()
+
+func play_gameAmbience4():
+	$gameAmbience4.play()
 
 func play_endscreenMusic1():
 	$endscreenMusic.play()
