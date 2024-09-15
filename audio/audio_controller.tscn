@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://j3ma234csm3c"]
+[gd_scene load_steps=38 format=3 uid="uid://j3ma234csm3c"]
 
 [ext_resource type="Script" path="res://audio/audio_controller.gd" id="1_ithd2"]
 [ext_resource type="AudioStream" uid="uid://b5bqoh107cbfj" path="res://Audio/sfx/Footstep_Dirt-001.mp3" id="2_nj881"]
@@ -19,6 +19,20 @@
 [ext_resource type="AudioStream" uid="uid://n68ybmprd8lh" path="res://Audio/Jump Sounds/Character_Jump-003.mp3" id="8_pet66"]
 [ext_resource type="AudioStream" uid="uid://bis4i5mi56omw" path="res://Audio/sfx/Footstep_Wood-002.mp3" id="9_lyex2"]
 [ext_resource type="AudioStream" uid="uid://ppqwm3uv4gva" path="res://Audio/Jump Sounds/Character_Jump-004.mp3" id="9_x78hd"]
+[ext_resource type="AudioStream" uid="uid://bfk5gxmuxgxrh" path="res://Audio/FS Dirt/Footstep_Dirt-003.ogg" id="13_bqrfk"]
+[ext_resource type="AudioStream" uid="uid://c0kcxpi0lhh52" path="res://Audio/FS Dirt/Footstep_Dirt-004.ogg" id="14_bbmh8"]
+[ext_resource type="AudioStream" uid="uid://bjq5xnnmughc0" path="res://Audio/FS Dirt/Footstep_Dirt-005.ogg" id="15_hipa3"]
+[ext_resource type="AudioStream" uid="uid://bh7jyb8sihjvj" path="res://Audio/FS_Sand/Footstep_Sand-003.ogg" id="18_e6b3b"]
+[ext_resource type="AudioStream" uid="uid://bt225mpob7p8" path="res://Audio/FS_Sand/Footstep_Sand-004.ogg" id="19_p4qql"]
+[ext_resource type="AudioStream" uid="uid://dyctq2ewej2in" path="res://Audio/FS_Sand/Footstep_Sand-005.ogg" id="20_l1sya"]
+[ext_resource type="AudioStream" uid="uid://blyo6clj6nta5" path="res://Audio/FS Sandstone/FootstepSandstone-003.ogg" id="23_heyuh"]
+[ext_resource type="AudioStream" uid="uid://b3jlyb413vi1s" path="res://Audio/FS Sandstone/FootstepSandstone-004.ogg" id="24_r00yk"]
+[ext_resource type="AudioStream" uid="uid://clyqj2wjca6n2" path="res://Audio/FS Sandstone/FootstepSandstone-005.ogg" id="25_f5r2n"]
+[ext_resource type="AudioStream" uid="uid://rp506s0fnaa8" path="res://Audio/FS_Wood/Footstep_Wood-003.ogg" id="28_djyob"]
+[ext_resource type="AudioStream" uid="uid://mpgvymwyf1kq" path="res://Audio/FS_Wood/Footstep_Wood-004.ogg" id="29_vymjm"]
+[ext_resource type="AudioStream" uid="uid://ubpgl2ab6q6n" path="res://Audio/FS_Wood/Footstep_Wood-005.ogg" id="30_rhfxb"]
+[ext_resource type="AudioStream" uid="uid://kmamvhrukon5" path="res://Audio/FS Sandstone/FootstepSandstone-002.ogg" id="31_2pti2"]
+[ext_resource type="AudioStream" uid="uid://b7jc7iaan261e" path="res://Audio/FS Dirt/Footstep_Dirt-001.ogg" id="32_lmj2h"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_22s1l"]
 random_pitch = 1.1
@@ -55,11 +69,11 @@ script = ExtResource("1_ithd2")
 ambiance_clips = [ExtResource("4_00yn6"), ExtResource("5_pkskq"), ExtResource("6_mr4aa"), ExtResource("7_k7w4q")]
 test_clips = [ExtResource("6_25hpj"), ExtResource("7_vjobb"), ExtResource("8_pet66"), ExtResource("9_x78hd")]
 menu_music = ExtResource("3_qqv3y")
-steps_dirt = [ExtResource("2_nj881"), ExtResource("3_53pc8")]
-steps_sand = [ExtResource("4_bym7o"), ExtResource("5_o3ruy")]
-steps_sandstone = [ExtResource("6_f5e54"), ExtResource("7_v4mc6")]
-steps_wood = [ExtResource("8_cpm3b"), ExtResource("9_lyex2")]
-steps_gravel = [ExtResource("6_f5e54"), ExtResource("7_v4mc6")]
+steps_dirt = [ExtResource("2_nj881"), ExtResource("3_53pc8"), ExtResource("13_bqrfk"), ExtResource("14_bbmh8"), ExtResource("15_hipa3")]
+steps_sand = [ExtResource("4_bym7o"), ExtResource("5_o3ruy"), ExtResource("18_e6b3b"), ExtResource("19_p4qql"), ExtResource("20_l1sya")]
+steps_sandstone = [ExtResource("6_f5e54"), ExtResource("7_v4mc6"), ExtResource("23_heyuh"), ExtResource("24_r00yk"), ExtResource("25_f5r2n")]
+steps_wood = [ExtResource("8_cpm3b"), ExtResource("9_lyex2"), ExtResource("28_djyob"), ExtResource("29_vymjm"), ExtResource("30_rhfxb")]
+steps_gravel = [ExtResource("15_hipa3"), ExtResource("24_r00yk"), ExtResource("13_bqrfk"), ExtResource("31_2pti2"), ExtResource("32_lmj2h")]
 
 [node name="jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_nj881")

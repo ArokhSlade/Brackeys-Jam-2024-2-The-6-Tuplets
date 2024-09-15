@@ -224,7 +224,7 @@ shape = SubResource("ConcavePolygonShape3D_nvkys")
 [node name="StaticBody3D2" type="StaticBody3D" parent="Platforms" groups=["terrain"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.9803, -3.69036, 0)
 script = ExtResource("17_ye5wt")
-terrain_type = 1
+terrain_type = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/StaticBody3D2"]
 mesh = ExtResource("19_wobyg")
