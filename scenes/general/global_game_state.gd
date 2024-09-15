@@ -1,6 +1,5 @@
 extends Node
 
-var materials_required_count = 4
 var was_game_won = false
 
 enum Motion {IDLE, RUN, JUMP} # TODO(Arokh):where would this live?

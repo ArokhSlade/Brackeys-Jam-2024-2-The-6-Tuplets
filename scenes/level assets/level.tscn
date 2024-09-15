@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bo20eh72d0433"]
+[gd_scene load_steps=39 format=3 uid="uid://bo20eh72d0433"]
 
 [ext_resource type="Script" path="res://scenes/general/game_manager.gd" id="1_dvvai"]
 [ext_resource type="PackedScene" uid="uid://ceyaoapmq52di" path="res://camera_3d.tscn" id="2_7cnwm"]
@@ -10,7 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://dnga6u54hw306" path="res://scenes/player/player.tscn" id="9_2fse1"]
 [ext_resource type="PackedScene" uid="uid://d4ks7dbpwpjs4" path="res://scenes/pickups and shelter/pickup_bricks.tscn" id="9_dqj8j"]
 [ext_resource type="PackedScene" uid="uid://qyset6fs0lox" path="res://scenes/menus/pause_menu.tscn" id="11_hqfbd"]
+[ext_resource type="PackedScene" uid="uid://57gnkqi2ng57" path="res://meshes/borakay3d/house_stages/1.glb" id="11_khcf7"]
+[ext_resource type="PackedScene" uid="uid://cywukf5yibu1u" path="res://meshes/borakay3d/house_stages/2.glb" id="12_ou314"]
+[ext_resource type="PackedScene" uid="uid://dqj13haotychv" path="res://meshes/borakay3d/house_stages/3.glb" id="13_f2vtf"]
 [ext_resource type="Texture2D" uid="uid://c7x2h07viy8tm" path="res://pictures/sky/midday.jpg" id="13_lfdo5"]
+[ext_resource type="PackedScene" uid="uid://cssfss15sn2i5" path="res://meshes/borakay3d/house_stages/7.glb" id="14_hx226"]
 [ext_resource type="Texture2D" uid="uid://5h1gjbfnlnpq" path="res://pictures/ui_icons/icon_construction.png" id="14_l3dmy"]
 [ext_resource type="Shape3D" uid="uid://dmh8w5r5laxhi" path="res://scenes/level assets/platform shapes/long_plank_shape.tres" id="15_01dit"]
 [ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="15_8otoy"]
@@ -54,6 +58,7 @@ points = PackedVector3Array(-2.5, -0.5, -1, -2.5, 0.5, -1, 2.5, -0.5, -1, -2.5, 
 
 [node name="Level" type="Node"]
 script = ExtResource("1_dvvai")
+materials_required_count = 10
 
 [node name="MenuCanvas" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -78,7 +83,7 @@ autostart = true
 [node name="LevelUI" type="CanvasLayer" parent="."]
 layer = -50
 
-[node name="TextureRect" type="TextureRect" parent="LevelUI"]
+[node name="HouseIcon" type="TextureRect" parent="LevelUI"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -166,6 +171,7 @@ player_health = 3
 
 [node name="BuildSite" parent="." instance=ExtResource("6_to7r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306323, 0)
+build_stages = [ExtResource("11_khcf7"), ExtResource("12_ou314"), ExtResource("13_f2vtf"), ExtResource("14_hx226")]
 
 [node name="BuildingMaterials" type="Node" parent="."]
 
@@ -180,6 +186,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41299, 13.1623, 0)
 
 [node name="BuildingMaterial4" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 0)
+
+[node name="BuildingMaterial5" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4244, 1, 0)
+
+[node name="BuildingMaterial6" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.28533, 1, 0)
+
+[node name="BuildingMaterial7" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6889, 1, 0)
+
+[node name="BuildingMaterial8" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5005, 1, 0)
+
+[node name="BuildingMaterial9" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26578, 1, 0)
+
+[node name="BuildingMaterial10" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.59751, 1, 0)
+
+[node name="BuildingMaterial11" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6927, 1, 0)
+
+[node name="BuildingMaterial12" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1666, 1, 0)
+
+[node name="BuildingMaterial13" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.403, 1, 0)
 
 [node name="Platforms" type="Node" parent="."]
 
