@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dhf06sfgvjd7u"
-path="res://.godot/imported/Calm3 - Peaceful Days.ogg-ec8c44afffeacfbdbb95672cdf003686.oggvorbisstr"
+path="res://.godot/imported/Calm3 - Peaceful Days.ogg-c8a7087500508e7db14790c9dddfaa6e.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm3 - Peaceful Days.ogg"
-dest_files=["res://.godot/imported/Calm3 - Peaceful Days.ogg-ec8c44afffeacfbdbb95672cdf003686.oggvorbisstr"]
+source_file="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm3 - Peaceful Days.ogg"
+dest_files=["res://.godot/imported/Calm3 - Peaceful Days.ogg-c8a7087500508e7db14790c9dddfaa6e.oggvorbisstr"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cyokxyyragllf"
-path="res://.godot/imported/Footstep_SandStone-001.mp3-dfb17ad91a9f69e33e1b5b1c78f2f7b6.mp3str"
+path="res://.godot/imported/Footstep_SandStone-001.mp3-9dea15f53c1c8fcf3b16952771b56624.mp3str"
 
 [deps]
 
-source_file="res://Audio/sfx/Footstep_SandStone-001.mp3"
-dest_files=["res://.godot/imported/Footstep_SandStone-001.mp3-dfb17ad91a9f69e33e1b5b1c78f2f7b6.mp3str"]
+source_file="res://audio/sfx/Footstep_SandStone-001.mp3"
+dest_files=["res://.godot/imported/Footstep_SandStone-001.mp3-9dea15f53c1c8fcf3b16952771b56624.mp3str"]
 
 [params]
 
