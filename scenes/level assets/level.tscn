@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bo20eh72d0433"]
+[gd_scene load_steps=43 format=3 uid="uid://bo20eh72d0433"]
 
 [ext_resource type="Script" path="res://scenes/general/game_manager.gd" id="1_dvvai"]
 [ext_resource type="PackedScene" uid="uid://ceyaoapmq52di" path="res://camera_3d.tscn" id="2_7cnwm"]
@@ -9,23 +9,27 @@
 [ext_resource type="PackedScene" uid="uid://do8e6ayqb6acm" path="res://scenes/pickups and shelter/pickup_plank.tscn" id="8_yw5vr"]
 [ext_resource type="PackedScene" uid="uid://dnga6u54hw306" path="res://scenes/player/player.tscn" id="9_2fse1"]
 [ext_resource type="PackedScene" uid="uid://d4ks7dbpwpjs4" path="res://scenes/pickups and shelter/pickup_bricks.tscn" id="9_dqj8j"]
+[ext_resource type="PackedScene" uid="uid://b7blh47qfenuv" path="res://meshes/shelter stages/1 bent legs.glb" id="11_aiu7e"]
 [ext_resource type="PackedScene" uid="uid://qyset6fs0lox" path="res://scenes/menus/pause_menu.tscn" id="11_hqfbd"]
-[ext_resource type="PackedScene" uid="uid://57gnkqi2ng57" path="res://meshes/borakay3d/house_stages/1.glb" id="11_khcf7"]
-[ext_resource type="PackedScene" uid="uid://cywukf5yibu1u" path="res://meshes/borakay3d/house_stages/2.glb" id="12_ou314"]
-[ext_resource type="PackedScene" uid="uid://dqj13haotychv" path="res://meshes/borakay3d/house_stages/3.glb" id="13_f2vtf"]
+[ext_resource type="PackedScene" uid="uid://jb3cdpwrhp88" path="res://meshes/shelter stages/2 straight legs.glb" id="12_8tsxx"]
+[ext_resource type="PackedScene" uid="uid://cnaaa6bhs5kxc" path="res://meshes/shelter stages/4 bent legs.glb" id="13_d5g2y"]
 [ext_resource type="Texture2D" uid="uid://c7x2h07viy8tm" path="res://pictures/sky/midday.jpg" id="13_lfdo5"]
-[ext_resource type="PackedScene" uid="uid://cssfss15sn2i5" path="res://meshes/borakay3d/house_stages/7.glb" id="14_hx226"]
+[ext_resource type="PackedScene" uid="uid://bx78klkbqpg28" path="res://meshes/shelter stages/4 straight legs.glb" id="14_dkerp"]
 [ext_resource type="Texture2D" uid="uid://5h1gjbfnlnpq" path="res://pictures/ui_icons/icon_construction.png" id="14_l3dmy"]
+[ext_resource type="PackedScene" uid="uid://b2iy1pl5ghq8s" path="res://meshes/shelter stages/no roof - bent legs.glb" id="15_0a8lx"]
 [ext_resource type="Shape3D" uid="uid://dmh8w5r5laxhi" path="res://scenes/level assets/platform shapes/long_plank_shape.tres" id="15_01dit"]
 [ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="15_8otoy"]
+[ext_resource type="PackedScene" uid="uid://cnc5115qs22h4" path="res://meshes/shelter stages/4 straight legs and 4 walls.glb" id="16_da2s1"]
 [ext_resource type="PackedScene" uid="uid://nygjomhu8npw" path="res://scenes/enemy_guard/Enemy_guard.tscn" id="16_e6yl5"]
 [ext_resource type="BoxMesh" uid="uid://b2yneilb7jqgs" path="res://scenes/level assets/platform shapes/long_plank_mesh.tres" id="16_e46q2"]
 [ext_resource type="ArrayMesh" uid="uid://8dwf6ppxp5vc" path="res://meshes/platforms/arokh_platform_01.obj" id="16_ef1q3"]
+[ext_resource type="PackedScene" uid="uid://vrayae30v4iv" path="res://meshes/shelter stages/with roof - bent legs.glb" id="17_5sb5g"]
 [ext_resource type="Material" uid="uid://c1epk6ve3fxt" path="res://materials/GRAVEL.tres" id="17_e5x4r"]
 [ext_resource type="Material" uid="uid://b6382iv6hqxsd" path="res://materials/SAND.tres" id="17_g80vk"]
 [ext_resource type="Material" uid="uid://cuis7v7i5gbmc" path="res://materials/SANDSTONE.tres" id="17_gf3nq"]
 [ext_resource type="PackedScene" uid="uid://bk1j7v5nthfag" path="res://scenes/enemy_guard/check_point.tscn" id="17_oac4o"]
 [ext_resource type="Script" path="res://scenes/level assets/terrain.gd" id="17_ye5wt"]
+[ext_resource type="PackedScene" uid="uid://dmy016yo4lnye" path="res://meshes/shelter stages/finished house.glb" id="18_egft0"]
 [ext_resource type="Theme" uid="uid://qc43p7xhuxrq" path="res://fonts/test_ui_theme.theme" id="19_sbsi5"]
 [ext_resource type="ArrayMesh" uid="uid://bx2ywgnjmj63f" path="res://Item_Pickups/meshes/Water_and_Island_and_cloud_Mesh.res" id="19_wobyg"]
 [ext_resource type="Material" uid="uid://cvnl6si3gea6c" path="res://materials/WOOD.tres" id="20_2vptw"]
@@ -171,7 +175,7 @@ player_health = 3
 
 [node name="BuildSite" parent="." instance=ExtResource("6_to7r2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.306323, 0)
-build_stages = [ExtResource("11_khcf7"), ExtResource("12_ou314"), ExtResource("13_f2vtf"), ExtResource("14_hx226")]
+build_stages = [ExtResource("11_aiu7e"), ExtResource("12_8tsxx"), ExtResource("13_d5g2y"), ExtResource("14_dkerp"), ExtResource("15_0a8lx"), ExtResource("16_da2s1"), ExtResource("17_5sb5g"), ExtResource("18_egft0")]
 
 [node name="BuildingMaterials" type="Node" parent="."]
 
@@ -190,17 +194,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 0)
 [node name="BuildingMaterial5" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4244, 1, 0)
 
-[node name="BuildingMaterial6" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.28533, 1, 0)
-
-[node name="BuildingMaterial7" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6889, 1, 0)
-
-[node name="BuildingMaterial8" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5005, 1, 0)
-
 [node name="BuildingMaterial9" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26578, 1, 0)
+
+[node name="BuildingMaterial13" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.04527, 1, 0)
+
+[node name="BuildingMaterial14" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.59599, 1, 0)
+
+[node name="BuildingMaterial15" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.45925, 1, 0)
+
+[node name="BuildingMaterial16" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.122, 1, 0)
+
+[node name="BuildingMaterial17" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.122, 1, 0)
+
+[node name="BuildingMaterial18" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.70265, 1, 0)
+
+[node name="BuildingMaterial19" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0463, 1, 0)
+
+[node name="BuildingMaterial20" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3123, 1, 0)
+
+[node name="BuildingMaterial21" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.51262, 1, 0)
+
+[node name="BuildingMaterial22" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.51262, 1, 0)
+
+[node name="BuildingMaterial23" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.51262, 1, 0)
 
 [node name="BuildingMaterial10" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.59751, 1, 0)
@@ -210,9 +238,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6927, 1, 0)
 
 [node name="BuildingMaterial12" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1666, 1, 0)
-
-[node name="BuildingMaterial13" parent="BuildingMaterials" instance=ExtResource("9_dqj8j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.403, 1, 0)
 
 [node name="Platforms" type="Node" parent="."]
 
