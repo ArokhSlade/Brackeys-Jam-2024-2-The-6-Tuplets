@@ -55,6 +55,11 @@ script = ExtResource("1_ithd2")
 ambiance_clips = [ExtResource("4_00yn6"), ExtResource("5_pkskq"), ExtResource("6_mr4aa"), ExtResource("7_k7w4q")]
 test_clips = [ExtResource("6_25hpj"), ExtResource("7_vjobb"), ExtResource("8_pet66"), ExtResource("9_x78hd")]
 menu_music = ExtResource("3_qqv3y")
+steps_dirt = [ExtResource("2_nj881"), ExtResource("3_53pc8")]
+steps_sand = [ExtResource("4_bym7o"), ExtResource("5_o3ruy")]
+steps_sandstone = [ExtResource("6_f5e54"), ExtResource("7_v4mc6")]
+steps_wood = [ExtResource("8_cpm3b"), ExtResource("9_lyex2")]
+steps_gravel = [ExtResource("6_f5e54"), ExtResource("7_v4mc6")]
 
 [node name="jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_nj881")

@@ -36,9 +36,6 @@ player_health = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.745, 0)
 script = ExtResource("3_ivt3e")
 
-[node name="FootstepTimer" type="Timer" parent="."]
-one_shot = true
-
 [node name="ShelterBuildingModule" parent="." instance=ExtResource("3_misgd")]
 
 [node name="apply_damage" type="Area3D" parent="."]
@@ -72,6 +69,11 @@ offset_right = 508.0
 offset_bottom = 154.0
 theme = ExtResource("5_5vm0l")
 text = "HP: N"
+
+[node name="StepSoundsPlayer" type="AudioStreamPlayer3D" parent="."]
+
+[node name="FootstepTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="motion_updated" from="." to="Character/Character_Full_rig_Run" method="_on_player_motion_updated"]
 [connection signal="body_entered" from="apply_damage" to="." method="on_enemy_hit_with_feet"]

@@ -1,4 +1,4 @@
-extends StaticBody3D
+extends MeshInstance3D
 
 const TerrainType = preload("res://scenes/level assets/TerrainType.gd")
 
@@ -18,12 +18,12 @@ const DIRT_MATERIAL = preload("res://materials/DIRT.tres")
 
 func _ready():	
 	if terrain_type == SANDSTONE:
-		$MeshInstance3D.material_override = SANDSTONE_MATERIAL
+		material_override = SANDSTONE_MATERIAL
 	elif terrain_type == SAND:
-		$MeshInstance3D.material_override = SAND_MATERIAL
+		material_override = SAND_MATERIAL
 	elif terrain_type == WOOD:
-		$MeshInstance3D.material_override = WOOD_MATERIAL
+		material_override = WOOD_MATERIAL
 	elif terrain_type == DIRT:
-		$MeshInstance3D.material_override = DIRT_MATERIAL
+		material_override = DIRT_MATERIAL
 	elif terrain_type == GRAVEL:
-		$MeshInstance3D.material_override = GRAVEL_MATERIAL
+		material_override = GRAVEL_MATERIAL

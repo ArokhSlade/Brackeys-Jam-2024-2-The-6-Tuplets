@@ -15,15 +15,3 @@ const SAND_MATERIAL = preload("res://materials/SAND.tres")
 const SANDSTONE_MATERIAL = preload("res://materials/SANDSTONE.tres")
 const WOOD_MATERIAL = preload("res://materials/WOOD.tres")
 const DIRT_MATERIAL = preload("res://materials/DIRT.tres")
-
-func _ready():	
-	if terrain_type == SANDSTONE:
-		$MeshInstance3D.material_override = SANDSTONE_MATERIAL
-	elif terrain_type == SAND:
-		$MeshInstance3D.material_override = SAND_MATERIAL
-	elif terrain_type == WOOD:
-		$MeshInstance3D.material_override = WOOD_MATERIAL
-	elif terrain_type == DIRT:
-		$MeshInstance3D.material_override = DIRT_MATERIAL
-	elif terrain_type == GRAVEL:
-		$MeshInstance3D.material_override = GRAVEL_MATERIAL
