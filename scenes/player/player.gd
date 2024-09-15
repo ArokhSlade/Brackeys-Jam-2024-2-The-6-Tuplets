@@ -16,10 +16,7 @@ signal died
 var motion : GlobalGameState.Motion = GlobalGameState.Motion.IDLE
 
 func _ready():
-	add_to_group("Player")
-	## changes music that's playing to game music
-	AudioController.stop_menuMusic()
-	AudioController.play_gameMusic1()
+	add_to_group("Player")	
 	_update_health_label()
 
 var jump_count = 0
