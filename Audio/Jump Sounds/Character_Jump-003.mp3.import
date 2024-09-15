@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://n68ybmprd8lh"
-path="res://.godot/imported/Character_Jump-003.mp3-726abeec2595b6b17de3a688b238c952.mp3str"
+path="res://.godot/imported/Character_Jump-003.mp3-1c4d1df414ba104d8cb7963389c707a9.mp3str"
 
 [deps]
 
-source_file="res://Audio/Jump Sounds/Character_Jump-003.mp3"
-dest_files=["res://.godot/imported/Character_Jump-003.mp3-726abeec2595b6b17de3a688b238c952.mp3str"]
+source_file="res://audio/Jump Sounds/Character_Jump-003.mp3"
+dest_files=["res://.godot/imported/Character_Jump-003.mp3-1c4d1df414ba104d8cb7963389c707a9.mp3str"]
 
 [params]
 

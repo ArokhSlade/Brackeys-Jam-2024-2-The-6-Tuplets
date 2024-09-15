@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bpc17hvtib2cw"
-path="res://.godot/imported/Calm6 - Innocence.ogg-fa53183e1793aba68a698496ecfc0a13.oggvorbisstr"
+path="res://.godot/imported/Calm6 - Innocence.ogg-0e215bc4b17257018d5f05d35034b151.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm6 - Innocence.ogg"
-dest_files=["res://.godot/imported/Calm6 - Innocence.ogg-fa53183e1793aba68a698496ecfc0a13.oggvorbisstr"]
+source_file="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm6 - Innocence.ogg"
+dest_files=["res://.godot/imported/Calm6 - Innocence.ogg-0e215bc4b17257018d5f05d35034b151.oggvorbisstr"]
 
 [params]
 

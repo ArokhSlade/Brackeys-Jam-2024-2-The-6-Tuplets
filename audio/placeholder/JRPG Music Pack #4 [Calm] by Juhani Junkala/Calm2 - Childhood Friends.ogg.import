@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://d1kkjx1fp07vn"
-path="res://.godot/imported/Calm2 - Childhood Friends.ogg-ee8cd1444892498b90e4295c57ff01c2.oggvorbisstr"
+path="res://.godot/imported/Calm2 - Childhood Friends.ogg-be1cfcb32a6019f6e7094e0ac75658d8.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm2 - Childhood Friends.ogg"
-dest_files=["res://.godot/imported/Calm2 - Childhood Friends.ogg-ee8cd1444892498b90e4295c57ff01c2.oggvorbisstr"]
+source_file="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm2 - Childhood Friends.ogg"
+dest_files=["res://.godot/imported/Calm2 - Childhood Friends.ogg-be1cfcb32a6019f6e7094e0ac75658d8.oggvorbisstr"]
 
 [params]
 
