@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://c1xararad8gbo"
-path="res://.godot/imported/Calm4 - Sand Castles.ogg-f95165eab7c2e390d551ced9671b8b15.oggvorbisstr"
+path="res://.godot/imported/Calm4 - Sand Castles.ogg-f09bff82592131646386e13f5f221db8.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm4 - Sand Castles.ogg"
-dest_files=["res://.godot/imported/Calm4 - Sand Castles.ogg-f95165eab7c2e390d551ced9671b8b15.oggvorbisstr"]
+source_file="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm4 - Sand Castles.ogg"
+dest_files=["res://.godot/imported/Calm4 - Sand Castles.ogg-f09bff82592131646386e13f5f221db8.oggvorbisstr"]
 
 [params]
 

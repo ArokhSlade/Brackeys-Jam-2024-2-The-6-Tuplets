@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b5bqoh107cbfj"
-path="res://.godot/imported/Footstep_Dirt-001.mp3-16add7ccebc37c8875d747f2b0528de3.mp3str"
+path="res://.godot/imported/Footstep_Dirt-001.mp3-a91c0ade88ad2726cc34b31989b9044b.mp3str"
 
 [deps]
 
-source_file="res://Audio/sfx/Footstep_Dirt-001.mp3"
-dest_files=["res://.godot/imported/Footstep_Dirt-001.mp3-16add7ccebc37c8875d747f2b0528de3.mp3str"]
+source_file="res://audio/sfx/Footstep_Dirt-001.mp3"
+dest_files=["res://.godot/imported/Footstep_Dirt-001.mp3-a91c0ade88ad2726cc34b31989b9044b.mp3str"]
 
 [params]
 
