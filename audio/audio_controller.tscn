@@ -1,54 +1,88 @@
-[gd_scene load_steps=24 format=3 uid="uid://j3ma234csm3c"]
+[gd_scene load_steps=37 format=3 uid="uid://j3ma234csm3c"]
 
 [ext_resource type="Script" path="res://audio/audio_controller.gd" id="1_ithd2"]
-[ext_resource type="AudioStream" uid="uid://b5bqoh107cbfj" path="res://Audio/sfx/Footstep_Dirt-001.mp3" id="2_nj881"]
-[ext_resource type="AudioStream" uid="uid://d3cxkbgrvbuhg" path="res://Audio/sfx/Footstep_Dirt-002.mp3" id="3_53pc8"]
-[ext_resource type="AudioStream" uid="uid://d3imyvgaff01g" path="res://Audio/music/1stSketch.mp3" id="3_qqv3y"]
-[ext_resource type="AudioStream" uid="uid://b565tw82qkwa0" path="res://Audio/Ambience Sequences/Ambience_1.ogg" id="4_00yn6"]
-[ext_resource type="AudioStream" uid="uid://c48p3djd6with" path="res://Audio/sfx/Footstep_Sand-001.mp3" id="4_bym7o"]
-[ext_resource type="AudioStream" uid="uid://bdt3p81iatwd8" path="res://Audio/sfx/Footstep_Sand-002.mp3" id="5_o3ruy"]
-[ext_resource type="AudioStream" uid="uid://b2brtr1cjk526" path="res://Audio/Ambience Sequences/Ambience_2.ogg" id="5_pkskq"]
-[ext_resource type="AudioStream" uid="uid://c6car8i3dpw0v" path="res://Audio/Jump Sounds/Character_Jump-001.mp3" id="6_25hpj"]
-[ext_resource type="AudioStream" uid="uid://cyokxyyragllf" path="res://Audio/sfx/Footstep_SandStone-001.mp3" id="6_f5e54"]
-[ext_resource type="AudioStream" uid="uid://cy7jqf3l6nnoj" path="res://Audio/Ambience Sequences/Ambience_3.ogg" id="6_mr4aa"]
-[ext_resource type="AudioStream" uid="uid://d173hbnq6ewsd" path="res://Audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm5 - Summer Memories.ogg" id="7_ighkg"]
-[ext_resource type="AudioStream" uid="uid://b8yh5dkcn4aos" path="res://Audio/Ambience Sequences/Ambience_4.ogg" id="7_k7w4q"]
-[ext_resource type="AudioStream" uid="uid://bws7vuu31omv8" path="res://Audio/sfx/Footstep_SandStone-002.mp3" id="7_v4mc6"]
-[ext_resource type="AudioStream" uid="uid://x6mphl4w23jg" path="res://Audio/Jump Sounds/Character_Jump-002.mp3" id="7_vjobb"]
-[ext_resource type="AudioStream" uid="uid://gpjt46e0261e" path="res://Audio/sfx/Footstep_Wood-001.mp3" id="8_cpm3b"]
-[ext_resource type="AudioStream" uid="uid://n68ybmprd8lh" path="res://Audio/Jump Sounds/Character_Jump-003.mp3" id="8_pet66"]
-[ext_resource type="AudioStream" uid="uid://bis4i5mi56omw" path="res://Audio/sfx/Footstep_Wood-002.mp3" id="9_lyex2"]
-[ext_resource type="AudioStream" uid="uid://ppqwm3uv4gva" path="res://Audio/Jump Sounds/Character_Jump-004.mp3" id="9_x78hd"]
+[ext_resource type="AudioStream" uid="uid://d3imyvgaff01g" path="res://audio/music/1stSketch.mp3" id="3_qqv3y"]
+[ext_resource type="AudioStream" uid="uid://b565tw82qkwa0" path="res://audio/Ambience Sequences/Ambience_1.ogg" id="4_00yn6"]
+[ext_resource type="AudioStream" uid="uid://b2brtr1cjk526" path="res://audio/Ambience Sequences/Ambience_2.ogg" id="5_pkskq"]
+[ext_resource type="AudioStream" uid="uid://c6car8i3dpw0v" path="res://audio/Jump Sounds/Character_Jump-001.mp3" id="6_25hpj"]
+[ext_resource type="AudioStream" uid="uid://cy7jqf3l6nnoj" path="res://audio/Ambience Sequences/Ambience_3.ogg" id="6_mr4aa"]
+[ext_resource type="AudioStream" uid="uid://d173hbnq6ewsd" path="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm5 - Summer Memories.ogg" id="7_ighkg"]
+[ext_resource type="AudioStream" uid="uid://b8yh5dkcn4aos" path="res://audio/Ambience Sequences/Ambience_4.ogg" id="7_k7w4q"]
+[ext_resource type="AudioStream" uid="uid://x6mphl4w23jg" path="res://audio/Jump Sounds/Character_Jump-002.mp3" id="7_vjobb"]
+[ext_resource type="AudioStream" uid="uid://n68ybmprd8lh" path="res://audio/Jump Sounds/Character_Jump-003.mp3" id="8_pet66"]
+[ext_resource type="AudioStream" uid="uid://ppqwm3uv4gva" path="res://audio/Jump Sounds/Character_Jump-004.mp3" id="9_x78hd"]
+[ext_resource type="AudioStream" uid="uid://b7jc7iaan261e" path="res://audio/FS Dirt/Footstep_Dirt-001.ogg" id="12_4y8dq"]
+[ext_resource type="AudioStream" uid="uid://ddumxoadjlkbt" path="res://audio/FS Dirt/Footstep_Dirt-002.ogg" id="13_wf7db"]
+[ext_resource type="AudioStream" uid="uid://igpbo4kj2hc2" path="res://audio/FS Dirt/Footstep_Dirt-003.ogg" id="14_ehas5"]
+[ext_resource type="AudioStream" uid="uid://c0kcxpi0lhh52" path="res://audio/FS Dirt/Footstep_Dirt-004.ogg" id="15_qmbxn"]
+[ext_resource type="AudioStream" uid="uid://bjq5xnnmughc0" path="res://audio/FS Dirt/Footstep_Dirt-005.ogg" id="16_pj2wl"]
+[ext_resource type="AudioStream" uid="uid://d28kw5l5d34sr" path="res://audio/FS_Sand/Footstep_Sand-001.ogg" id="17_wrjs1"]
+[ext_resource type="AudioStream" uid="uid://bhtme8i0jrfnq" path="res://audio/FS_Sand/Footstep_Sand-002.ogg" id="18_3733h"]
+[ext_resource type="AudioStream" uid="uid://bh7jyb8sihjvj" path="res://audio/FS_Sand/Footstep_Sand-003.ogg" id="19_y853c"]
+[ext_resource type="AudioStream" uid="uid://bt225mpob7p8" path="res://audio/FS_Sand/Footstep_Sand-004.ogg" id="20_ro0op"]
+[ext_resource type="AudioStream" uid="uid://dyctq2ewej2in" path="res://audio/FS_Sand/Footstep_Sand-005.ogg" id="21_mufse"]
+[ext_resource type="AudioStream" uid="uid://dg2nk3p8347la" path="res://audio/FS Sandstone/FootstepSandstone-001.ogg" id="22_s8xlb"]
+[ext_resource type="AudioStream" uid="uid://kmamvhrukon5" path="res://audio/FS Sandstone/FootstepSandstone-002.ogg" id="23_umrav"]
+[ext_resource type="AudioStream" uid="uid://blyo6clj6nta5" path="res://audio/FS Sandstone/FootstepSandstone-003.ogg" id="24_d6jrc"]
+[ext_resource type="AudioStream" uid="uid://b3jlyb413vi1s" path="res://audio/FS Sandstone/FootstepSandstone-004.ogg" id="25_xw36b"]
+[ext_resource type="AudioStream" uid="uid://clyqj2wjca6n2" path="res://audio/FS Sandstone/FootstepSandstone-005.ogg" id="26_b82u3"]
+[ext_resource type="AudioStream" uid="uid://c2iwu3srh263" path="res://audio/FS_Wood/Footstep_Wood-001.ogg" id="27_wjy6t"]
+[ext_resource type="AudioStream" uid="uid://ba23k6ssn07vt" path="res://audio/FS_Wood/Footstep_Wood-002.ogg" id="28_msyr6"]
+[ext_resource type="AudioStream" uid="uid://rp506s0fnaa8" path="res://audio/FS_Wood/Footstep_Wood-003.ogg" id="29_iywqd"]
+[ext_resource type="AudioStream" uid="uid://mpgvymwyf1kq" path="res://audio/FS_Wood/Footstep_Wood-004.ogg" id="30_30qw0"]
+[ext_resource type="AudioStream" uid="uid://ubpgl2ab6q6n" path="res://audio/FS_Wood/Footstep_Wood-005.ogg" id="31_6qwo6"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7e0r4"]
+random_pitch = 1.25
+random_volume_offset_db = 1.25
+streams_count = 4
+stream_0/stream = ExtResource("6_25hpj")
+stream_1/stream = ExtResource("7_vjobb")
+stream_2/stream = ExtResource("8_pet66")
+stream_3/stream = ExtResource("9_x78hd")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_22s1l"]
-random_pitch = 1.1
-streams_count = 2
-stream_0/stream = ExtResource("2_nj881")
-stream_1/stream = ExtResource("3_53pc8")
+random_pitch = 1.25
+random_volume_offset_db = 1.25
+streams_count = 5
+stream_0/stream = ExtResource("12_4y8dq")
+stream_1/stream = ExtResource("13_wf7db")
+stream_2/stream = ExtResource("14_ehas5")
+stream_3/stream = ExtResource("15_qmbxn")
+stream_4/stream = ExtResource("16_pj2wl")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pmeqd"]
 playback_mode = 1
-random_pitch = 1.19
-random_volume_offset_db = 1.29
-streams_count = 2
-stream_0/stream = ExtResource("4_bym7o")
-stream_1/stream = ExtResource("5_o3ruy")
+random_pitch = 1.25
+random_volume_offset_db = 1.25
+streams_count = 5
+stream_0/stream = ExtResource("17_wrjs1")
+stream_1/stream = ExtResource("18_3733h")
+stream_2/stream = ExtResource("19_y853c")
+stream_3/stream = ExtResource("20_ro0op")
+stream_4/stream = ExtResource("21_mufse")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_00yij"]
 playback_mode = 1
-random_pitch = 1.39
-random_volume_offset_db = 1.29
-streams_count = 2
-stream_0/stream = ExtResource("6_f5e54")
-stream_1/stream = ExtResource("7_v4mc6")
+random_pitch = 1.25
+random_volume_offset_db = 1.25
+streams_count = 5
+stream_0/stream = ExtResource("22_s8xlb")
+stream_1/stream = ExtResource("23_umrav")
+stream_2/stream = ExtResource("24_d6jrc")
+stream_3/stream = ExtResource("25_xw36b")
+stream_4/stream = ExtResource("26_b82u3")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hk756"]
 playback_mode = 1
 random_pitch = 1.2
 random_volume_offset_db = 0.77
-streams_count = 2
-stream_0/stream = ExtResource("8_cpm3b")
-stream_1/stream = ExtResource("9_lyex2")
+streams_count = 5
+stream_0/stream = ExtResource("27_wjy6t")
+stream_1/stream = ExtResource("28_msyr6")
+stream_2/stream = ExtResource("29_iywqd")
+stream_3/stream = ExtResource("30_30qw0")
+stream_4/stream = ExtResource("31_6qwo6")
 
 [node name="AudioController" type="Node"]
 script = ExtResource("1_ithd2")
@@ -57,9 +91,7 @@ test_clips = [ExtResource("6_25hpj"), ExtResource("7_vjobb"), ExtResource("8_pet
 menu_music = ExtResource("3_qqv3y")
 
 [node name="jump" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_nj881")
-volume_db = 1.962
-pitch_scale = 3.06
+stream = SubResource("AudioStreamRandomizer_7e0r4")
 
 [node name="menuMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_qqv3y")
@@ -87,15 +119,18 @@ parameters/looping = false
 
 [node name="stepDirt" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_22s1l")
-volume_db = -10.75
+volume_db = -5.0
 
 [node name="stepSand" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_pmeqd")
+volume_db = -5.0
 
 [node name="stepSandstone" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_00yij")
+volume_db = -5.0
 
 [node name="stepWood" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_hk756")
+volume_db = -5.0
 
 [node name="BackgroundClipPlayer" type="AudioStreamPlayer" parent="."]
