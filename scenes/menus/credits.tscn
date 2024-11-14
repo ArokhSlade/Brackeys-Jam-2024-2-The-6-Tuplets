@@ -87,6 +87,5 @@ size_flags_vertical = 8
 theme = ExtResource("1_rslkx")
 text = "Back"
 script = ExtResource("4_vpdeh")
-scene_path = "res://scenes/menus/main_menu.tscn"
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/BackButton" to="ColorRect/VBoxContainer/BackButton" method="_on_pressed"]

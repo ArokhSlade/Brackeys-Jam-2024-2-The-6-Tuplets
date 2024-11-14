@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://d173hbnq6ewsd"
-path="res://.godot/imported/Calm5 - Summer Memories.ogg-5bbe046593cbda97b8282c80c5830534.oggvorbisstr"
+path="res://.godot/imported/Calm5 - Summer Memories.ogg-80045961a0d43d658f0d434665ea6745.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm5 - Summer Memories.ogg"
-dest_files=["res://.godot/imported/Calm5 - Summer Memories.ogg-5bbe046593cbda97b8282c80c5830534.oggvorbisstr"]
+source_file="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm5 - Summer Memories.ogg"
+dest_files=["res://.godot/imported/Calm5 - Summer Memories.ogg-80045961a0d43d658f0d434665ea6745.oggvorbisstr"]
 
 [params]
 

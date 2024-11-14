@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bs4nnfg4o6h0c"
-path="res://.godot/imported/Calm1 - A Place I Call Home.ogg-444d9e5c44905b37a38a01c7e067a4d8.oggvorbisstr"
+path="res://.godot/imported/Calm1 - A Place I Call Home.ogg-662f26f9d0e474420bf2d7c6c6831b66.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm1 - A Place I Call Home.ogg"
-dest_files=["res://.godot/imported/Calm1 - A Place I Call Home.ogg-444d9e5c44905b37a38a01c7e067a4d8.oggvorbisstr"]
+source_file="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm1 - A Place I Call Home.ogg"
+dest_files=["res://.godot/imported/Calm1 - A Place I Call Home.ogg-662f26f9d0e474420bf2d7c6c6831b66.oggvorbisstr"]
 
 [params]
 

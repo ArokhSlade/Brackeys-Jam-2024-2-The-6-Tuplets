@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk1j7v5nthfag"]
+
+[ext_resource type="Script" path="res://scenes/enemy_guard/check_point.gd" id="1_f03w0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tvmrq"]
+size = Vector3(1.22949, 2.02942, 3.18274)
+
+[node name="CheckPoint" type="Area3D" groups=["checkpoints"]]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_f03w0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.114746, 1.27253, 0.0913696)
+shape = SubResource("BoxShape3D_tvmrq")
+
+[node name="Marker3D" type="Marker3D" parent="."]

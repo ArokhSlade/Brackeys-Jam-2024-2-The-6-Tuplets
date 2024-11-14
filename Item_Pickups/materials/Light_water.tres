@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b5x63ctq6n40x"]
+
+[resource]
+resource_name = "Light_water"
+cull_mode = 2
+albedo_color = Color(0.529965, 0.607731, 0.906332, 1)
+roughness = 0.5

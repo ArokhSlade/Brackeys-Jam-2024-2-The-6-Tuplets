@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://wyfpamn42njq"]
+
+[ext_resource type="Script" path="res://scenes/level assets/terrain.gd" id="1_h6txd"]
+
+[node name="StaticBody3D" type="StaticBody3D" groups=["terrain"]]
+script = ExtResource("1_h6txd")

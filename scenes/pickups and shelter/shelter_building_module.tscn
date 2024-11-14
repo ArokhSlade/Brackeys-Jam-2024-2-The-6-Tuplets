@@ -1,14 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpslgkte872ph"]
+[gd_scene load_steps=5 format=3 uid="uid://dpslgkte872ph"]
 
 [ext_resource type="Script" path="res://scenes/pickups and shelter/shelter_building_module.gd" id="1_e3746"]
 [ext_resource type="Texture2D" uid="uid://d0n2wa8vkokf0" path="res://pictures/ui_icons/straw_bushel_alpha.png" id="2_n1cxo"]
+[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="3_tfiwe"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m7ajp"]
-
-[sub_resource type="Theme" id="Theme_qqw2a"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_gjcih"]
-font_size = 250
 
 [node name="ShelterBuildingModule" type="Node3D"]
 script = ExtResource("1_e3746")
@@ -28,34 +24,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Materials UI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0442708
-anchor_top = 0.0694444
-anchor_right = 0.217882
-anchor_bottom = 0.205247
-offset_right = 800.0
-offset_bottom = 352.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.2, 0.2)
-theme = SubResource("Theme_qqw2a")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Materials UI/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Materials UI"]
 layout_mode = 2
+offset_left = 56.6666
+offset_top = 50.0
+offset_right = 245.667
+offset_bottom = 499.0
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("2_n1cxo")
 
-[node name="SpacingLabel" type="Label" parent="Materials UI/HBoxContainer"]
-layout_mode = 2
-text = "  "
-label_settings = SubResource("LabelSettings_gjcih")
-
-[node name="MaterialsLabel" type="Label" parent="Materials UI/HBoxContainer"]
+[node name="MaterialsLabel" type="Label" parent="Materials UI"]
 unique_name_in_owner = true
 layout_mode = 2
+offset_left = 122.0
+offset_top = 61.0
+offset_right = 972.0
+offset_bottom = 468.0
+theme = ExtResource("3_tfiwe")
 text = "1/4"
-label_settings = SubResource("LabelSettings_gjcih")
 
 [connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]

@@ -16,7 +16,7 @@ func _ready() -> void:
 		return
 
 func _process(delta: float) -> void:
-	if player:
+	if player != null:
 		update_camera_position()
 
 func update_camera_position():
@@ -47,3 +47,7 @@ func update_camera_position():
 
 	# UPDATE LAST PLAYER POSITION
 	player_last_y = player_position.y
+
+
+func _on_player_died():
+	player = null

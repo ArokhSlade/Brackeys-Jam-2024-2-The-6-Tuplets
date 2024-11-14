@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://blyo6clj6nta5"
-path="res://.godot/imported/FootstepSandstone-003.ogg-2b6cacfb1da1f069795d57f639725a1c.oggvorbisstr"
+path="res://.godot/imported/FootstepSandstone-003.ogg-0224d330157b710d021af563b07bc614.oggvorbisstr"
 
 [deps]
 
-source_file="res://Audio/FS Sandstone/FootstepSandstone-003.ogg"
-dest_files=["res://.godot/imported/FootstepSandstone-003.ogg-2b6cacfb1da1f069795d57f639725a1c.oggvorbisstr"]
+source_file="res://audio/FS Sandstone/FootstepSandstone-003.ogg"
+dest_files=["res://.godot/imported/FootstepSandstone-003.ogg-0224d330157b710d021af563b07bc614.oggvorbisstr"]
 
 [params]
 

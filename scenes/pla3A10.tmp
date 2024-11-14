@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://dy0d5e4fcyuv2"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_mcjbf"]
+[ext_resource type="PackedScene" uid="uid://dpslgkte872ph" path="res://scenes/pickups and shelter/shelter_building_module.tscn" id="2_syksq"]
+[ext_resource type="Script" path="res://scenes/apply_damage.gd" id="3_j84jk"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_odj5n"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdmxt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wglny"]
+size = Vector3(1, 0.3, 0.4)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ul7gi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7sxc2"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13241, 0)
+collision_layer = 2
+script = ExtResource("1_mcjbf")
+
+[node name="Character" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Character"]
+mesh = SubResource("CapsuleMesh_odj5n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_hdmxt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22168, 0.549839, 0)
+mesh = SubResource("BoxMesh_wglny")
+
+[node name="FootstepTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ShelterBuildingModule" parent="." instance=ExtResource("2_syksq")]
+
+[node name="apply_damage" type="Area3D" parent="."]
+transform = Transform3D(0.697518, 0, 0, 0, 0.697518, 0, 0, 0, 0.697518, 0, -0.662981, 0)
+script = ExtResource("3_j84jk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="apply_damage"]
+shape = SubResource("SphereShape3D_ul7gi")
+
+[node name="take_damage" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="take_damage"]
+shape = SubResource("CapsuleShape3D_7sxc2")
+
+[connection signal="body_entered" from="apply_damage" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="take_damage" to="." method="_on_take_damage_body_entered"]

@@ -1,19 +1,38 @@
-[gd_scene load_steps=19 format=3 uid="uid://j3ma234csm3c"]
+[gd_scene load_steps=38 format=3 uid="uid://j3ma234csm3c"]
 
 [ext_resource type="Script" path="res://audio/audio_controller.gd" id="1_ithd2"]
 [ext_resource type="AudioStream" uid="uid://b5bqoh107cbfj" path="res://audio/sfx/Footstep_Dirt-001.mp3" id="2_nj881"]
 [ext_resource type="AudioStream" uid="uid://d3cxkbgrvbuhg" path="res://audio/sfx/Footstep_Dirt-002.mp3" id="3_53pc8"]
-[ext_resource type="AudioStream" uid="uid://bs4nnfg4o6h0c" path="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm1 - A Place I Call Home.ogg" id="3_hc2vb"]
+[ext_resource type="AudioStream" uid="uid://d3imyvgaff01g" path="res://audio/music/1stSketch.mp3" id="3_qqv3y"]
+[ext_resource type="AudioStream" uid="uid://b565tw82qkwa0" path="res://audio/Ambience Sequences/Ambience_1.ogg" id="4_00yn6"]
 [ext_resource type="AudioStream" uid="uid://c48p3djd6with" path="res://audio/sfx/Footstep_Sand-001.mp3" id="4_bym7o"]
-[ext_resource type="AudioStream" uid="uid://d1kkjx1fp07vn" path="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm2 - Childhood Friends.ogg" id="4_utq7i"]
 [ext_resource type="AudioStream" uid="uid://bdt3p81iatwd8" path="res://audio/sfx/Footstep_Sand-002.mp3" id="5_o3ruy"]
-[ext_resource type="AudioStream" uid="uid://dhf06sfgvjd7u" path="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm3 - Peaceful Days.ogg" id="5_v4amg"]
+[ext_resource type="AudioStream" uid="uid://b2brtr1cjk526" path="res://audio/Ambience Sequences/Ambience_2.ogg" id="5_pkskq"]
+[ext_resource type="AudioStream" uid="uid://c6car8i3dpw0v" path="res://audio/Jump Sounds/Character_Jump-001.mp3" id="6_25hpj"]
 [ext_resource type="AudioStream" uid="uid://cyokxyyragllf" path="res://audio/sfx/Footstep_SandStone-001.mp3" id="6_f5e54"]
-[ext_resource type="AudioStream" uid="uid://c1xararad8gbo" path="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm4 - Sand Castles.ogg" id="6_lb2ol"]
+[ext_resource type="AudioStream" uid="uid://cy7jqf3l6nnoj" path="res://audio/Ambience Sequences/Ambience_3.ogg" id="6_mr4aa"]
 [ext_resource type="AudioStream" uid="uid://d173hbnq6ewsd" path="res://audio/placeholder/JRPG Music Pack #4 [Calm] by Juhani Junkala/Calm5 - Summer Memories.ogg" id="7_ighkg"]
+[ext_resource type="AudioStream" uid="uid://b8yh5dkcn4aos" path="res://audio/Ambience Sequences/Ambience_4.ogg" id="7_k7w4q"]
 [ext_resource type="AudioStream" uid="uid://bws7vuu31omv8" path="res://audio/sfx/Footstep_SandStone-002.mp3" id="7_v4mc6"]
+[ext_resource type="AudioStream" uid="uid://x6mphl4w23jg" path="res://audio/Jump Sounds/Character_Jump-002.mp3" id="7_vjobb"]
 [ext_resource type="AudioStream" uid="uid://gpjt46e0261e" path="res://audio/sfx/Footstep_Wood-001.mp3" id="8_cpm3b"]
+[ext_resource type="AudioStream" uid="uid://n68ybmprd8lh" path="res://audio/Jump Sounds/Character_Jump-003.mp3" id="8_pet66"]
 [ext_resource type="AudioStream" uid="uid://bis4i5mi56omw" path="res://audio/sfx/Footstep_Wood-002.mp3" id="9_lyex2"]
+[ext_resource type="AudioStream" uid="uid://ppqwm3uv4gva" path="res://audio/Jump Sounds/Character_Jump-004.mp3" id="9_x78hd"]
+[ext_resource type="AudioStream" uid="uid://bfk5gxmuxgxrh" path="res://audio/FS Dirt/Footstep_Dirt-003.ogg" id="13_bqrfk"]
+[ext_resource type="AudioStream" uid="uid://c0kcxpi0lhh52" path="res://audio/FS Dirt/Footstep_Dirt-004.ogg" id="14_bbmh8"]
+[ext_resource type="AudioStream" uid="uid://bjq5xnnmughc0" path="res://audio/FS Dirt/Footstep_Dirt-005.ogg" id="15_hipa3"]
+[ext_resource type="AudioStream" uid="uid://bh7jyb8sihjvj" path="res://audio/FS_Sand/Footstep_Sand-003.ogg" id="18_e6b3b"]
+[ext_resource type="AudioStream" uid="uid://bt225mpob7p8" path="res://audio/FS_Sand/Footstep_Sand-004.ogg" id="19_p4qql"]
+[ext_resource type="AudioStream" uid="uid://dyctq2ewej2in" path="res://audio/FS_Sand/Footstep_Sand-005.ogg" id="20_l1sya"]
+[ext_resource type="AudioStream" uid="uid://blyo6clj6nta5" path="res://audio/FS Sandstone/FootstepSandstone-003.ogg" id="23_heyuh"]
+[ext_resource type="AudioStream" uid="uid://b3jlyb413vi1s" path="res://audio/FS Sandstone/FootstepSandstone-004.ogg" id="24_r00yk"]
+[ext_resource type="AudioStream" uid="uid://clyqj2wjca6n2" path="res://audio/FS Sandstone/FootstepSandstone-005.ogg" id="25_f5r2n"]
+[ext_resource type="AudioStream" uid="uid://rp506s0fnaa8" path="res://audio/FS_Wood/Footstep_Wood-003.ogg" id="28_djyob"]
+[ext_resource type="AudioStream" uid="uid://mpgvymwyf1kq" path="res://audio/FS_Wood/Footstep_Wood-004.ogg" id="29_vymjm"]
+[ext_resource type="AudioStream" uid="uid://ubpgl2ab6q6n" path="res://audio/FS_Wood/Footstep_Wood-005.ogg" id="30_rhfxb"]
+[ext_resource type="AudioStream" uid="uid://kmamvhrukon5" path="res://audio/FS Sandstone/FootstepSandstone-002.ogg" id="31_2pti2"]
+[ext_resource type="AudioStream" uid="uid://b7jc7iaan261e" path="res://audio/FS Dirt/Footstep_Dirt-001.ogg" id="32_lmj2h"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_22s1l"]
 random_pitch = 1.1
@@ -45,8 +64,16 @@ streams_count = 2
 stream_0/stream = ExtResource("8_cpm3b")
 stream_1/stream = ExtResource("9_lyex2")
 
-[node name="AudioController" type="Node2D"]
+[node name="AudioController" type="Node"]
 script = ExtResource("1_ithd2")
+ambiance_clips = [ExtResource("4_00yn6"), ExtResource("5_pkskq"), ExtResource("6_mr4aa"), ExtResource("7_k7w4q")]
+test_clips = [ExtResource("6_25hpj"), ExtResource("7_vjobb"), ExtResource("8_pet66"), ExtResource("9_x78hd")]
+menu_music = ExtResource("3_qqv3y")
+steps_dirt = [ExtResource("2_nj881"), ExtResource("3_53pc8"), ExtResource("13_bqrfk"), ExtResource("14_bbmh8"), ExtResource("15_hipa3")]
+steps_sand = [ExtResource("4_bym7o"), ExtResource("5_o3ruy"), ExtResource("18_e6b3b"), ExtResource("19_p4qql"), ExtResource("20_l1sya")]
+steps_sandstone = [ExtResource("6_f5e54"), ExtResource("7_v4mc6"), ExtResource("23_heyuh"), ExtResource("24_r00yk"), ExtResource("25_f5r2n")]
+steps_wood = [ExtResource("8_cpm3b"), ExtResource("9_lyex2"), ExtResource("28_djyob"), ExtResource("29_vymjm"), ExtResource("30_rhfxb")]
+steps_gravel = [ExtResource("15_hipa3"), ExtResource("24_r00yk"), ExtResource("13_bqrfk"), ExtResource("31_2pti2"), ExtResource("32_lmj2h")]
 
 [node name="jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_nj881")
@@ -54,19 +81,23 @@ volume_db = 1.962
 pitch_scale = 3.06
 
 [node name="menuMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_hc2vb")
+stream = ExtResource("3_qqv3y")
 parameters/looping = false
 
-[node name="gameMusic1" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_utq7i")
+[node name="gameAmbience1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_00yn6")
 parameters/looping = false
 
-[node name="gameMusic2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_v4amg")
+[node name="gameAmbience2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_pkskq")
 parameters/looping = false
 
-[node name="gameMusic3" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_lb2ol")
+[node name="gameAmbience3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_mr4aa")
+parameters/looping = false
+
+[node name="gameAmbience4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_k7w4q")
 parameters/looping = false
 
 [node name="endscreenMusic" type="AudioStreamPlayer2D" parent="."]
@@ -85,3 +116,5 @@ stream = SubResource("AudioStreamRandomizer_00yij")
 
 [node name="stepWood" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_hk756")
+
+[node name="BackgroundClipPlayer" type="AudioStreamPlayer" parent="."]
