@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b3jlyb413vi1s"
+path="res://.godot/imported/FootstepSandstone-004.ogg-54ec71782229e6e84aa10b016899654e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/FS Sandstone/FootstepSandstone-004.ogg"
+dest_files=["res://.godot/imported/FootstepSandstone-004.ogg-54ec71782229e6e84aa10b016899654e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
