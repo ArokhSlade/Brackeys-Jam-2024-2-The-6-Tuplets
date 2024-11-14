@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://gpjt46e0261e"
-path="res://.godot/imported/Footstep_Wood-001.mp3-a1a3884d2181bc5184d1c9bca58b1c02.mp3str"
+path="res://.godot/imported/Footstep_Wood-001.mp3-1faa67355cc598ca0cced815b6b31028.mp3str"
 
 [deps]
 
-source_file="res://Audio/sfx/Footstep_Wood-001.mp3"
-dest_files=["res://.godot/imported/Footstep_Wood-001.mp3-a1a3884d2181bc5184d1c9bca58b1c02.mp3str"]
+source_file="res://audio/sfx/Footstep_Wood-001.mp3"
+dest_files=["res://.godot/imported/Footstep_Wood-001.mp3-1faa67355cc598ca0cced815b6b31028.mp3str"]
 
 [params]
 
