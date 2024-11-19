@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h74de24eax41"
+uid="uid://bn2f3il6s8vtp"
 path.s3tc="res://.godot/imported/Pickup_items_SandBricks_Pickup_UV.png-f90a7ca6b5c24368005ba5afdf996721.s3tc.ctex"
+path.etc2="res://.godot/imported/Pickup_items_SandBricks_Pickup_UV.png-f90a7ca6b5c24368005ba5afdf996721.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://meshes/Pickup_items_SandBricks_Pickup_UV.png"
-dest_files=["res://.godot/imported/Pickup_items_SandBricks_Pickup_UV.png-f90a7ca6b5c24368005ba5afdf996721.s3tc.ctex"]
+dest_files=["res://.godot/imported/Pickup_items_SandBricks_Pickup_UV.png-f90a7ca6b5c24368005ba5afdf996721.s3tc.ctex", "res://.godot/imported/Pickup_items_SandBricks_Pickup_UV.png-f90a7ca6b5c24368005ba5afdf996721.etc2.ctex"]
 
 [params]
 

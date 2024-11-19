@@ -10,8 +10,8 @@ const WOOD = GlobalGameState.TerrainType.WOOD
 const DIRT = GlobalGameState.TerrainType.DIRT
 const GRAVEL = GlobalGameState.TerrainType.GRAVEL
 
-const GRAVEL_MATERIAL = preload("res://materials/gravel.tres")
-const SAND_MATERIAL = preload("res://materials/sand.tres")
-const SANDSTONE_MATERIAL = preload("res://materials/sandstone.tres")
-const WOOD_MATERIAL = preload("res://materials/wood.tres")
-const DIRT_MATERIAL = preload("res://materials/dirt.tres")
+const GRAVEL_MATERIAL = preload("res://materials/GRAVEL.tres")
+const SAND_MATERIAL = preload("res://materials/SAND.tres")
+const SANDSTONE_MATERIAL = preload("res://materials/SANDSTONE.tres")
+const WOOD_MATERIAL = preload("res://materials/WOOD.tres")
+const DIRT_MATERIAL = preload("res://materials/DIRT.tres")

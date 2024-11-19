@@ -2,17 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvl3ggnwl8324"
+uid="uid://b3pde70gja232"
 path.s3tc="res://.godot/imported/Pickup_items_Wood_Pickup_UV.png-5e249d58136c7320088c53e750aeba41.s3tc.ctex"
+path.etc2="res://.godot/imported/Pickup_items_Wood_Pickup_UV.png-5e249d58136c7320088c53e750aeba41.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
+}
+generator_parameters={
+"md5": "91bbe0c5af6a63c81612c39111a39f7d"
 }
 
 [deps]
 
 source_file="res://Item_Pickups/Pickup_items_Wood_Pickup_UV.png"
-dest_files=["res://.godot/imported/Pickup_items_Wood_Pickup_UV.png-5e249d58136c7320088c53e750aeba41.s3tc.ctex"]
+dest_files=["res://.godot/imported/Pickup_items_Wood_Pickup_UV.png-5e249d58136c7320088c53e750aeba41.s3tc.ctex", "res://.godot/imported/Pickup_items_Wood_Pickup_UV.png-5e249d58136c7320088c53e750aeba41.etc2.ctex"]
 
 [params]
 

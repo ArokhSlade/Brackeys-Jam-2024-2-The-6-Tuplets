@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 ]
+[gd_scene load_steps=3 format=3 uid="uid://do8e6ayqb6acm"]
 
-[ext_resource type="ArrayMesh"  path="res://meshes/building_materials/wooden_cube.res" id="1_8w0kr"]
+[ext_resource type="ArrayMesh" uid="uid://h2vuykqqrpmi" path="res://meshes/building_materials/wooden_cube.res" id="1_8w0kr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8puh"]
 size = Vector3(0.930664, 0.244141, 3.16553)

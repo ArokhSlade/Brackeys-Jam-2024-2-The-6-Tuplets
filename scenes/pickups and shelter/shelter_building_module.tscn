@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 ]
+[gd_scene load_steps=5 format=3 uid="uid://dpslgkte872ph"]
 
 [ext_resource type="Script" path="res://scenes/pickups and shelter/shelter_building_module.gd" id="1_e3746"]
-[ext_resource type="Texture2D"  path="res://pictures/ui_icons/straw_bushel_alpha.png" id="2_n1cxo"]
-[ext_resource type="Theme"  path="res://fonts/test_ui_headline_theme.theme" id="3_tfiwe"]
+[ext_resource type="Texture2D" uid="uid://d0n2wa8vkokf0" path="res://pictures/ui_icons/straw_bushel_alpha.png" id="2_n1cxo"]
+[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="3_tfiwe"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m7ajp"]
 

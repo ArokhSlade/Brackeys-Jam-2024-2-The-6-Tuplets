@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 ]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chff8socicawh"]
 
 [resource]
 resource_name = "Hair_Colour"

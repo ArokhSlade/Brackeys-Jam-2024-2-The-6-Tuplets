@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b5t62rbxw0rak"
+uid="uid://jb3cdpwrhp88"
 path="res://.godot/imported/2 straight legs.glb-e4880e36028078f47dcf3f93de5fc63a.scn"
 
 [deps]
@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/2 straight legs.glb-e4880e36028078f47dcf3f93d
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=50.0
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true

@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 ]
+[gd_scene load_steps=10 format=3 uid="uid://dnga6u54hw306"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_jav5r"]
-[ext_resource type="PackedScene"  path="res://meshes/characters/Character_Full_rig_Run.glb" id="2_1tmfg"]
+[ext_resource type="PackedScene" uid="uid://ddyjf1vtv2er7" path="res://meshes/characters/Character_Full_rig_Run.glb" id="2_1tmfg"]
 [ext_resource type="Script" path="res://scenes/player/player_animation.gd" id="3_ivt3e"]
-[ext_resource type="PackedScene"  path="res://scenes/pickups and shelter/shelter_building_module.tscn" id="3_misgd"]
-[ext_resource type="Theme"  path="res://fonts/test_ui_headline_theme.theme" id="5_5vm0l"]
+[ext_resource type="PackedScene" uid="uid://dpslgkte872ph" path="res://scenes/pickups and shelter/shelter_building_module.tscn" id="3_misgd"]
+[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="5_5vm0l"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1bava"]
 radius = 0.363895
