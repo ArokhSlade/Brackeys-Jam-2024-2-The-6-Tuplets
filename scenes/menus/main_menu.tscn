@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dy8f85l62q7v3"]
+[gd_scene load_steps=9 format=3 uid="uid://g1apj6nb0guq"]
 
 [ext_resource type="Script" path="res://scenes/menus/menu_base.gd" id="1_ux8au"]
 [ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="2_50o8t"]
-[ext_resource type="Texture2D" uid="uid://djft6khwgc5xy" path="res://pictures/key art.png" id="2_jm1g5"]
+[ext_resource type="Texture2D" uid="uid://cran8pea1g684" path="res://pictures/key art.png" id="2_jm1g5"]
 [ext_resource type="Theme" uid="uid://qc43p7xhuxrq" path="res://fonts/test_ui_theme.theme" id="3_p32xq"]
 [ext_resource type="Script" path="res://scenes/menus/quit_button.gd" id="5_jh16t"]
 [ext_resource type="Script" path="res://scenes/menus/start_game_button.gd" id="5_qlfve"]
-[ext_resource type="PackedScene" uid="uid://b7vc0qaf6buxr" path="res://scenes/menus/options_menu.tscn" id="6_vmdub"]
-[ext_resource type="PackedScene" uid="uid://di0lp5gtvsv3" path="res://scenes/menus/credits_menu.tscn" id="7_ehv3a"]
+[ext_resource type="PackedScene" path="res://scenes/menus/options_menu.tscn" id="6_vmdub"]
+[ext_resource type="PackedScene" path="res://scenes/menus/credits_menu.tscn" id="7_ehv3a"]
 
 [node name="MainMenu" type="ReferenceRect"]
 anchors_preset = 15

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtaxbeeyvq55x"]
+[gd_scene load_steps=2 format=3 ]
 
-[ext_resource type="PackedScene" uid="uid://dfdthumkb8q66" path="res://scenes/menus/game_over_menu.tscn" id="1_c1lqw"]
+[ext_resource type="PackedScene"  path="res://scenes/menus/game_over_menu.tscn" id="1_c1lqw"]
 
 [node name="GameOverScene" type="CanvasLayer"]
 

@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://1807agsvmro7"]
-
-[ext_resource type="Texture2D" uid="uid://d3yrxtpsgr24x" path="res://pictures/sandstone.bmp" id="1_2mmdm"]
-
-[resource]
-albedo_color = Color(0.71, 0.5112, 0.142, 1)
-albedo_texture = ExtResource("1_2mmdm")

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://vrayae30v4iv"
+uid="uid://sbmjdm58cbvc"
 path="res://.godot/imported/with roof - bent legs.glb-508dda6141a2239c5c056192b708f467.scn"
 
 [deps]
@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/with roof - bent legs.glb-508dda6141a2239c5c0
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=50.0
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true

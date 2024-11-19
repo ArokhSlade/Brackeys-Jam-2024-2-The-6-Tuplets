@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://b5x63ctq6n40x"]
+[gd_resource type="StandardMaterial3D" format=3 ]
 
 [resource]
 resource_name = "Light_water"

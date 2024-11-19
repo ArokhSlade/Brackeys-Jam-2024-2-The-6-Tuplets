@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://nygjomhu8npw"]
+[gd_scene load_steps=5 format=3 ]
 
 [ext_resource type="Script" path="res://scenes/enemy_guard/enemy.gd" id="1_35pk1"]
-[ext_resource type="PackedScene" uid="uid://clxjrmcjf5bbm" path="res://meshes/characters/Enemy_With_Animation.glb" id="1_ufe0y"]
+[ext_resource type="PackedScene"  path="res://meshes/characters/Enemy_With_Animation.glb" id="1_ufe0y"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jtwgs"]
 radius = 0.906648

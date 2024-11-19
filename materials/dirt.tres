@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 ]
+
+[ext_resource type="Texture2D"  path="res://pictures/textures/dirt.png" id="1_kldf0"]
+
+[resource]
+albedo_color = Color(0.687005, 0.636107, 0.336921, 1)
+albedo_texture = ExtResource("1_kldf0")
+uv1_scale = Vector3(0.12, 0.12, 0.12)
+uv1_triplanar = true
