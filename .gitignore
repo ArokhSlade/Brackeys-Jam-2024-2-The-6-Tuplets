@@ -2,4 +2,4 @@
 .godot/
 /android/
 /export/
-.import
+*.import
