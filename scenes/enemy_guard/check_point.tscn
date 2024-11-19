@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 ]
+[gd_scene load_steps=3 format=3 uid="uid://bk1j7v5nthfag"]
 
 [ext_resource type="Script" path="res://scenes/enemy_guard/check_point.gd" id="1_f03w0"]
 

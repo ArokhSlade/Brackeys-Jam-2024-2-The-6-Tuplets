@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 ]
+[gd_scene load_steps=9 format=3 uid="uid://b6nkhbd8hna8d"]
 
 [ext_resource type="Script" path="res://scenes/pickups and shelter/build_site.gd" id="1_1afw5"]
-[ext_resource type="BoxMesh"  path="res://meshes/test_shelter_stages/shelter_stage_0.tres" id="2_xanc6"]
-[ext_resource type="BoxMesh"  path="res://meshes/test_shelter_stages/shelter_stage_1.tres" id="3_16482"]
-[ext_resource type="BoxMesh"  path="res://meshes/test_shelter_stages/shelter_stage_2.tres" id="4_4epqw"]
-[ext_resource type="BoxMesh"  path="res://meshes/test_shelter_stages/shelter_stage_3.tres" id="5_3dmod"]
+[ext_resource type="BoxMesh" uid="uid://dw0ohtxv052fb" path="res://meshes/test_shelter_stages/shelter_stage_0.tres" id="2_xanc6"]
+[ext_resource type="BoxMesh" uid="uid://b7bsrombsh0y5" path="res://meshes/test_shelter_stages/shelter_stage_1.tres" id="3_16482"]
+[ext_resource type="BoxMesh" uid="uid://cf45b1r76aw2v" path="res://meshes/test_shelter_stages/shelter_stage_2.tres" id="4_4epqw"]
+[ext_resource type="BoxMesh" uid="uid://5pack77vq28v" path="res://meshes/test_shelter_stages/shelter_stage_3.tres" id="5_3dmod"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruy1m"]
 albedo_color = Color(0.31802, 0.31802, 0.31802, 1)

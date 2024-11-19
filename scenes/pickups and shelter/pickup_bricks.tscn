@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 ]
+[gd_scene load_steps=3 format=3 uid="uid://d4ks7dbpwpjs4"]
 
-[ext_resource type="ArrayMesh"  path="res://meshes/building_materials/brick_pile.res" id="1_t1iv6"]
+[ext_resource type="ArrayMesh" uid="uid://cjtcu67mksofy" path="res://meshes/building_materials/brick_pile.res" id="1_t1iv6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8puh"]
 size = Vector3(2.5752, 1.30469, 1.11517)

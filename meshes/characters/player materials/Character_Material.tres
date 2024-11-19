@@ -1,6 +1,6 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 ]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b82imm5nrcnqt"]
 
-[ext_resource type="Texture2D"  path="res://meshes/characters/Character_Full_rig_Run_Character_UV_03.png" id="1_34i17"]
+[ext_resource type="Texture2D" uid="uid://cdsun0sspbfuu" path="res://meshes/characters/Character_Full_rig_Run_Character_UV_03.png" id="1_34i17"]
 
 [resource]
 resource_name = "Character_Material"

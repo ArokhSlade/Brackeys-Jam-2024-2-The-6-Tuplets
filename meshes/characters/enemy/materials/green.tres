@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" format=3 ]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://t1gemhuftch0"]
 
 [resource]
 resource_name = "green"

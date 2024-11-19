@@ -2,17 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctj2tglq5xl5r"
+uid="uid://ckwbihh2208uk"
 path.s3tc="res://.godot/imported/Pickup_items_Straw_Pickup_UV.png-3c49d6f1dc54e14136ed595e63fdc89b.s3tc.ctex"
+path.etc2="res://.godot/imported/Pickup_items_Straw_Pickup_UV.png-3c49d6f1dc54e14136ed595e63fdc89b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
+}
+generator_parameters={
+"md5": "f8371ed11ded7de3b474556f7ea6a09d"
 }
 
 [deps]
 
 source_file="res://Item_Pickups/Pickup_items_Straw_Pickup_UV.png"
-dest_files=["res://.godot/imported/Pickup_items_Straw_Pickup_UV.png-3c49d6f1dc54e14136ed595e63fdc89b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Pickup_items_Straw_Pickup_UV.png-3c49d6f1dc54e14136ed595e63fdc89b.s3tc.ctex", "res://.godot/imported/Pickup_items_Straw_Pickup_UV.png-3c49d6f1dc54e14136ed595e63fdc89b.etc2.ctex"]
 
 [params]
 

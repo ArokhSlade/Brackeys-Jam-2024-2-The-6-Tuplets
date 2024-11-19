@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 ]
+[gd_scene load_steps=5 format=3 uid="uid://di0lp5gtvsv3"]
 
 [ext_resource type="Script" path="res://scenes/menus/menu_base.gd" id="1_5oui0"]
-[ext_resource type="Texture2D"  path="res://pictures/placeholder_credits_left.png" id="2_4ev05"]
-[ext_resource type="Theme"  path="res://fonts/test_ui_headline_theme.theme" id="3_0o78l"]
-[ext_resource type="Theme"  path="res://fonts/test_ui_theme.theme" id="4_y2aor"]
+[ext_resource type="Texture2D" uid="uid://b5lmw0y6j2qtd" path="res://pictures/placeholder_credits_left.png" id="2_4ev05"]
+[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="3_0o78l"]
+[ext_resource type="Theme" uid="uid://qc43p7xhuxrq" path="res://fonts/test_ui_theme.theme" id="4_y2aor"]
 
 [node name="CreditsMenu" type="ReferenceRect"]
 anchors_preset = 15
