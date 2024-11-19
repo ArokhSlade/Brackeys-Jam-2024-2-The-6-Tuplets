@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lssfpo57n746"
+uid="uid://dhtrofskhynef"
 path.s3tc="res://.godot/imported/Character_Full_rig_Character_UV_03.png-969b7eba39a7bf9cd5ac5da8c6e6dc38.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "3568202f1cffee63bfc67a31b2334ab1"
 }
 
 [deps]

@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyc8citdvmfto"
+uid="uid://d4vw2yrahfqs"
 path.s3tc="res://.godot/imported/Pickup_items_Wood_Pickup_UV.png-cd72086429ba0a50468e7b2e9b0c4c6a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "91bbe0c5af6a63c81612c39111a39f7d"
 }
 
 [deps]

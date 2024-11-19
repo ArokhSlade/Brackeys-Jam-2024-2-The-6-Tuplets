@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvy0fe3xldk2w"
+uid="uid://besrrodwavfbq"
 path.s3tc="res://.godot/imported/Pickup_items_SandBricks_Pickup_UV.png-a6442ef89ce1f45ae567e3a1991101cb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "9ed692579082cf6f19e9ae0b4483bf73"
 }
 
 [deps]

@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6xay8jthx78n"
+uid="uid://dca0uyd1mntvx"
 path.s3tc="res://.godot/imported/Pickup_items_with_animation_Straw_Pickup_UV.png-a7941e70d78cb3af06807cc6763e0c77.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "f8371ed11ded7de3b474556f7ea6a09d"
 }
 
 [deps]

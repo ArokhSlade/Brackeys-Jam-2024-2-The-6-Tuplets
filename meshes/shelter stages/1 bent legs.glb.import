@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7blh47qfenuv"
+uid="uid://bwc3vwdj7bhkr"
 path="res://.godot/imported/1 bent legs.glb-14fcfb44f304acea821c1c0f2c58f7fa.scn"
 
 [deps]
@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/1 bent legs.glb-14fcfb44f304acea821c1c0f2c58f
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=50.0
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -31,27 +31,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"meshes": {
-"1 bent legs_Broken_Leg2_003": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://meshes/shelter stages/meshes/1 bent legs_Broken_Leg2_003.res"
-},
-"1 bent legs_Broken_Leg_003": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://meshes/shelter stages/meshes/1 bent legs_Broken_Leg_003.res"
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

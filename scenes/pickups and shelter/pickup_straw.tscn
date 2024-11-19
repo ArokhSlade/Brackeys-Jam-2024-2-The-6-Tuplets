@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://benlqovn1gllt"]
+[gd_scene load_steps=3 format=3 ]
 
-[ext_resource type="ArrayMesh" uid="uid://cd1oqatrtwwin" path="res://meshes/building_materials/straw_bushel.res" id="1_bmyto"]
+[ext_resource type="ArrayMesh"  path="res://meshes/building_materials/straw_bushel.res" id="1_bmyto"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8puh"]
 size = Vector3(1.4873, 1.42383, 2.70215)

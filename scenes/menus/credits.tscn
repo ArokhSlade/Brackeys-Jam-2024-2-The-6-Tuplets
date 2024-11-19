@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dc30mq6qhto62"]
+[gd_scene load_steps=5 format=3 ]
 
-[ext_resource type="Theme" uid="uid://qc43p7xhuxrq" path="res://fonts/test_ui_theme.theme" id="1_rslkx"]
-[ext_resource type="Texture2D" uid="uid://b5lmw0y6j2qtd" path="res://pictures/placeholder_credits_left.png" id="2_4plsx"]
-[ext_resource type="Theme" uid="uid://bytk0b1dvpwlo" path="res://fonts/test_ui_headline_theme.theme" id="3_85v8u"]
+[ext_resource type="Theme"  path="res://fonts/test_ui_theme.theme" id="1_rslkx"]
+[ext_resource type="Texture2D"  path="res://pictures/placeholder_credits_left.png" id="2_4plsx"]
+[ext_resource type="Theme"  path="res://fonts/test_ui_headline_theme.theme" id="3_85v8u"]
 [ext_resource type="Script" path="res://scenes/menus/scene_loader_button.gd" id="4_vpdeh"]
 
 [node name="Credits" type="CanvasLayer"]
