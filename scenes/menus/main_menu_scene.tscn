@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1c4ma36chvbh"]
+[gd_scene load_steps=3 format=3 uid="uid://bmo51cnygaacl"]
 
-[ext_resource type="PackedScene" uid="uid://dy8f85l62q7v3" path="res://scenes/menus/main_menu.tscn" id="1_d7u6c"]
+[ext_resource type="PackedScene" uid="uid://g1apj6nb0guq" path="res://scenes/menus/main_menu.tscn" id="1_d7u6c"]
 [ext_resource type="Script" path="res://scenes/menus/main_menu_scene.gd" id="1_nplv5"]
 
 [node name="MainMenuScene" type="CanvasLayer"]
