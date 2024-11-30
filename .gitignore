@@ -2,5 +2,4 @@
 .godot/
 /android/
 /export/
-*.import
 *.tmp
